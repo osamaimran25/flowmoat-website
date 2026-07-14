@@ -36,7 +36,7 @@ function applyBranding() {
     target.textContent = SITE_CONFIG.brandName;
   });
 
-  document.title = `${SITE_CONFIG.brandName} | Enterprise AI Engineering Company`;
+  document.title = `Enterprise AI Engineering Company | ${SITE_CONFIG.brandName}`;
 }
 
 function closeMobileMenu() {
@@ -113,7 +113,7 @@ function setupSmoothScrolling() {
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
       history.pushState(null, "", targetId);
     });
   });
@@ -868,7 +868,7 @@ function setupOpportunityFinder() {
         if (automation) {
           automation.value = `I'm interested in: ${want}. ` + (input.value.trim() ? `Context: ${input.value.trim()}` : "");
         }
-        contact?.scrollIntoView({ behavior: "smooth", block: "start" });
+        contact?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
         window.setTimeout(() => document.querySelector("#name")?.focus({ preventScroll: true }), 650);
       });
     });
@@ -901,7 +901,7 @@ function setupOpportunityFinder() {
         scan.style.display = "none";
         renderResults(chosen);
         runBtn.disabled = false;
-        output.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        output.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "nearest" });
       }
     };
     advance();
