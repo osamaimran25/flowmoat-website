@@ -1,0 +1,39 @@
+# Flowmoat
+
+> Flowmoat is an enterprise AI engineering company that builds AI-powered software,
+> modernizes legacy systems, and automates business workflows for organizations of
+> 50–1,000 employees across the United States, Canada, the United Kingdom, Australia,
+> and the United Arab Emirates.
+
+Flowmoat combines product thinking with enterprise engineering. Engagements start with the
+business outcome, then work backward to the right architecture. Flowmoat also builds and
+operates its own SaaS products, which means its team has firsthand experience turning complex
+business domains into production software rather than delivering isolated features.
+
+## Services
+
+- [AI Engineering](https://flowmoat.com/#services): Intelligent systems, AI agents, and copilots that help teams find answers, make decisions, and execute complex work with human oversight.
+- [AI Modernization](https://flowmoat.com/#services): Add practical AI to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without a disruptive rebuild.
+- [Enterprise Software Development](https://flowmoat.com/#services): Custom SaaS, internal platforms, business portals, dashboards, back-office and administration systems.
+- [Workflow Automation](https://flowmoat.com/#services): Business process automation, API integration, and custom workflow engineering that connects people, systems, and data.
+
+## Products
+
+- [RegRely](https://regrely.com): AI-powered compliance and privacy management platform for compliance programs, privacy operations, vendor risk, and governance.
+- [GreenOH](https://greenoh.pk): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
+
+## Who Flowmoat works with
+
+Founders, CEOs, CTOs, COOs, VP Engineering, VP Operations, and IT Directors at growing companies
+with meaningful software or workflow complexity. Typical engagements range from $10,000 to $100,000+.
+
+## How engagements work
+
+1. **Discover** — Map the objective, current workflow, users, systems, data, constraints, and success criteria.
+2. **Architect** — Define the product experience, technical approach, integration boundaries, controls, and phased delivery plan.
+3. **Build** — Deliver working software in focused iterations, with regular demonstrations and transparent decisions.
+4. **Scale** — Support rollout, measure performance, strengthen the system, and evolve it as the business grows.
+
+## Contact
+
+- [Book a strategy call](https://flowmoat.com/#contact)

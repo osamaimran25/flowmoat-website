@@ -5,7 +5,6 @@ const SITE_CONFIG = {
   // activation email to this inbox — click the link in it once, then every
   // future submission (form + AI chat lead) lands straight in your inbox.
   contactEmail: "osamaimran25@gmail.com",
-  contactEndpoint: "https://formsubmit.co/ajax/osamaimran25@gmail.com",
 };
 
 const selectors = {
@@ -378,10 +377,25 @@ function setupContactForm() {
 
   const submitButton = contactForm.querySelector(".form-submit");
 
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  const resetSubmitButton = () => {
+    if (!submitButton) return;
+    submitButton.disabled = false;
+    submitButton.textContent = "Discuss My Project";
+  };
 
+  if (new URLSearchParams(window.location.search).get("submitted") === "1") {
+    if (successMessage) {
+      successMessage.classList.remove("is-error");
+      successMessage.textContent = "Thanks. Your verified project brief was sent — we'll reply by email shortly.";
+    }
+    history.replaceState(null, "", `${window.location.pathname}#contact`);
+  }
+
+  window.addEventListener("pageshow", resetSubmitButton);
+
+  contactForm.addEventListener("submit", (event) => {
     if (!validateContactForm()) {
+      event.preventDefault();
       const firstInvalid = contactForm.querySelector(".form-row.invalid input, .form-row.invalid select, .form-row.invalid textarea");
       firstInvalid?.focus();
       return;
@@ -392,62 +406,11 @@ function setupContactForm() {
       successMessage.textContent = "";
     }
 
-    const originalLabel = submitButton?.textContent;
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-    }
-
-    try {
-      await sendLeadToInbox({
-        _subject: "New project brief — Flowmoat website",
-        source: "Contact form",
-        name: contactForm.elements.name.value.trim(),
-        email: contactForm.elements.email.value.trim(),
-        company: contactForm.elements.company.value.trim(),
-        budget: contactForm.elements.budget.value,
-        project: contactForm.elements.automation.value.trim(),
-      });
-
-      contactForm.reset();
-      fields.forEach((field) => setFieldError(field, ""));
-      if (successMessage) {
-        successMessage.classList.remove("is-error");
-        successMessage.textContent = "Thanks. Your brief was sent — we'll reply by email shortly.";
-      }
-    } catch (error) {
-      if (successMessage) {
-        successMessage.classList.add("is-error");
-        successMessage.textContent = "Could not send right now. Please email us directly at " + SITE_CONFIG.contactEmail + ".";
-      }
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalLabel || "Send Project Brief";
-      }
+      submitButton.textContent = "Continue to verification...";
     }
   });
-}
-
-async function sendLeadToInbox(payload) {
-  if (!SITE_CONFIG.contactEndpoint) {
-    throw new Error("No contact endpoint configured.");
-  }
-
-  const response = await fetch(SITE_CONFIG.contactEndpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({ _captcha: "false", _template: "table", ...payload }),
-  });
-
-  if (!response.ok) {
-    throw new Error("Request failed with status " + response.status);
-  }
-
-  return response.json().catch(() => ({}));
 }
 
 function setupAiAssistant() {
@@ -619,52 +582,10 @@ function setupAiAssistant() {
   }
 
   function startLeadCapture() {
-    state.capture = "name";
-    state.lead = {};
-    botSay(`Great — let's get you to the right person. First, what's your <strong>name</strong>?`);
-  }
-
-  async function handleCaptureStep(text) {
-    if (state.capture === "name") {
-      state.lead.name = text;
-      state.capture = "email";
-      botSay(`Thanks ${escapeHtml(text.split(" ")[0])}. What's the best <strong>email</strong> to reach you?`);
-      return;
-    }
-
-    if (state.capture === "email") {
-      if (!validateEmail(text.trim())) {
-        botSay(`Hmm, that email doesn't look right — could you re-type it?`);
-        return;
-      }
-      state.lead.email = text.trim();
-      state.capture = "need";
-      botSay(`Perfect. In one line, what do you want to <strong>build or automate</strong>?`);
-      return;
-    }
-
-    if (state.capture === "need") {
-      state.lead.project = text;
-      state.capture = "sending";
-
-      const typing = addMessage("Sending your details…", "bot");
-      try {
-        await sendLeadToInbox({
-          _subject: "New lead from AI chat — Flowmoat",
-          source: "AI assistant chat",
-          name: state.lead.name,
-          email: state.lead.email,
-          project: state.lead.project,
-        });
-        typing.remove();
-        botSay(`✅ Done! Your request is in — we'll reply at <strong>${escapeHtml(state.lead.email)}</strong> shortly. Anything else?`, ["Services", "Pricing"]);
-      } catch (error) {
-        typing.remove();
-        botSay(`I couldn't send that automatically. Please email us directly at <strong>${SITE_CONFIG.contactEmail}</strong> and we'll jump on it.`, ["Services"]);
-      }
-      state.capture = null;
-      return;
-    }
+    state.capture = null;
+    botSay(`Use the protected project form below. It includes a real “I'm not a robot” check before anything is delivered.`, ["Services", "Products"]);
+    document.querySelector("#contact")?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    window.setTimeout(() => document.querySelector("#name")?.focus({ preventScroll: true }), 650);
   }
 
   function handleUserInput(rawText) {
@@ -673,11 +594,6 @@ function setupAiAssistant() {
 
     addMessage(escapeHtml(text), "user");
     textInput.value = "";
-
-    if (state.capture) {
-      handleCaptureStep(text);
-      return;
-    }
 
     if (isLeadTrigger(text)) {
       startLeadCapture();

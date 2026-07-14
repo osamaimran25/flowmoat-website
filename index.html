@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Flowmoat builds AI-powered enterprise software, modernizes critical systems, and automates workflows for growing companies."
+      content="Flowmoat is an enterprise AI engineering company. We build AI-powered software, modernize legacy systems, and automate workflows for companies in the US, UK, Canada, Australia, and the UAE. Book a strategy call."
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#070a12" />
@@ -18,14 +18,15 @@
     <meta property="og:title" content="Enterprise AI Engineering Company | Flowmoat" />
     <meta property="og:description" content="Build, modernize, and automate business-critical software with enterprise AI engineering from Flowmoat." />
     <meta property="og:url" content="https://flowmoat.com/" />
-    <meta property="og:image" content="https://flowmoat.com/og-image.png" />
+    <meta property="og:image" content="https://flowmoat.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Flowmoat enterprise AI engineering website" />
+    <meta property="og:image:alt" content="Flowmoat — enterprise AI engineering, software modernization, and workflow automation" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Enterprise AI Engineering Company | Flowmoat" />
     <meta name="twitter:description" content="Build, modernize, and automate business-critical software with enterprise AI engineering from Flowmoat." />
-    <meta name="twitter:image" content="https://flowmoat.com/og-image.png" />
+    <meta name="twitter:image" content="https://flowmoat.com/og-image.jpg" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -41,26 +42,97 @@
             "name": "Flowmoat",
             "url": "https://flowmoat.com/",
             "logo": "https://flowmoat.com/logo.svg",
-            "description": "Enterprise AI engineering company helping growing organizations modernize operations through intelligent software and automation.",
-            "areaServed": ["North America", "United Kingdom", "Australia"],
+            "image": "https://flowmoat.com/og-image.jpg",
+            "description": "Flowmoat is an enterprise AI engineering company that builds AI-powered software, modernizes legacy systems, and automates business workflows for companies with 50 to 1,000 employees.",
+            "slogan": "Enterprise AI engineering for companies that need more than code delivery.",
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" },
+              { "@type": "Country", "name": "United Kingdom" },
+              { "@type": "Country", "name": "Australia" },
+              { "@type": "Country", "name": "United Arab Emirates" }
+            ],
             "knowsAbout": [
               "Enterprise AI Engineering",
               "AI Modernization",
               "Enterprise Software Development",
               "AI Agents",
               "Workflow Automation",
-              "Custom SaaS Development"
+              "Custom SaaS Development",
+              "Business Process Automation",
+              "Legacy System Modernization",
+              "API Integration"
+            ],
+            "owns": [
+              { "@id": "https://flowmoat.com/#regrely" },
+              { "@id": "https://flowmoat.com/#greenoh" }
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Enterprise AI Engineering Services",
               "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Engineering" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Modernization" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Enterprise Software Development" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Workflow Automation" } }
+                { "@type": "Offer", "itemOffered": { "@id": "https://flowmoat.com/#service-ai-engineering" } },
+                { "@type": "Offer", "itemOffered": { "@id": "https://flowmoat.com/#service-ai-modernization" } },
+                { "@type": "Offer", "itemOffered": { "@id": "https://flowmoat.com/#service-enterprise-software" } },
+                { "@type": "Offer", "itemOffered": { "@id": "https://flowmoat.com/#service-workflow-automation" } }
               ]
             }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://flowmoat.com/#service-ai-engineering",
+            "name": "AI Engineering",
+            "serviceType": "Enterprise AI Engineering",
+            "url": "https://flowmoat.com/#services",
+            "provider": { "@id": "https://flowmoat.com/#organization" },
+            "description": "Build intelligent systems, AI agents, and copilots that help teams find answers, make decisions, and execute complex work with the right human oversight."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://flowmoat.com/#service-ai-modernization",
+            "name": "AI Modernization",
+            "serviceType": "Legacy System Modernization",
+            "url": "https://flowmoat.com/#services",
+            "provider": { "@id": "https://flowmoat.com/#organization" },
+            "description": "Add practical AI capabilities to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without forcing a disruptive rebuild."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://flowmoat.com/#service-enterprise-software",
+            "name": "Enterprise Software Development",
+            "serviceType": "Custom Enterprise Software Development",
+            "url": "https://flowmoat.com/#services",
+            "provider": { "@id": "https://flowmoat.com/#organization" },
+            "description": "Design and build custom SaaS, internal platforms, business portals, dashboards, back-office systems, and administration software."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://flowmoat.com/#service-workflow-automation",
+            "name": "Workflow Automation",
+            "serviceType": "Business Process Automation",
+            "url": "https://flowmoat.com/#services",
+            "provider": { "@id": "https://flowmoat.com/#organization" },
+            "description": "Connect people, systems, and data through business process automation, API integrations, and custom workflow engineering."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://flowmoat.com/#regrely",
+            "name": "RegRely",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://regrely.com",
+            "description": "AI-powered compliance and privacy management platform helping organizations manage compliance programs, privacy operations, vendor risk, and governance.",
+            "publisher": { "@id": "https://flowmoat.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://flowmoat.com/#greenoh",
+            "name": "GreenOH",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://greenoh.pk",
+            "description": "Pakistan's first solar aggregator platform, letting homes and businesses compare verified solar installers and make confident decisions through one trusted marketplace.",
+            "publisher": { "@id": "https://flowmoat.com/#organization" }
           },
           {
             "@type": "WebSite",
@@ -78,13 +150,81 @@
             "name": "Enterprise AI Engineering Company | Flowmoat",
             "isPartOf": { "@id": "https://flowmoat.com/#website" },
             "about": { "@id": "https://flowmoat.com/#organization" },
-            "description": "Flowmoat builds AI-powered enterprise software, modernizes critical systems, and automates workflows for growing companies.",
-            "inLanguage": "en"
+            "description": "Flowmoat is an enterprise AI engineering company. We build AI-powered software, modernize legacy systems, and automate workflows for companies in the US, UK, Canada, Australia, and the UAE.",
+            "inLanguage": "en",
+            "primaryImageOfPage": { "@id": "https://flowmoat.com/#primaryimage" },
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".hero-definition", ".hero-subheadline"]
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://flowmoat.com/#primaryimage",
+            "url": "https://flowmoat.com/og-image.jpg",
+            "contentUrl": "https://flowmoat.com/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://flowmoat.com/#faq",
+            "isPartOf": { "@id": "https://flowmoat.com/#webpage" },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does Flowmoat build?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We build AI-powered enterprise software, modernize existing systems, develop custom SaaS and internal platforms, and automate operational workflows."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you add AI to our existing software?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We can introduce AI into CRMs, ERPs, portals, SaaS products, mobile applications, and legacy systems while working within existing data, security, and operational constraints."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you work on new products or existing systems?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Both. We take new software from strategy to production and help established organizations modernize systems already central to their operations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do engagements begin?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most engagements begin with strategy and discovery. We clarify the business outcome, map the current environment, identify the highest-value opportunities, and define a phased delivery roadmap."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Flowmoat support the software after launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We can provide ongoing engineering, optimization, monitoring, and product evolution after the initial release."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who does Flowmoat work with?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We work best with founders, CEOs, CTOs, COOs, product leaders, and operations leaders at growing companies with meaningful software or workflow complexity."
+                }
+              }
+            ]
           }
         ]
       }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260714-3" />
+    <link rel="stylesheet" href="styles.css?v=20260714-5" />
   </head>
   <body>
     <div class="experience-bg" aria-hidden="true">
@@ -140,7 +280,7 @@
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">Enterprise AI engineering company</p>
-            <h1>Modernize your business with AI-powered software.</h1>
+            <h1>Enterprise AI engineering that modernizes how your business runs.</h1>
             <p class="hero-subheadline">
               Flowmoat helps growing companies reduce manual work, modernize critical systems,
               and launch intelligent products through AI engineering, enterprise software, and
@@ -150,6 +290,12 @@
               <a class="btn btn-primary js-contact-cta" href="#contact">Book a Strategy Call</a>
               <a class="btn btn-secondary" href="#use-cases">Explore Our Work</a>
             </div>
+            <p class="hero-definition">
+              Flowmoat is an enterprise AI engineering company serving organizations of 50–1,000 employees
+              across the United States, Canada, the United Kingdom, Australia, and the UAE. We build
+              AI-powered software, modernize legacy systems, and automate workflows — and we build our own
+              products, RegRely and GreenOH.
+            </p>
           </div>
 
           <div class="hero-visual reveal" aria-label="Live enterprise AI operating system canvas">
@@ -647,7 +793,17 @@
             </p>
           </div>
 
-          <form class="contact-form reveal" id="contactForm" novalidate>
+          <form
+            class="contact-form reveal"
+            id="contactForm"
+            action="https://formsubmit.co/osamaimran25@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="New project brief — Flowmoat website" />
+            <input type="hidden" name="_next" value="https://flowmoat.com/?submitted=1#contact" />
+            <input type="hidden" name="_template" value="table" />
+            <input class="bot-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-row">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
@@ -679,6 +835,13 @@
               <label for="automation">What do you want to build, modernize, or make AI-powered?</label>
               <textarea id="automation" name="automation" rows="5" required minlength="20"></textarea>
               <small class="error-message"></small>
+            </div>
+            <div class="captcha-notice" role="note" aria-label="Spam protection enabled">
+              <span class="captcha-shield" aria-hidden="true">✓</span>
+              <span>
+                <strong>Protected by reCAPTCHA</strong>
+                <small>You will complete an “I’m not a robot” check before your brief is delivered.</small>
+              </span>
             </div>
             <button class="btn btn-primary form-submit" type="submit">Discuss My Project</button>
             <p class="form-success" role="status" aria-live="polite"></p>
@@ -721,6 +884,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260714-3"></script>
+    <script src="script.js?v=20260714-4"></script>
   </body>
 </html>
