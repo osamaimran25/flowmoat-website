@@ -30,6 +30,7 @@ const navMenu = document.querySelector(selectors.navMenu);
 const navLinks = Array.from(document.querySelectorAll(selectors.navLinks));
 const contactForm = document.querySelector(selectors.contactForm);
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobilePerformanceMode = window.matchMedia("(max-width: 820px), (pointer: coarse)").matches;
 
 function applyBranding() {
   document.querySelectorAll(selectors.brandTargets).forEach((target) => {
@@ -70,17 +71,22 @@ function setupMobileNavigation() {
 }
 
 function setupHeaderState() {
+  let rafId = null;
+
   const updateHeader = () => {
     header?.classList.toggle("scrolled", window.scrollY > 18);
+    rafId = null;
   };
 
   updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("scroll", () => {
+    if (!rafId) rafId = window.requestAnimationFrame(updateHeader);
+  }, { passive: true });
 }
 
 function setupExperienceBackground() {
   const glow = document.querySelector(selectors.mouseGlow);
-  if (!glow || reducedMotion) return;
+  if (!glow || reducedMotion || mobilePerformanceMode) return;
 
   let rafId = null;
   let pendingX = window.innerWidth * 0.5;
@@ -176,9 +182,11 @@ function setupScrollReveal() {
 }
 
 function setupParallaxReveal() {
-  if (reducedMotion) return;
+  if (reducedMotion || mobilePerformanceMode) return;
 
   const parallaxTargets = document.querySelectorAll(".workflow-canvas, .cta-panel, .result-card");
+  let rafId = null;
+
   const update = () => {
     const viewportCenter = window.innerHeight / 2;
     parallaxTargets.forEach((target) => {
@@ -187,11 +195,16 @@ function setupParallaxReveal() {
       const offset = Math.max(-18, Math.min(18, distance * -0.025));
       target.style.setProperty("--parallax-y", `${offset}px`);
     });
+    rafId = null;
+  };
+
+  const requestUpdate = () => {
+    if (!rafId) rafId = window.requestAnimationFrame(update);
   };
 
   update();
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }
 
 function setupLiveWorkflow() {
@@ -199,7 +212,7 @@ function setupLiveWorkflow() {
   const aiStatus = document.querySelector("[data-ai-status]");
   const nodes = Array.from(document.querySelectorAll(".workflow-node"));
 
-  if (!log || reducedMotion) return;
+  if (!log || reducedMotion || mobilePerformanceMode) return;
 
   const statuses = [
     "Reading context...",
@@ -223,6 +236,8 @@ function setupLiveWorkflow() {
 
   let tick = 0;
   window.setInterval(() => {
+    if (document.hidden) return;
+
     tick += 1;
     const time = new Date().toLocaleTimeString([], { hour12: false });
     const item = document.createElement("li");

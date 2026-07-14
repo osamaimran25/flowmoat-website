@@ -1169,6 +1169,86 @@ textarea:focus {
   }
 }
 
+/* Mobile performance: preserve the visual language without scroll-heavy effects. */
+@media (max-width: 820px), (pointer: coarse) {
+  html,
+  body {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  body::before {
+    position: absolute !important;
+    height: 100vh !important;
+    animation: none !important;
+  }
+
+  body::after,
+  .mouse-glow,
+  .particle-field {
+    display: none !important;
+  }
+
+  .experience-bg {
+    position: absolute !important;
+    height: 100vh !important;
+  }
+
+  .aurora {
+    filter: blur(42px) !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .aurora-two {
+    display: none;
+  }
+
+  .site-header.scrolled,
+  .nav-menu,
+  .workflow-canvas,
+  .workflow-node,
+  .fm-chat {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .site-header.scrolled,
+  .nav-menu {
+    background: rgba(7, 10, 18, 0.98);
+  }
+
+  .hero-bg,
+  .hero-copy h1,
+  .workflow-canvas::before,
+  .workflow-path,
+  .workflow-node,
+  .thinking-dots i,
+  .service-card::after,
+  .service-icon,
+  .mini-workflow b,
+  .fm-launcher-ping {
+    animation: none !important;
+  }
+
+  .workflow-path {
+    filter: none !important;
+    stroke-dasharray: none;
+  }
+
+  .data-packet,
+  .mini-workflow b {
+    display: none;
+  }
+
+  .workflow-node::after {
+    filter: none !important;
+  }
+
+  .reveal {
+    transition-duration: 360ms;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .finder-scan-dot,
   .finder-result,
