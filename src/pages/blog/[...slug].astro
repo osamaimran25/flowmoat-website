@@ -1,0 +1,166 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Faq from "../../components/Faq.astro";
+import { faqSchema, breadcrumbSchema } from "../../lib/schema.js";
+import { getService } from "../../data/services.js";
+import { SITE } from "../../data/site.js";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const d = post.data;
+const path = `/blog/${post.id}/`;
+const service = getService(d.service);
+
+// Related posts: same service first, then anything else, capped at two.
+const all = await getCollection("blog");
+const related = [
+  ...all.filter((p) => p.id !== post.id && p.data.service === d.service),
+  ...all.filter((p) => p.id !== post.id && p.data.service !== d.service),
+].slice(0, 2);
+
+const fmt = (date) =>
+  date.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+const article = {
+  "@type": "BlogPosting",
+  "@id": `${SITE.url}${path}#article`,
+  headline: d.title,
+  description: d.description,
+  url: `${SITE.url}${path}`,
+  datePublished: d.published.toISOString(),
+  dateModified: (d.updated ?? d.published).toISOString(),
+  // Organization as author until named humans are published — an invented
+  // byline is worse than an honest corporate one.
+  author: { "@id": `${SITE.url}/#organization` },
+  publisher: { "@id": `${SITE.url}/#organization` },
+  isPartOf: { "@id": `${SITE.url}/blog/#blog` },
+  mainEntityOfPage: { "@id": `${SITE.url}${path}#webpage` },
+  image: `${SITE.url}/og/blog-${post.id}.jpg`,
+  about: { "@id": `${SITE.url}/services/${d.service}/#service` },
+  wordCount: post.body.split(/\s+/).length,
+  inLanguage: "en",
+};
+
+const schema = [
+  article,
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Insights", path: "/blog/" },
+      { name: d.title, path },
+    ],
+    path,
+  ),
+  ...(d.faqs.length ? [faqSchema(d.faqs, path)] : []),
+];
+---
+
+<BaseLayout
+  title={`${d.title} | Flowmoat`}
+  description={d.description}
+  {schema}
+  {path}
+  ogImage={`/og/blog-${post.id}.jpg`}
+  ogImageAlt={d.title}
+>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog/">Insights</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{service.name}</span>
+      </nav>
+
+      <div class="post-meta">
+        <span class="post-tag">{service.name}</span>
+        <span>{fmt(d.published)}</span>
+        <span>{d.readingTime} min read</span>
+      </div>
+
+      <h1>{d.title}</h1>
+
+      <p class="hero-definition">{d.answer}</p>
+    </div>
+  </section>
+
+  <section class="section post-section">
+    <div class="container narrow">
+      <article class="prose">
+        <Content />
+      </article>
+    </div>
+  </section>
+
+  {
+    d.faqs.length > 0 && (
+      <section class="section faq" id="faq">
+        <div class="container narrow">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2>Common questions</h2>
+          </div>
+          <Faq faqs={d.faqs} />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="why-list">
+        <div class="reveal">
+          <h3>
+            <a href={`/services/${service.slug}/`}>{service.name}</a>
+          </h3>
+          <p>{service.definition}</p>
+          <a class="service-link" href={`/services/${service.slug}/`}>
+            Explore {service.name} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Keep reading</p>
+        <h2>Related</h2>
+      </div>
+      <div class="post-list">
+        {
+          related.map((item) => (
+            <article class="post-card reveal">
+              <div class="post-meta">
+                <span class="post-tag">{getService(item.data.service).name}</span>
+                <span>{item.data.readingTime} min read</span>
+              </div>
+              <h3>
+                <a href={`/blog/${item.id}/`}>{item.data.title}</a>
+              </h3>
+              <p>{item.data.excerpt}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Start with the right roadmap</p>
+      <h2>Facing this decision? We will give you a straight answer.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+    </div>
+  </section>
+</BaseLayout>

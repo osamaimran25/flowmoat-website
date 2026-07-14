@@ -28,7 +28,14 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={service.title} description={service.metaDescription} {schema} {path}>
+<BaseLayout
+  title={service.title}
+  description={service.metaDescription}
+  {schema}
+  {path}
+  ogImage={`/og/service-${service.slug}.jpg`}
+  ogImageAlt={service.h1}
+>
   <section class="section page-hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container narrow">

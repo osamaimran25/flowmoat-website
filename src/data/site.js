@@ -12,7 +12,7 @@ export const SITE = {
 export const NAV = [
   { label: "Services", href: "/services/" },
   { label: "Work", href: "/work/" },
-  { label: "Products", href: "/#products" },
+  { label: "Insights", href: "/blog/" },
   { label: "About", href: "/about/" },
 ];
 

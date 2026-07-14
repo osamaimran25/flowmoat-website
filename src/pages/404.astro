@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SERVICES } from "../data/services.js";
+
+// noindex: a 404 should never be indexed, but it should still recover the visitor.
+---
+
+<BaseLayout
+  title="Page not found | Flowmoat"
+  description="That page does not exist. Here is where everything else lives."
+  path="/404/"
+  noindex={true}
+>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <p class="eyebrow">404</p>
+      <h1>That page does not exist.</h1>
+      <p class="hero-subheadline">
+        It may have moved, or the link may be wrong. Everything below is where it should be.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/">Back to home</a>
+        <a class="btn btn-secondary" href="/contact/">Book a strategy call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Services</p>
+        <h2>What we build</h2>
+      </div>
+      <div class="services-grid">
+        {
+          SERVICES.map((service) => (
+            <article class="service-card reveal">
+              <div class="service-icon">{service.icon}</div>
+              <h3>
+                <a href={`/services/${service.slug}/`}>{service.name}</a>
+              </h3>
+              <p>{service.cardSummary}</p>
+              <a class="service-link" href={`/services/${service.slug}/`}>
+                Explore {service.name} <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="why-list">
+        <div class="reveal">
+          <h3><a href="/work/">Our work</a></h3>
+          <p>The products Flowmoat has built and operates.</p>
+        </div>
+        <div class="reveal">
+          <h3><a href="/blog/">Insights</a></h3>
+          <p>Decisions worth getting right before you build.</p>
+        </div>
+        <div class="reveal">
+          <h3><a href="/about/">About Flowmoat</a></h3>
+          <p>How we work, and the principles we will not trade away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { breadcrumbSchema } from "../../lib/schema.js";
+import { getService } from "../../data/services.js";
+import { SITE } from "../../data/site.js";
+
+const path = "/blog/";
+const title = "Insights on Enterprise AI, Software, and Automation | Flowmoat";
+const description =
+  "Practical writing on enterprise AI engineering, legacy modernization, custom software, and workflow automation — from the team that builds and operates its own products.";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.published.getTime() - a.data.published.getTime(),
+);
+
+const fmt = (date) =>
+  date.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+const schema = [
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Insights", path },
+    ],
+    path,
+  ),
+  {
+    "@type": "Blog",
+    "@id": `${SITE.url}${path}#blog`,
+    url: `${SITE.url}${path}`,
+    name: "Flowmoat Insights",
+    description,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      "@id": `${SITE.url}/blog/${post.id}/#article`,
+      headline: post.data.title,
+      url: `${SITE.url}/blog/${post.id}/`,
+      datePublished: post.data.published.toISOString(),
+    })),
+  },
+];
+---
+
+<BaseLayout {title} {description} {schema} {path} ogImage="/og/blog.jpg" ogImageAlt="Flowmoat Insights — decisions worth getting right before you build">
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Insights</span>
+      </nav>
+
+      <p class="eyebrow">Insights</p>
+      <h1>Decisions worth getting right before you build.</h1>
+      <p class="hero-subheadline">
+        No thought leadership, no trend pieces. Just the questions we get asked on the first call,
+        answered properly — including the answers that cost us the project.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="post-list">
+        {
+          posts.map((post) => {
+            const service = getService(post.data.service);
+            return (
+              <article class="post-card reveal">
+                <div class="post-meta">
+                  <span class="post-tag">{service.name}</span>
+                  <span>{fmt(post.data.published)}</span>
+                  <span>{post.data.readingTime} min read</span>
+                </div>
+                <h2>
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                </h2>
+                <p>{post.data.excerpt}</p>
+                <a class="service-link" href={`/blog/${post.id}/`}>
+                  Read <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Start with the right roadmap</p>
+      <h2>Have a decision like these in front of you right now?</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+    </div>
+  </section>
+</BaseLayout>
