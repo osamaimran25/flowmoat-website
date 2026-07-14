@@ -262,6 +262,8 @@ function setupLiveWorkflow() {
 }
 
 function injectServicePreviews() {
+  if (mobilePerformanceMode) return;
+
   const cards = document.querySelectorAll(selectors.serviceCards);
 
   cards.forEach((card, index) => {
@@ -282,6 +284,26 @@ function injectServicePreviews() {
     const icon = card.querySelector(".service-icon");
     icon?.after(preview);
   });
+}
+
+function removeMobileMotionArtifacts() {
+  if (!mobilePerformanceMode) return;
+
+  document.querySelectorAll(".data-packet, .thinking-dots").forEach((element) => element.remove());
+}
+
+function setupDeferredAssistant() {
+  if (!mobilePerformanceMode) {
+    setupAiAssistant();
+    return;
+  }
+
+  const initialize = () => setupAiAssistant();
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(initialize, { timeout: 1800 });
+  } else {
+    window.setTimeout(initialize, 900);
+  }
 }
 
 function setupActiveNavigation() {
@@ -950,6 +972,7 @@ function escapeHtml(value) {
 }
 
 applyBranding();
+removeMobileMotionArtifacts();
 injectServicePreviews();
 setupMobileNavigation();
 setupHeaderState();
@@ -961,5 +984,5 @@ setupParallaxReveal();
 setupActiveNavigation();
 setupContactForm();
 setupLiveWorkflow();
-setupAiAssistant();
+setupDeferredAssistant();
 setupOpportunityFinder();

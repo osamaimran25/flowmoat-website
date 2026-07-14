@@ -1219,6 +1219,8 @@ textarea:focus {
 
   .hero-bg,
   .hero-copy h1,
+  .brand-logo-flow,
+  .status-dot,
   .workflow-canvas::before,
   .workflow-path,
   .workflow-node,
@@ -1236,7 +1238,7 @@ textarea:focus {
   }
 
   .data-packet,
-  .mini-workflow b {
+  .mini-workflow {
     display: none;
   }
 
@@ -1248,6 +1250,14 @@ textarea:focus {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .glass-card,
+  .service-card,
+  .use-case,
+  .process-step,
+  .result-card {
+    contain: layout paint;
   }
 }
 
