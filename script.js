@@ -161,6 +161,11 @@ function setupFaqAccordion() {
 function setupScrollReveal() {
   const revealElements = document.querySelectorAll(selectors.reveal);
 
+  if (mobilePerformanceMode) {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
   if (!("IntersectionObserver" in window)) {
     revealElements.forEach((element) => element.classList.add("is-visible"));
     return;

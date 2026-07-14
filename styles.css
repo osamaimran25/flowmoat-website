@@ -1245,7 +1245,9 @@ textarea:focus {
   }
 
   .reveal {
-    transition-duration: 360ms;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 
