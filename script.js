@@ -7,6 +7,12 @@ const SITE_CONFIG = {
   contactEmail: "osamaimran25@gmail.com",
 };
 
+// Sends a GA4 event. No-ops safely if analytics is blocked or not yet loaded.
+function track(eventName, params = {}) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", eventName, params);
+}
+
 const selectors = {
   header: "[data-header]",
   navToggle: "[data-nav-toggle]",
@@ -127,6 +133,16 @@ function setupSmoothScrolling() {
     button.addEventListener("click", () => {
       const firstInput = document.querySelector("#name");
       window.setTimeout(() => firstInput?.focus({ preventScroll: true }), 650);
+    });
+  });
+
+  // Delegated so CTAs injected later (e.g. the finder result) are tracked too.
+  document.addEventListener("click", (event) => {
+    const cta = event.target.closest(selectors.contactCtas);
+    if (!cta) return;
+    track("cta_click", {
+      cta_text: cta.textContent.trim().slice(0, 60),
+      section: cta.closest("section")?.id || "unknown",
     });
   });
 }
@@ -388,6 +404,8 @@ function setupContactForm() {
       successMessage.classList.remove("is-error");
       successMessage.textContent = "Thanks. Your verified project brief was sent — we'll reply by email shortly.";
     }
+    // The delivered brief — not the button click — is the real conversion.
+    track("generate_lead", { method: "contact_form" });
     history.replaceState(null, "", `${window.location.pathname}#contact`);
   }
 
@@ -405,6 +423,12 @@ function setupContactForm() {
       successMessage.classList.remove("is-error");
       successMessage.textContent = "";
     }
+
+    // Passed validation and is leaving for the verification step. Pairing this
+    // with generate_lead shows how many briefs are lost at the captcha.
+    track("contact_form_submit", {
+      budget: contactForm.querySelector("#budget")?.value || "unspecified",
+    });
 
     if (submitButton) {
       submitButton.disabled = true;
@@ -784,6 +808,7 @@ function setupOpportunityFinder() {
     results.querySelectorAll("[data-build]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const want = btn.getAttribute("data-build");
+        track("finder_opportunity_selected", { opportunity: want });
         const automation = document.querySelector("#automation");
         const contact = document.querySelector("#contact");
         if (automation) {
@@ -810,6 +835,12 @@ function setupOpportunityFinder() {
     runBtn.disabled = true;
 
     const chosen = pickSolutions(text);
+
+    // High-intent: someone described a real workflow. Track which opportunity
+    // areas resonate, but never the free-text itself — that is the visitor's.
+    track("finder_run", {
+      opportunities: chosen.map((s) => s.title).join(", "),
+    });
     const steps = ["Analyzing your workflow...", "Mapping AI opportunities...", "Estimating impact...", "Ready."];
     let step = 0;
 
