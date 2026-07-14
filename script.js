@@ -269,20 +269,6 @@ function removeMobileMotionArtifacts() {
   document.querySelectorAll(".data-packet, .thinking-dots").forEach((element) => element.remove());
 }
 
-function setupDeferredAssistant() {
-  if (!mobilePerformanceMode) {
-    setupAiAssistant();
-    return;
-  }
-
-  const initialize = () => setupAiAssistant();
-  if ("requestIdleCallback" in window) {
-    window.requestIdleCallback(initialize, { timeout: 1800 });
-  } else {
-    window.setTimeout(initialize, 900);
-  }
-}
-
 function setupActiveNavigation() {
   const sectionIds = navLinks
     .map((link) => link.getAttribute("href"))
@@ -961,5 +947,5 @@ setupParallaxReveal();
 setupActiveNavigation();
 setupContactForm();
 setupLiveWorkflow();
-setupDeferredAssistant();
+setupAiAssistant();
 setupOpportunityFinder();
