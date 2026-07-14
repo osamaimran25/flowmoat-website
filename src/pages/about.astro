@@ -1,0 +1,202 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Faq from "../components/Faq.astro";
+import { faqSchema, breadcrumbSchema } from "../lib/schema.js";
+import { SITE } from "../data/site.js";
+
+const path = "/about/";
+const title = "About Flowmoat — Enterprise AI Engineering Company";
+const description =
+  "Flowmoat is an enterprise AI engineering company that builds AI-powered software, modernizes legacy systems, and automates workflows — and builds its own SaaS products. Serving the US, UK, Canada, Australia, and the UAE.";
+
+const definition =
+  "Flowmoat is an enterprise AI engineering company serving organizations of 50–1,000 employees across the United States, Canada, the United Kingdom, Australia, and the UAE. We build AI-powered software, modernize legacy systems, and automate workflows — and we build our own products, RegRely and GreenOH.";
+
+const faqs = [
+  {
+    q: "What kind of company is Flowmoat?",
+    a: "Flowmoat is an enterprise AI engineering company. We build AI-powered software, modernize existing systems, develop custom SaaS and internal platforms, and automate operational workflows for companies of 50 to 1,000 employees.",
+  },
+  {
+    q: "Where does Flowmoat work?",
+    a: "We work with companies in the United States, Canada, the United Kingdom, Australia, and the United Arab Emirates. Delivery is remote, with working-hours overlap on your timezone.",
+  },
+  {
+    q: "How is Flowmoat different from a development agency?",
+    a: "An agency executes a specification you hand them. We start from the business outcome and work backward to the architecture — and because we build and operate our own SaaS products, we design for the version of the system that still has to work in year three.",
+  },
+  {
+    q: "What does a Flowmoat engagement cost?",
+    a: "Typical engagements range from $10,000 to $100,000+, depending on scope, integrations, and compliance requirements. We scope and price the first phase before you commit to anything beyond it.",
+  },
+];
+
+const schema = [
+  faqSchema(faqs, path),
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "About", path },
+    ],
+    path,
+  ),
+  {
+    "@type": "AboutPage",
+    "@id": `${SITE.url}${path}#aboutpage`,
+    url: `${SITE.url}${path}`,
+    name: title,
+    description,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    mainEntity: { "@id": `${SITE.url}/#organization` },
+  },
+];
+
+const process = [
+  {
+    n: "01",
+    title: "Discover",
+    body: "Map the objective, the current workflow, the users, the systems, the data, the constraints, and what success actually looks like in numbers.",
+  },
+  {
+    n: "02",
+    title: "Architect",
+    body: "Define the product experience, the technical approach, the integration boundaries, the controls, and a phased delivery plan you can fund one phase at a time.",
+  },
+  {
+    n: "03",
+    title: "Build",
+    body: "Deliver working software in focused iterations, with regular demonstrations and decisions made in the open rather than behind a status report.",
+  },
+  {
+    n: "04",
+    title: "Scale",
+    body: "Support the rollout, measure performance against the baseline, strengthen the system, and evolve it as the business changes around it.",
+  },
+];
+
+const principles = [
+  {
+    title: "The outcome comes before the architecture",
+    body: "We do not start from a technology preference. We start from the business result you need and work backward — which sometimes means telling you the thing you asked for is not the thing you need.",
+  },
+  {
+    title: "We build what we would have to operate",
+    body: "We run RegRely and GreenOH in production. That changes how you design a system: you stop optimising for the demo and start optimising for the year-three maintenance burden.",
+  },
+  {
+    title: "You own everything",
+    body: "Source code, repositories, infrastructure, and documentation are yours outright. We write the architecture down well enough that another team could take it over without us.",
+  },
+  {
+    title: "We will tell you when not to build",
+    body: "Some problems are solved by an off-the-shelf tool, a process change, or nothing at all. Saying so costs us a project and earns a client who comes back with the one worth doing.",
+  },
+];
+---
+
+<BaseLayout {title} {description} {schema} {path}>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">About</span>
+      </nav>
+
+      <p class="eyebrow">About</p>
+      <h1>An engineering company that builds its own products.</h1>
+      <p class="hero-subheadline">
+        Flowmoat combines product thinking with enterprise engineering. Engagements start with the
+        business outcome, then work backward to the right architecture.
+      </p>
+
+      <p class="hero-definition">{definition}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+        <a class="btn btn-secondary" href="/work/">See our work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">How we think</p>
+        <h2>Four principles we will not trade away.</h2>
+      </div>
+      <div class="why-list">
+        {
+          principles.map((principle) => (
+            <div class="reveal">
+              <h3>{principle.title}</h3>
+              <p>{principle.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Process</p>
+        <h2>How an engagement runs.</h2>
+      </div>
+      <div class="three-grid">
+        {
+          process.map((step) => (
+            <article class="process-step reveal">
+              <span class="card-number">{step.n}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-layout">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Where we work</p>
+        <h2>Five markets, one delivery team.</h2>
+        <p>
+          We deliver remotely with meaningful overlap on your working hours, and we scope around your
+          data-residency and compliance requirements rather than treating them as an afterthought.
+        </p>
+      </div>
+      <div class="solution-list">
+        {
+          SITE.countries.map((country) => (
+            <div class="reveal">
+              <span aria-hidden="true" />
+              <p>{country}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>About Flowmoat</h2>
+      </div>
+      <Faq {faqs} />
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Start with the right roadmap</p>
+      <h2>Tell us the outcome. We will tell you what it takes.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+    </div>
+  </section>
+</BaseLayout>

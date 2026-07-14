@@ -3263,3 +3263,144 @@ textarea {
     padding-top: calc(var(--header-height) + 36px) !important;
   }
 }
+
+/* ── Multi-page: inner page heroes, breadcrumbs, and card links ───────────── */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(var(--header-height) + 64px) !important;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.15rem, 3.6vw, 3.25rem) !important;
+  line-height: 1.08 !important;
+  max-width: 780px !important;
+  margin-top: 10px;
+}
+
+.page-hero .eyebrow {
+  margin-bottom: 6px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+}
+
+.breadcrumbs a:hover {
+  color: var(--text);
+  border-bottom-color: rgba(84, 215, 255, 0.5);
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--muted-strong);
+}
+
+/* Card titles link to their page without looking like inline body links. */
+.service-card h3 a,
+.why-list h3 a {
+  color: inherit;
+}
+
+.service-card h3 a:hover,
+.why-list h3 a:hover {
+  color: var(--accent, #54d7ff);
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  color: #54d7ff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.service-link span {
+  transition: transform 180ms ease;
+}
+
+.service-link:hover span {
+  transform: translateX(3px);
+}
+
+/* Four offerings read better as a 2×2 than a cramped 4-across. */
+.offerings-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.contact-steps {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.contact-steps > div {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.055);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.contact-steps h3 {
+  margin-top: 10px;
+  font-size: 1.02rem;
+}
+
+.contact-steps p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 1080px) {
+  .offerings-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .page-hero {
+    padding-top: calc(var(--header-height) + 40px) !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.85rem, 7.8vw, 2.25rem) !important;
+    max-width: 100% !important;
+  }
+
+  .offerings-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Two related-service cards should fill the row, not sit in a 3-col grid. */
+.related-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+@media (max-width: 820px) {
+  .related-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

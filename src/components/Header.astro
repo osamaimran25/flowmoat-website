@@ -1,0 +1,37 @@
+---
+import BrandMark from "./BrandMark.astro";
+import { NAV, NAV_CTA } from "../data/site.js";
+
+const here = Astro.url.pathname;
+const isActive = (href) => href.startsWith("/") && !href.includes("#") && here.startsWith(href);
+---
+
+<header class="site-header" data-header>
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="/" aria-label="Flowmoat home">
+      <BrandMark gradientId="brandLogoGradient" />
+      <span data-brand>Flowmoat</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu" data-nav-menu>
+      {
+        NAV.map((item) => (
+          <a
+            href={item.href}
+            class="nav-link"
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href={NAV_CTA.href} class="nav-link nav-cta">{NAV_CTA.label}</a>
+    </div>
+  </nav>
+</header>

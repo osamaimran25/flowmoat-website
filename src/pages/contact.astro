@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { breadcrumbSchema } from "../lib/schema.js";
+import { SITE } from "../data/site.js";
+
+const path = "/contact/";
+const title = "Contact Flowmoat — Book an AI Engineering Strategy Call";
+const description =
+  "Tell us what you want to build, modernize, or automate. An AI engineering expert reviews every brief and responds with the most relevant next step. Serving the US, UK, Canada, Australia, and the UAE.";
+
+const schema = [
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Contact", path },
+    ],
+    path,
+  ),
+  {
+    "@type": "ContactPage",
+    "@id": `${SITE.url}${path}#contactpage`,
+    url: `${SITE.url}${path}`,
+    name: title,
+    description,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: { "@id": `${SITE.url}/#organization` },
+  },
+];
+
+const steps = [
+  {
+    n: "01",
+    title: "An engineer reads it",
+    body: "Not a sales development rep working from a script. The person who reads your brief is the person who would scope the work.",
+  },
+  {
+    n: "02",
+    title: "You get a real reply within two business days",
+    body: "Either a concrete next step, a question we need answered to scope it, or an honest note that this is not a fit for us.",
+  },
+  {
+    n: "03",
+    title: "A 30-minute strategy call",
+    body: "We map the objective, the current systems, and the constraints. You leave with a point of view on the approach whether or not you hire us.",
+  },
+];
+---
+
+<BaseLayout {title} {description} {schema} {path}>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+
+      <p class="eyebrow">Contact</p>
+      <h1>Tell us what you want to improve, build, or modernize.</h1>
+      <p class="hero-subheadline">
+        Share the business goal and the current context. An AI engineering expert will review your
+        request and respond with the most relevant next step.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What happens next</p>
+        <h2>Three steps, no sales funnel.</h2>
+        <div class="contact-steps">
+          {
+            steps.map((step) => (
+              <div class="reveal">
+                <span class="card-number">{step.n}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <ContactForm nextPath="/contact/?submitted=1#contact" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Before you write</p>
+        <h2>What makes a brief we can actually answer.</h2>
+      </div>
+      <div class="solution-list">
+        <div class="reveal">
+          <span aria-hidden="true"></span>
+          <p>The business outcome you want — not the feature you think you need.</p>
+        </div>
+        <div class="reveal">
+          <span aria-hidden="true"></span>
+          <p>The systems already involved: CRM, ERP, portal, spreadsheets, whatever it really runs on.</p>
+        </div>
+        <div class="reveal">
+          <span aria-hidden="true"></span>
+          <p>Who does the work today, and roughly how long it takes them.</p>
+        </div>
+        <div class="reveal">
+          <span aria-hidden="true"></span>
+          <p>Any hard constraints: a deadline, a compliance requirement, a system you cannot touch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

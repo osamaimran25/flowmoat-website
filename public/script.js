@@ -41,8 +41,6 @@ function applyBranding() {
   document.querySelectorAll(selectors.brandTargets).forEach((target) => {
     target.textContent = SITE_CONFIG.brandName;
   });
-
-  document.title = `Enterprise AI Engineering Company | ${SITE_CONFIG.brandName}`;
 }
 
 function closeMobileMenu() {

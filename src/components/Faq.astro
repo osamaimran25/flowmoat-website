@@ -1,0 +1,22 @@
+---
+// Renders the visible FAQ. Pair with faqSchema() from lib/schema.js and feed
+// both from the SAME array — Google drops FAQ rich results when the schema
+// text does not match the rendered text exactly.
+const { faqs } = Astro.props;
+---
+
+<div class="faq-list">
+  {
+    faqs.map((faq) => (
+      <div class="faq-item reveal">
+        <button class="faq-question" type="button" aria-expanded="false">
+          {faq.q}
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>{faq.a}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

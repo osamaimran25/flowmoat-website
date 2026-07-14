@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { breadcrumbSchema, PRODUCTS } from "../lib/schema.js";
+
+const path = "/work/";
+const title = "Our Work — Products Flowmoat Built and Operates | Flowmoat";
+const description =
+  "Flowmoat does not only deliver client software — we build and operate our own SaaS products, RegRely and GreenOH. See what we have shipped and how we work.";
+
+const definition =
+  "Flowmoat builds and operates two of its own SaaS products: RegRely, an AI compliance and privacy platform, and GreenOH, Pakistan's first solar aggregator. Both are live, in production, and maintained by the same team that delivers client engagements.";
+
+const schema = [
+  ...PRODUCTS,
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Work", path },
+    ],
+    path,
+  ),
+];
+
+const products = [
+  {
+    tag: "RegRely",
+    url: "https://regrely.com",
+    headline: "AI compliance and privacy management",
+    body: "RegRely turns compliance programs, privacy operations, vendor risk, and governance into a single system of record — with AI doing the reading, mapping, and drafting that compliance teams otherwise do by hand.",
+    proves: [
+      "Domain complexity: compliance rules that change per jurisdiction and per framework",
+      "AI applied where judgement is expensive, with a human approving what matters",
+      "Multi-tenant SaaS: onboarding, permissions, billing, and audit trails",
+    ],
+  },
+  {
+    tag: "GreenOH",
+    url: "https://greenoh.pk",
+    headline: "Pakistan's first solar aggregator",
+    body: "GreenOH is a marketplace where homes and businesses compare verified solar installers in one place, instead of chasing quotes across a fragmented, low-trust market.",
+    proves: [
+      "Two-sided marketplace mechanics: supply verification, matching, and trust",
+      "Building a category that did not previously exist in the market",
+      "Consumer-grade product experience on top of an operationally messy industry",
+    ],
+  },
+];
+---
+
+<BaseLayout {title} {description} {schema} {path}>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Work</span>
+      </nav>
+
+      <p class="eyebrow">Our work</p>
+      <h1>We do not only build software for clients. We build and run our own.</h1>
+      <p class="hero-subheadline">
+        Most agencies have never had to live with their own architecture decisions. We operate two
+        production SaaS products, which means we have been on the receiving end of every shortcut a
+        delivery team is tempted to take.
+      </p>
+
+      <p class="hero-definition">{definition}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+        <a class="btn btn-secondary" href="/services/">Our services</a>
+      </div>
+    </div>
+  </section>
+
+  {
+    products.map((product) => (
+      <section class="section">
+        <div class="container split-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">{product.tag}</p>
+            <h2>{product.headline}</h2>
+            <p>{product.body}</p>
+            <div class="hero-actions">
+              <a class="btn btn-secondary" href={product.url} target="_blank" rel="noopener">
+                Visit {product.tag}
+              </a>
+            </div>
+          </div>
+          <div class="solution-list">
+            {product.proves.map((item) => (
+              <div class="reveal">
+                <span aria-hidden="true" />
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Client work</p>
+        <h2>Client case studies are published only with permission.</h2>
+        <p>
+          Most of what we build is internal to the businesses that commissioned it — operational
+          platforms, back-office systems, and automations that companies do not want described in
+          public. We do not publish a client's name, screenshots, or numbers without their written
+          approval, and we will not invent a case study to fill the gap.
+        </p>
+        <p>
+          If you want to speak to a reference before committing to an engagement, ask on the call and
+          we will arrange one where the client has agreed to it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Start with the right roadmap</p>
+      <h2>Bring us the outcome you need. We will tell you what it actually takes.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+    </div>
+  </section>
+</BaseLayout>

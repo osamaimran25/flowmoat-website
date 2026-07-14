@@ -4,3 +4,6 @@ open_claw_gtm/
 FLOWMOAT_ENTERPRISE_WEBSITE_COPY.md
 flowmoat-widget.js
 
+node_modules/
+dist/
+.astro/

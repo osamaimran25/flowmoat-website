@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Faq from "../../components/Faq.astro";
+import { SERVICES, getService } from "../../data/services.js";
+import { faqSchema, serviceSchema, breadcrumbSchema } from "../../lib/schema.js";
+
+export function getStaticPaths() {
+  return SERVICES.map((service) => ({ params: { slug: service.slug } }));
+}
+
+const { slug } = Astro.params;
+const service = getService(slug);
+const path = `/services/${service.slug}/`;
+
+const related = service.related.map(getService);
+
+const schema = [
+  serviceSchema(service),
+  faqSchema(service.faqs, path),
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services/" },
+      { name: service.name, path },
+    ],
+    path,
+  ),
+];
+---
+
+<BaseLayout title={service.title} description={service.metaDescription} {schema} {path}>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{service.name}</span>
+      </nav>
+
+      <p class="eyebrow">{service.eyebrow}</p>
+      <h1>{service.h1}</h1>
+      <p class="hero-subheadline">{service.intro}</p>
+
+      <p class="hero-definition">{service.definition}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+        <a class="btn btn-secondary" href="/services/">All services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The problem</p>
+        <h2>{service.problemTitle}</h2>
+      </div>
+      <div class="solution-list">
+        {
+          service.problems.map((problem) => (
+            <div class="reveal">
+              <span aria-hidden="true"></span>
+              <p>{problem}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Capabilities</p>
+        <h2>{service.offeringsTitle}</h2>
+      </div>
+      <div class="three-grid offerings-grid">
+        {
+          service.offerings.map((offering) => (
+            <article class="glass-card reveal">
+              <h3>{offering.title}</h3>
+              <p>{offering.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-layout">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Engagement</p>
+        <h2>{service.deliverablesTitle}</h2>
+        <p>Every engagement ends with software your team owns and can operate without us.</p>
+      </div>
+      <div class="solution-list">
+        {
+          service.deliverables.map((deliverable) => (
+            <div class="reveal">
+              <span aria-hidden="true"></span>
+              <p>{deliverable}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Fit</p>
+        <h2>{service.whoForTitle}</h2>
+      </div>
+      <div class="why-list">
+        {
+          service.whoFor.map((who) => (
+            <div class="reveal">
+              <p>{who}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>{service.name} — common questions</h2>
+      </div>
+      <Faq faqs={service.faqs} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Related</p>
+        <h2>Often delivered alongside</h2>
+      </div>
+      <div class="three-grid related-grid">
+        {
+          related.map((item) => (
+            <article class="service-card reveal">
+              <div class="service-icon">{item.icon}</div>
+              <h3>
+                <a href={`/services/${item.slug}/`}>{item.name}</a>
+              </h3>
+              <p>{item.cardSummary}</p>
+              <a class="service-link" href={`/services/${item.slug}/`}>
+                Explore {item.name} <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Start with the right roadmap</p>
+      <h2>Turn your {service.name} initiative into a system your business can rely on.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+    </div>
+  </section>
+</BaseLayout>

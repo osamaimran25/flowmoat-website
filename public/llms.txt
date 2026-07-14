@@ -12,15 +12,21 @@ business domains into production software rather than delivering isolated featur
 
 ## Services
 
-- [AI Engineering](https://flowmoat.com/#services): Intelligent systems, AI agents, and copilots that help teams find answers, make decisions, and execute complex work with human oversight.
-- [AI Modernization](https://flowmoat.com/#services): Add practical AI to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without a disruptive rebuild.
-- [Enterprise Software Development](https://flowmoat.com/#services): Custom SaaS, internal platforms, business portals, dashboards, back-office and administration systems.
-- [Workflow Automation](https://flowmoat.com/#services): Business process automation, API integration, and custom workflow engineering that connects people, systems, and data.
+- [Services overview](https://flowmoat.com/services/): The four capabilities Flowmoat delivers and how to choose between them.
+- [AI Engineering](https://flowmoat.com/services/ai-engineering/): Production AI systems — AI agents, copilots, permission-aware retrieval (RAG), and document intelligence, with evaluation harnesses and human oversight built in.
+- [AI Modernization](https://flowmoat.com/services/ai-modernization/): Adding AI to existing CRMs, ERPs, portals, SaaS products, and legacy systems through their data and APIs, without a migration or a rebuild.
+- [Enterprise Software Development](https://flowmoat.com/services/enterprise-software-development/): Custom SaaS, internal platforms, business portals, dashboards, and back-office systems, delivered end to end.
+- [Workflow Automation](https://flowmoat.com/services/workflow-automation/): Business process automation, API integration, and custom workflow engineering using n8n, Make, and custom Python where platforms cannot reach.
 
 ## Products
 
 - [RegRely](https://regrely.com): AI-powered compliance and privacy management platform for compliance programs, privacy operations, vendor risk, and governance.
 - [GreenOH](https://greenoh.pk): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
+
+## Company
+
+- [About Flowmoat](https://flowmoat.com/about/): How Flowmoat works, its engineering principles, and the markets it serves.
+- [Our work](https://flowmoat.com/work/): The products Flowmoat has built and operates. Client case studies are published only with the client's written permission.
 
 ## Who Flowmoat works with
 
@@ -36,4 +42,4 @@ with meaningful software or workflow complexity. Typical engagements range from 
 
 ## Contact
 
-- [Book a strategy call](https://flowmoat.com/#contact)
+- [Book a strategy call](https://flowmoat.com/contact/)
