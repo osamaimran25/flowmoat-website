@@ -1205,6 +1205,16 @@ textarea:focus {
 
   .site-header.scrolled,
   .nav-menu,
+  .orbital-panel,
+  .glass-card,
+  .service-card,
+  .pricing-card,
+  .contact-form,
+  .cta-panel,
+  .faq-item,
+  .process-step,
+  .result-card,
+  .use-case,
   .workflow-canvas,
   .workflow-node,
   .fm-chat {
@@ -1242,6 +1252,37 @@ textarea:focus {
     display: none;
   }
 
+  .hero-visual::before,
+  .glass-card::before,
+  .service-card::before,
+  .service-card::after,
+  .pricing-card::before,
+  .process-step::before,
+  .use-case::after,
+  .faq-item::before,
+  .contact-form::before {
+    display: none !important;
+  }
+
+  .orbital-panel,
+  .glass-card,
+  .service-card,
+  .pricing-card,
+  .contact-form,
+  .cta-panel,
+  .faq-item,
+  .process-step,
+  .result-card,
+  .use-case,
+  .workflow-canvas,
+  .workflow-node {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24) !important;
+  }
+
+  .live-log li {
+    animation: none !important;
+  }
+
   .workflow-node::after {
     filter: none !important;
   }
@@ -1252,13 +1293,6 @@ textarea:focus {
     transition: none !important;
   }
 
-  .glass-card,
-  .service-card,
-  .use-case,
-  .process-step,
-  .result-card {
-    contain: layout paint;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
