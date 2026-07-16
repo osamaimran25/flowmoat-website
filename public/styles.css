@@ -1508,14 +1508,14 @@ textarea:focus {
 }
 
 .fm-chat-id strong {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .fm-status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   color: var(--muted);
 }
 
@@ -1558,7 +1558,7 @@ textarea:focus {
   max-width: 82%;
   padding: 10px 13px;
   border-radius: 14px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
   animation: fmFade 220ms ease both;
 }
@@ -1623,7 +1623,7 @@ textarea:focus {
   border-radius: 999px;
   background: rgba(84, 215, 255, 0.08);
   color: var(--muted-strong);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
@@ -1650,7 +1650,7 @@ textarea:focus {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.28);
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .fm-input input:focus {
