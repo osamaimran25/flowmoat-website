@@ -331,7 +331,6 @@ function validateContactForm() {
   const name = contactForm.elements.name;
   const email = contactForm.elements.email;
   const company = contactForm.elements.company;
-  const budget = contactForm.elements.budget;
   const automation = contactForm.elements.automation;
 
   let isValid = true;
@@ -355,13 +354,6 @@ function validateContactForm() {
     isValid = false;
   } else {
     setFieldError(company, "");
-  }
-
-  if (!budget.value) {
-    setFieldError(budget, "Select a budget range.");
-    isValid = false;
-  } else {
-    setFieldError(budget, "");
   }
 
   if (automation.value.trim().length < 20) {
@@ -424,9 +416,7 @@ function setupContactForm() {
 
     // Passed validation and is leaving for the verification step. Pairing this
     // with generate_lead shows how many briefs are lost at the captcha.
-    track("contact_form_submit", {
-      budget: contactForm.querySelector("#budget")?.value || "unspecified",
-    });
+    track("contact_form_submit");
 
     if (submitButton) {
       submitButton.disabled = true;
