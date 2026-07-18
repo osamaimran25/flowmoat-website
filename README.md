@@ -1,6 +1,6 @@
-# Flowmoat Website
+# Greenoh Website
 
-Static website for [Flowmoat](https://flowmoat.com), an enterprise AI engineering company.
+Static website for [Greenoh](https://thegreenoh.com), an enterprise AI engineering company.
 
 ## Local preview
 
