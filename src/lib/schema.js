@@ -56,7 +56,7 @@ export const PRODUCTS = [
     "@type": "SoftwareApplication",
     "@id": `${SITE.url}/#greenoh`,
     name: "GreenOH",
-    url: "https://greenoh.pk",
+    url: "https://thegreenoh.com",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:

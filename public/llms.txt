@@ -21,7 +21,7 @@ business domains into production software rather than delivering isolated featur
 ## Products
 
 - [RegRely](https://regrely.com): AI-powered compliance and privacy management platform for compliance programs, privacy operations, vendor risk, and governance.
-- [GreenOH](https://greenoh.pk): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
+- [GreenOH](https://thegreenoh.com): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
 
 ## Company
 
