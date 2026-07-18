@@ -1,5 +1,5 @@
 const SITE_CONFIG = {
-  brandName: "Greenoh",
+  brandName: "Flowmoat",
   // Free email delivery via FormSubmit (no signup, no API key).
   // Submissions are emailed here. The FIRST submission triggers a one-time
   // activation email to this inbox — click the link in it once, then every

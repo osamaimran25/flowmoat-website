@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://thegreenoh.com/sitemap.xml
+Sitemap: https://flowmoat.com/sitemap.xml

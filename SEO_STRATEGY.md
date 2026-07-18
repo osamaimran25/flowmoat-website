@@ -1,20 +1,20 @@
-# Greenoh — Enterprise SEO / AEO / GEO Strategy
+# FlowMoat — Enterprise SEO / AEO / GEO Strategy
 
 **Audit date:** 2026-07-14
-**Site audited:** `index.html`, `styles.css`, `script.js`, `robots.txt`, `sitemap.xml`, `site.webmanifest` (GitHub Pages, custom domain `thegreenoh.com`)
+**Site audited:** `index.html`, `styles.css`, `script.js`, `robots.txt`, `sitemap.xml`, `site.webmanifest` (GitHub Pages, custom domain `flowmoat.com`)
 **Goal:** qualified enterprise leads ($10k–$100k+) from US / CA / UK / AU / UAE — not raw traffic.
 
 ---
 
 ## THE HEADLINE FINDING (read this first)
 
-Greenoh is a **single-page site with exactly one indexable URL**.
+FlowMoat is a **single-page site with exactly one indexable URL**.
 
 ```
-sitemap.xml → https://thegreenoh.com/    ← that's the entire site
+sitemap.xml → https://flowmoat.com/    ← that's the entire site
 ```
 
-Every nav link is a fragment (`#services`, `#products`, `#use-cases`). Google indexes fragments as **one page**. So today Greenoh can realistically compete for **one** head term — and it is currently pointed at *"enterprise AI engineering company"*, one of the hardest terms in the category, with **zero** EEAT signals behind it.
+Every nav link is a fragment (`#services`, `#products`, `#use-cases`). Google indexes fragments as **one page**. So today FlowMoat can realistically compete for **one** head term — and it is currently pointed at *"enterprise AI engineering company"*, one of the hardest terms in the category, with **zero** EEAT signals behind it.
 
 Everything requested in the brief — keyword clusters, 11 landing pages, 100 blog posts, internal linking, breadcrumbs, Article schema — **requires a multi-page site**. There is no version of this strategy that works on one URL.
 
@@ -37,7 +37,7 @@ Doing #3 before #2 is wasted work.
 | Server-rendered HTML | All copy is in the raw HTML — AI crawlers (GPTBot, ClaudeBot, PerplexityBot) **don't execute JS**, so this is critical and you got it right |
 | `.reveal` doesn't hide content from crawlers | `script.js:162` adds `is-visible` immediately; no JS-gated content |
 | Single, correct `<h1>` | One `<h1>`, clean `h2`→`h3` hierarchy throughout |
-| Canonical present | `<link rel="canonical" href="https://thegreenoh.com/">` |
+| Canonical present | `<link rel="canonical" href="https://flowmoat.com/">` |
 | OG + Twitter cards complete | Title, description, image, dimensions, alt all set |
 | `robots` meta is generous | `max-snippet:-1`, `max-image-preview:large` — good for AI citation |
 | Organization + WebSite + WebPage schema exists | Solid foundation, just incomplete |
@@ -51,11 +51,11 @@ Doing #3 before #2 is wasted work.
 | **C1** | **One URL for 20 keyword clusters** | `sitemap.xml` | Cannot rank for services, industries, or comparisons. Structural ceiling. |
 | **C2** | **FAQ content exists, FAQPage schema does not** | `index.html:567-630` — 6 Q&As in HTML, no `FAQPage` in the JSON-LD graph | Biggest single AEO miss. This is the #1 format AI engines quote. **~30 min to fix.** |
 | **C3** | **Contact form posts to a Gmail address via formsubmit.co** | `index.html:653` — `formsubmit.co/osamaimran25@gmail.com` | A CTO evaluating a $100k engagement sees a personal Gmail in the form action. Instantly disqualifying. Also zero lead capture / CRM. |
-| **C4** | **No `sameAs` in Organization schema** | `index.html:39-64` | Google cannot connect Greenoh to LinkedIn / Clutch / GitHub / Crunchbase. **Without `sameAs`, Greenoh is not a recognized entity** — it's just a string. This is why AI engines won't cite you. |
+| **C4** | **No `sameAs` in Organization schema** | `index.html:39-64` | Google cannot connect FlowMoat to LinkedIn / Clutch / GitHub / Crunchbase. **Without `sameAs`, FlowMoat is not a recognized entity** — it's just a string. This is why AI engines won't cite you. |
 | **C5** | **Zero EEAT signals on the entire page** | No team, no bios, no client logos, no testimonials, no case study numbers, no certifications, no address, no phone | Google's guidelines weight this heavily for YMYL-adjacent commercial queries. AI engines actively look for it before citing. |
 | **C6** | **`areaServed` omits Canada and UAE** | `index.html:45` — `["North America", "United Kingdom", "Australia"]` | Two of five target markets are invisible. Also use ISO codes, not prose. |
 | **C7** | **H1 contains no primary keyword** | `index.html:143` — *"Modernize your business with AI-powered software."* | Good copy, weak ranking signal. The `<title>` says "Enterprise AI Engineering Company", the H1 doesn't reinforce it. |
-| **C8** | **Brand name is inconsistent** | Brief says **Greenoh**; every file says **Greenoh** | Entity disambiguation depends on exact-string consistency across site + LinkedIn + directories. Pick one. **Decision needed.** |
+| **C8** | **Brand name is inconsistent** | Brief says **FlowMoat**; every file says **Flowmoat** | Entity disambiguation depends on exact-string consistency across site + LinkedIn + directories. Pick one. **Decision needed.** |
 | **C9** | **No analytics, no Search Console verification** | `grep` for gtag/GSC → 0 hits | You are flying blind. Cannot measure any of this. |
 
 ### 1.3 Medium-impact issues
@@ -70,7 +70,7 @@ Doing #3 before #2 is wasted work.
 | M6 | robots.txt doesn't explicitly name AI crawlers | `Allow: /` covers them, but explicit allow-listing is a clear intent signal |
 | M7 | Meta description has no geography and no CTA | 137 chars, functional, unremarkable |
 | M8 | Heavy always-on animations (aurora, particles, mouse-glow, `animateMotion`) | INP / mobile battery risk — recent commits suggest you've already been fighting this |
-| M9 | `greenoh-widget.js` (16 KB) exists but is never loaded | Dead file — remove or wire up |
+| M9 | `flowmoat-widget.js` (16 KB) exists but is never loaded | Dead file — remove or wire up |
 | M10 | No `HowTo` or comparison content anywhere | Two formats AI engines cite constantly |
 
 ### 1.4 Low-impact
@@ -115,7 +115,7 @@ GitHub Pages serves `/services/ai-engineering/index.html` from a folder — no f
 
 **T3 — Complete the Organization node**: `sameAs`, `contactPoint`, `address`, `foundingDate`, `numberOfEmployees`, ISO `areaServed`.
 
-**T4 — Replace the Gmail form endpoint.** Move to a real domain address (`hello@thegreenoh.com`) and a proper handler (Formspark / Basin / a Cloudflare Worker), with the lead pushed into a CRM.
+**T4 — Replace the Gmail form endpoint.** Move to a real domain address (`hello@flowmoat.com`) and a proper handler (Formspark / Basin / a Cloudflare Worker), with the lead pushed into a CRM.
 
 **T5 — Install GA4 + Google Search Console + Bing Webmaster Tools.** Bing matters more than usual now: **ChatGPT search is Bing-backed.**
 
@@ -133,7 +133,7 @@ GitHub Pages serves `/services/ai-engineering/index.html` from a folder — no f
 
 ### LOW
 
-**T14** — Delete or wire up `greenoh-widget.js`.
+**T14** — Delete or wire up `flowmoat-widget.js`.
 **T15** — Add PNG icons (192/512) to the webmanifest.
 **T16** — Add `<meta name="author">` and an `Article` `author` entity once the blog exists.
 
@@ -217,7 +217,7 @@ GitHub Pages serves `/services/ai-engineering/index.html` from a folder — no f
 - n8n vs Make vs custom Python automation
 - RPA vs AI workflow automation
 - in-house AI team vs AI engineering partner
-- Greenoh vs [competitor] *(add once competitors are chosen)*
+- FlowMoat vs [competitor] *(add once competitors are chosen)*
 - legacy modernization vs full rebuild
 - LangChain vs custom agent architecture for enterprise
 - offshore dev shop vs specialist AI engineering firm
@@ -267,7 +267,7 @@ Each cluster = **one pillar page** + supporting blog posts + one FAQ block.
 | **9** | **Solar / Energy Tech** *(GreenOH halo)* | `/products/greenoh/` | solar aggregator platform Pakistan | Solar marketplace tech · Installer verification |
 | **10** | **Industries** | `/industries/<x>/` | AI for [industry] | One page + 3 posts per industry |
 
-> **Note on clusters 8 & 9:** RegRely and GreenOH serve *different audiences* than Greenoh's core buyer. Their SEO value to Greenoh is **entity authority and proof-of-work**, not lead gen. Don't over-invest — they should each get one strong page that links back to Greenoh as the builder. If RegRely needs real SEO, it needs its own domain strategy.
+> **Note on clusters 8 & 9:** RegRely and GreenOH serve *different audiences* than FlowMoat's core buyer. Their SEO value to FlowMoat is **entity authority and proof-of-work**, not lead gen. Don't over-invest — they should each get one strong page that links back to FlowMoat as the builder. If RegRely needs real SEO, it needs its own domain strategy.
 
 ---
 
@@ -341,8 +341,8 @@ The **answer block** is the most important element for AEO. Write it as a clean,
 ### Homepage — revised
 
 ```html
-<title>Enterprise AI Engineering Company | Greenoh</title>
-<meta name="description" content="Greenoh is an enterprise AI engineering company. We build AI-powered software, modernize legacy systems, and automate workflows for companies in the US, UK, Canada, Australia, and UAE. Book a strategy call.">
+<title>Enterprise AI Engineering Company | FlowMoat</title>
+<meta name="description" content="FlowMoat is an enterprise AI engineering company. We build AI-powered software, modernize legacy systems, and automate workflows for companies in the US, UK, Canada, Australia, and UAE. Book a strategy call.">
 ```
 *(Current title is already good — keep it. Description gains geography + CTA.)*
 
@@ -357,12 +357,12 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 
 | URL | Title (≤60 char) | Description (≤155 char) |
 |---|---|---|
-| `/services/ai-engineering/` | AI Engineering Services for Enterprise \| Greenoh | Custom AI systems, agents, and copilots engineered for production. From proof of concept to enterprise scale. Book a strategy call. |
-| `/services/ai-modernization/` | AI Modernization Services \| Legacy Systems \| Greenoh | Add AI to your existing CRM, ERP, and legacy systems — without a disruptive rebuild. Enterprise AI modernization from Greenoh. |
-| `/services/enterprise-software-development/` | Enterprise Software Development Company \| Greenoh | Custom SaaS, internal platforms, dashboards, and back-office systems built on enterprise-grade architecture. |
-| `/services/workflow-automation/` | Workflow Automation Services for Enterprise \| Greenoh | Automate business processes, connect systems, and remove manual work with custom automation and API integration. |
-| `/about/` | About Greenoh \| Enterprise AI Engineering Team | Meet the team behind Greenoh, RegRely, and GreenOH. Enterprise AI engineers building production systems since [YEAR]. |
-| `/case-studies/` | Case Studies \| Enterprise AI & Software \| Greenoh | Real enterprise AI, modernization, and automation projects — with the architecture decisions and outcomes behind them. |
+| `/services/ai-engineering/` | AI Engineering Services for Enterprise \| FlowMoat | Custom AI systems, agents, and copilots engineered for production. From proof of concept to enterprise scale. Book a strategy call. |
+| `/services/ai-modernization/` | AI Modernization Services \| Legacy Systems \| FlowMoat | Add AI to your existing CRM, ERP, and legacy systems — without a disruptive rebuild. Enterprise AI modernization from FlowMoat. |
+| `/services/enterprise-software-development/` | Enterprise Software Development Company \| FlowMoat | Custom SaaS, internal platforms, dashboards, and back-office systems built on enterprise-grade architecture. |
+| `/services/workflow-automation/` | Workflow Automation Services for Enterprise \| FlowMoat | Automate business processes, connect systems, and remove manual work with custom automation and API integration. |
+| `/about/` | About FlowMoat \| Enterprise AI Engineering Team | Meet the team behind FlowMoat, RegRely, and GreenOH. Enterprise AI engineers building production systems since [YEAR]. |
+| `/case-studies/` | Case Studies \| Enterprise AI & Software \| FlowMoat | Real enterprise AI, modernization, and automation projects — with the architecture decisions and outcomes behind them. |
 
 **Rules:** one keyword per title · brand always last · description = benefit + proof + CTA · never duplicate a title.
 
@@ -377,15 +377,15 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 ```json
 {
   "@type": "FAQPage",
-  "@id": "https://thegreenoh.com/#faq",
-  "isPartOf": { "@id": "https://thegreenoh.com/#webpage" },
+  "@id": "https://flowmoat.com/#faq",
+  "isPartOf": { "@id": "https://flowmoat.com/#webpage" },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does Greenoh build?",
+      "name": "What does FlowMoat build?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Greenoh builds AI-powered enterprise software, modernizes existing systems, develops custom SaaS and internal platforms, and automates operational workflows."
+        "text": "FlowMoat builds AI-powered enterprise software, modernizes existing systems, develops custom SaaS and internal platforms, and automates operational workflows."
       }
     }
     // ... the remaining 5 Q&As, verbatim from index.html:567-630
@@ -397,11 +397,11 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 
 ```json
 "sameAs": [
-  "https://www.linkedin.com/company/greenoh",
-  "https://github.com/greenoh",
-  "https://clutch.co/profile/greenoh",
-  "https://www.crunchbase.com/organization/greenoh",
-  "https://x.com/greenoh"
+  "https://www.linkedin.com/company/flowmoat",
+  "https://github.com/flowmoat",
+  "https://clutch.co/profile/flowmoat",
+  "https://www.crunchbase.com/organization/flowmoat",
+  "https://x.com/flowmoat"
 ],
 "areaServed": [
   { "@type": "Country", "name": "United States" },
@@ -413,7 +413,7 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 "contactPoint": {
   "@type": "ContactPoint",
   "contactType": "sales",
-  "email": "hello@thegreenoh.com",
+  "email": "hello@flowmoat.com",
   "availableLanguage": ["English"],
   "areaServed": ["US", "CA", "GB", "AU", "AE"]
 },
@@ -422,20 +422,20 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 "slogan": "Enterprise AI engineering for companies that need more than code delivery."
 ```
 
-> **`sameAs` is the highest-leverage schema field you are missing.** It is how Google's Knowledge Graph and every AI engine confirm Greenoh is a *real entity* rather than an unverified string. Ship it as soon as the profiles exist — and **create the profiles if they don't** (LinkedIn Company Page first, then Clutch, then Crunchbase).
+> **`sameAs` is the highest-leverage schema field you are missing.** It is how Google's Knowledge Graph and every AI engine confirm FlowMoat is a *real entity* rather than an unverified string. Ship it as soon as the profiles exist — and **create the profiles if they don't** (LinkedIn Company Page first, then Clutch, then Crunchbase).
 
 **S3 — `SoftwareApplication`** for RegRely and GreenOH:
 
 ```json
 {
   "@type": "SoftwareApplication",
-  "@id": "https://thegreenoh.com/#regrely",
+  "@id": "https://flowmoat.com/#regrely",
   "name": "RegRely",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://regrely.com",
   "description": "AI-powered compliance and privacy management platform for compliance operations, vendor risk, and governance.",
-  "publisher": { "@id": "https://thegreenoh.com/#organization" }
+  "publisher": { "@id": "https://flowmoat.com/#organization" }
 }
 ```
 *(Same shape for GreenOH with `applicationCategory: "BusinessApplication"`, `url: "https://greenoh.pk"`.)*
@@ -453,7 +453,7 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 ### LOW / conditional
 
 - **`Review` / `AggregateRating`** — **only from genuine, verifiable reviews.** Self-serving review markup is a manual-action risk. Get real Clutch/G2 reviews first, then mark them up.
-- **`LocalBusiness`** — **only if you have a real, staffed, physical address.** If Greenoh is remote-first, **skip it entirely.** Fabricating a location to chase local packs is fraud-adjacent and will burn the domain. Use `Organization` + `areaServed` instead — that's the honest and correct choice for a distributed company.
+- **`LocalBusiness`** — **only if you have a real, staffed, physical address.** If FlowMoat is remote-first, **skip it entirely.** Fabricating a location to chase local packs is fraud-adjacent and will burn the domain. Use `Organization` + `areaServed` instead — that's the honest and correct choice for a distributed company.
 
 ---
 
@@ -484,7 +484,7 @@ This keeps the emotional hook, adds the head term, and stays human. Avoid `"Ente
 | Cross-service | Each service page links to **2** adjacent services (`ai-modernization` ↔ `workflow-automation`) |
 | Industry → service | Each industry page links to all **4** core services |
 | Case study → service | Each case study links to the service(s) it proves |
-| Products → home | RegRely/GreenOH pages link back to Greenoh as builder — **this is how you transfer product credibility to the parent entity** |
+| Products → home | RegRely/GreenOH pages link back to FlowMoat as builder — **this is how you transfer product credibility to the parent entity** |
 | Anchor text | Descriptive, varied, natural. Never "click here", never the same exact-match anchor 50×. |
 | Footer | Include the **full** service + industry list — a site-wide crawl path |
 | CTA links | Every page → `/contact/` at least twice |
@@ -562,7 +562,7 @@ Each targets a distinct intent. **`[I]`** informational · **`[C]`** commercial 
 57. Third-Party Risk in the Age of AI Vendors `[I]`
 58. Compliance Tech Stack for a 500-Person Company `[C]`
 
-### Solar / Energy (59–68) — *GreenOH halo; lower priority for Greenoh lead gen*
+### Solar / Energy (59–68) — *GreenOH halo; lower priority for FlowMoat lead gen*
 59. Building a Solar Marketplace Platform: Technical Architecture `[I]`
 60. How Aggregator Platforms Create Trust in Fragmented Markets `[I]`
 61. GreenOH: Building Pakistan's First Solar Aggregator `[C]` *(case study)*
@@ -632,7 +632,7 @@ AI engines (ChatGPT, Claude, Perplexity, Gemini, AI Overviews) **cite differentl
 
 Directly after each H1, a **40–60 word self-contained definition** an AI can lift verbatim:
 
-> **Greenoh is an enterprise AI engineering company that builds AI-powered software, modernizes legacy systems, and automates business workflows for companies with 50–1,000 employees. Greenoh serves clients in the United States, Canada, the United Kingdom, Australia, and the UAE, and builds its own products: RegRely and GreenOH.**
+> **FlowMoat is an enterprise AI engineering company that builds AI-powered software, modernizes legacy systems, and automates business workflows for companies with 50–1,000 employees. FlowMoat serves clients in the United States, Canada, the United Kingdom, Australia, and the UAE, and builds its own products: RegRely and GreenOH.**
 
 Every noun is a fact. No adjectives. No marketing. **This is the single highest-leverage AEO change on the site.**
 
@@ -642,7 +642,7 @@ Every noun is a fact. No adjectives. No marketing. **This is the single highest-
 
 AI engines love tables — they're trivially extractable. Add to every service page:
 
-| | Typical dev agency | In-house team | Greenoh |
+| | Typical dev agency | In-house team | FlowMoat |
 |---|---|---|---|
 | Time to production | 6–12 months | 12+ months | 8–16 weeks |
 | AI specialization | Generalist | Varies | Core focus |
@@ -665,24 +665,24 @@ AI engines cite **numbers**. Vague claims get skipped. Publish original data you
 ### A6 — `llms.txt` *(MEDIUM)*
 
 ```
-# Greenoh
+# FlowMoat
 
-> Greenoh is an enterprise AI engineering company that builds AI-powered
+> FlowMoat is an enterprise AI engineering company that builds AI-powered
 > software, modernizes legacy systems, and automates workflows for companies
 > with 50-1,000 employees across the US, UK, Canada, Australia, and UAE.
 
 ## Services
-- [AI Engineering](https://thegreenoh.com/services/ai-engineering/): Custom AI systems, agents, copilots — PoC to production.
-- [AI Modernization](https://thegreenoh.com/services/ai-modernization/): Add AI to existing CRM, ERP, and legacy systems.
-- [Enterprise Software Development](https://thegreenoh.com/services/enterprise-software-development/): Custom SaaS, internal platforms, dashboards.
-- [Workflow Automation](https://thegreenoh.com/services/workflow-automation/): Business process automation and API integration.
+- [AI Engineering](https://flowmoat.com/services/ai-engineering/): Custom AI systems, agents, copilots — PoC to production.
+- [AI Modernization](https://flowmoat.com/services/ai-modernization/): Add AI to existing CRM, ERP, and legacy systems.
+- [Enterprise Software Development](https://flowmoat.com/services/enterprise-software-development/): Custom SaaS, internal platforms, dashboards.
+- [Workflow Automation](https://flowmoat.com/services/workflow-automation/): Business process automation and API integration.
 
 ## Products
 - [RegRely](https://regrely.com): AI compliance and privacy management platform.
 - [GreenOH](https://greenoh.pk): Pakistan's first solar aggregator platform.
 
 ## Contact
-- [Book a strategy call](https://thegreenoh.com/contact/)
+- [Book a strategy call](https://flowmoat.com/contact/)
 ```
 
 ### A7 — Explicit AI crawler access *(MEDIUM)*
@@ -710,7 +710,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://thegreenoh.com/sitemap.xml
+Sitemap: https://flowmoat.com/sitemap.xml
 ```
 
 > `Google-Extended` controls Gemini training/grounding — allowing it is a **deliberate trade** (visibility in exchange for training use). Your call; for a company that wants AI citation, allowing is the right move.
@@ -726,7 +726,7 @@ Sitemap: https://thegreenoh.com/sitemap.xml
 - Founder posting substantively on LinkedIn/X under a real name
 - Guest posts and podcasts in the enterprise-AI space
 
-**Reality check:** when a CTO asks ChatGPT *"best enterprise AI engineering companies"*, the answer is assembled from Clutch listicles, G2, and industry roundups — **not** from thegreenoh.com. Getting listed in those sources is the highest-ROI AEO work available to you, and none of it is code.
+**Reality check:** when a CTO asks ChatGPT *"best enterprise AI engineering companies"*, the answer is assembled from Clutch listicles, G2, and industry roundups — **not** from flowmoat.com. Getting listed in those sources is the highest-ROI AEO work available to you, and none of it is code.
 
 ### A9 — Content structure for extraction *(MEDIUM)*
 Question-form H2s · short paragraphs (2–4 sentences) · bullets over prose · a bolded key sentence per section · a TL;DR at the top of long posts.
@@ -746,12 +746,12 @@ AI engines favor fresh content. Add visible `dateModified` + schema `dateModifie
 | Add the answer block under H1 | **HIGH** | 1 hr |
 | Fix `areaServed` → all 5 countries, ISO-correct | **HIGH** | 15 min |
 | Create LinkedIn Company Page → add `sameAs` | **HIGH** | 2 hr |
-| Replace Gmail form endpoint → `hello@thegreenoh.com` | **HIGH** | 1 hr |
+| Replace Gmail form endpoint → `hello@flowmoat.com` | **HIGH** | 1 hr |
 | Install GA4 + Search Console + Bing Webmaster | **HIGH** | 1 hr |
 | Add `SoftwareApplication` schema (RegRely, GreenOH) | MED | 30 min |
 | Add `llms.txt` + AI-crawler `robots.txt` | MED | 30 min |
 | Compress `og-image.png` (424 KB → <150 KB) | MED | 15 min |
-| Decide: **Greenoh** or **Greenoh** — then unify everywhere | **HIGH** | 30 min |
+| Decide: **FlowMoat** or **Flowmoat** — then unify everywhere | **HIGH** | 30 min |
 
 **~8 hours of work. Meaningful AEO improvement. Do this before anything else.**
 
@@ -800,13 +800,13 @@ Industry pages · 4 posts/month · founder-led LinkedIn/X presence · guest post
 | Booking | Form only | Add **Calendly/Cal.com** — enterprise buyers want to self-serve a slot, not wait for an email |
 | Social proof | **None** | "Trusted by teams at…" bar directly under the hero |
 
-> **The uncomfortable truth:** Greenoh currently asks a CTO to disclose a **$100,000 budget** through a form that posts to a **personal Gmail address**, on a site with **no team page, no client names, no testimonials, and no case studies**. No amount of schema markup fixes that. **Trust is the bottleneck, not rankings.** Fix trust first.
+> **The uncomfortable truth:** FlowMoat currently asks a CTO to disclose a **$100,000 budget** through a form that posts to a **personal Gmail address**, on a site with **no team page, no client names, no testimonials, and no case studies**. No amount of schema markup fixes that. **Trust is the bottleneck, not rankings.** Fix trust first.
 
 ---
 
 ## DECISIONS NEEDED FROM YOU
 
-1. **Brand casing** — "Greenoh" or "Greenoh"? Must be identical across site, LinkedIn, Clutch, everywhere.
+1. **Brand casing** — "FlowMoat" or "Flowmoat"? Must be identical across site, LinkedIn, Clutch, everywhere.
 2. **Framework** — Astro (recommended), Eleventy, or hand-rolled HTML folders?
 3. **Physical address** — is there a real, staffed office? Determines whether `LocalBusiness` schema and Google Business Profile are honest options.
 4. **Team visibility** — are you willing to put real names, faces, and bios on `/about/`? **EEAT does not work anonymously.**

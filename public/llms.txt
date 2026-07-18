@@ -1,34 +1,34 @@
-# Greenoh
+# Flowmoat
 
-> Greenoh is an enterprise AI engineering company that builds AI-powered software,
+> Flowmoat is an enterprise AI engineering company that builds AI-powered software,
 > modernizes legacy systems, and automates business workflows for organizations of
 > 50–1,000 employees across the United States, Canada, the United Kingdom, Australia,
 > and the United Arab Emirates.
 
-Greenoh combines product thinking with enterprise engineering. Engagements start with the
-business outcome, then work backward to the right architecture. Greenoh also builds and
+Flowmoat combines product thinking with enterprise engineering. Engagements start with the
+business outcome, then work backward to the right architecture. Flowmoat also builds and
 operates its own SaaS products, which means its team has firsthand experience turning complex
 business domains into production software rather than delivering isolated features.
 
 ## Services
 
-- [Services overview](https://thegreenoh.com/services/): The four capabilities Greenoh delivers and how to choose between them.
-- [AI Engineering](https://thegreenoh.com/services/ai-engineering/): Production AI systems — AI agents, copilots, permission-aware retrieval (RAG), and document intelligence, with evaluation harnesses and human oversight built in.
-- [AI Modernization](https://thegreenoh.com/services/ai-modernization/): Adding AI to existing CRMs, ERPs, portals, SaaS products, and legacy systems through their data and APIs, without a migration or a rebuild.
-- [Enterprise Software Development](https://thegreenoh.com/services/enterprise-software-development/): Custom SaaS, internal platforms, business portals, dashboards, and back-office systems, delivered end to end.
-- [Workflow Automation](https://thegreenoh.com/services/workflow-automation/): Business process automation, API integration, and custom workflow engineering using n8n, Make, and custom Python where platforms cannot reach.
+- [Services overview](https://flowmoat.com/services/): The four capabilities Flowmoat delivers and how to choose between them.
+- [AI Engineering](https://flowmoat.com/services/ai-engineering/): Production AI systems — AI agents, copilots, permission-aware retrieval (RAG), and document intelligence, with evaluation harnesses and human oversight built in.
+- [AI Modernization](https://flowmoat.com/services/ai-modernization/): Adding AI to existing CRMs, ERPs, portals, SaaS products, and legacy systems through their data and APIs, without a migration or a rebuild.
+- [Enterprise Software Development](https://flowmoat.com/services/enterprise-software-development/): Custom SaaS, internal platforms, business portals, dashboards, and back-office systems, delivered end to end.
+- [Workflow Automation](https://flowmoat.com/services/workflow-automation/): Business process automation, API integration, and custom workflow engineering using n8n, Make, and custom Python where platforms cannot reach.
 
 ## Products
 
 - [RegRely](https://regrely.com): AI-powered compliance and privacy management platform for compliance programs, privacy operations, vendor risk, and governance.
-- [GreenOH.pk](https://greenoh.pk): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
+- [GreenOH](https://greenoh.pk): Pakistan's first solar aggregator platform, where homes and businesses compare verified solar installers through one trusted marketplace.
 
 ## Company
 
-- [About Greenoh](https://thegreenoh.com/about/): How Greenoh works, its engineering principles, and the markets it serves.
-- [Our work](https://thegreenoh.com/work/): The products Greenoh has built and operates. Client case studies are published only with the client's written permission.
+- [About Flowmoat](https://flowmoat.com/about/): How Flowmoat works, its engineering principles, and the markets it serves.
+- [Our work](https://flowmoat.com/work/): The products Flowmoat has built and operates. Client case studies are published only with the client's written permission.
 
-## Who Greenoh works with
+## Who Flowmoat works with
 
 Founders, CEOs, CTOs, COOs, VP Engineering, VP Operations, and IT Directors at growing companies
 with meaningful software or workflow complexity. Typical engagements range from $10,000 to $100,000+.
@@ -42,4 +42,4 @@ with meaningful software or workflow complexity. Typical engagements range from 
 
 ## Contact
 
-- [Book a strategy call](https://thegreenoh.com/contact/)
+- [Book a strategy call](https://flowmoat.com/contact/)

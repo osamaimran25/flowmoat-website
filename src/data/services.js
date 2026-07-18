@@ -7,14 +7,14 @@ export const SERVICES = [
     name: "AI Engineering",
     cardSummary:
       "Build intelligent systems that help teams find answers, make decisions, and execute complex work with the right human oversight.",
-    title: "Enterprise AI Engineering Services | Greenoh",
+    title: "Enterprise AI Engineering Services | Flowmoat",
     metaDescription:
-      "Greenoh builds production AI systems for enterprises — AI agents, copilots, RAG search, and document intelligence. Serving the US, UK, Canada, Australia, and the UAE. Book a strategy call.",
+      "Flowmoat builds production AI systems for enterprises — AI agents, copilots, RAG search, and document intelligence. Serving the US, UK, Canada, Australia, and the UAE. Book a strategy call.",
     h1: "Enterprise AI engineering that ships to production.",
     eyebrow: "AI Engineering",
     // AEO answer block: self-contained, 40–60 words, citable without context.
     definition:
-      "Enterprise AI engineering is the practice of designing, building, and operating production AI systems inside a business — not prototypes. Greenoh builds AI agents, copilots, retrieval systems, and document intelligence that connect to real company data, run under human oversight, and hold up to enterprise security, audit, and reliability requirements.",
+      "Enterprise AI engineering is the practice of designing, building, and operating production AI systems inside a business — not prototypes. Flowmoat builds AI agents, copilots, retrieval systems, and document intelligence that connect to real company data, run under human oversight, and hold up to enterprise security, audit, and reliability requirements.",
     intro:
       "Most AI projects die between the demo and the deployment. A pilot impresses the room, then stalls on data access, evaluation, permissions, cost, and the question nobody wants to own: what happens when it is wrong? We engineer for that question from the first week.",
     problemTitle: "Why AI pilots stall",
@@ -61,14 +61,14 @@ export const SERVICES = [
     faqs: [
       {
         q: "How is AI engineering different from hiring an AI consultant?",
-        a: "A consultant produces a strategy and a recommendation. AI engineering produces a running system. Greenoh writes the code, connects the data, builds the evaluation harness, and hands over software your team can operate.",
+        a: "A consultant produces a strategy and a recommendation. AI engineering produces a running system. Flowmoat writes the code, connects the data, builds the evaluation harness, and hands over software your team can operate.",
       },
       {
         q: "How long does an enterprise AI engineering project take?",
         a: "Most engagements deliver a working system in 6 to 12 weeks. We ship in focused iterations with regular demonstrations rather than disappearing for a quarter and returning with a finished product.",
       },
       {
-        q: "Which AI models does Greenoh build on?",
+        q: "Which AI models does Flowmoat build on?",
         a: "We stay model-agnostic and select based on the task, your data-residency requirements, and cost per task. We architect so the model layer can be swapped without rewriting the system around it.",
       },
       {
@@ -85,13 +85,13 @@ export const SERVICES = [
     name: "AI Modernization",
     cardSummary:
       "Add practical AI capabilities to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without forcing a disruptive rebuild.",
-    title: "AI Modernization Services for Legacy Systems | Greenoh",
+    title: "AI Modernization Services for Legacy Systems | Flowmoat",
     metaDescription:
-      "Greenoh adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a rebuild. AI modernization for the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a rebuild. AI modernization for the US, UK, Canada, Australia, and the UAE.",
     h1: "Add AI to the systems you already run.",
     eyebrow: "AI Modernization",
     definition:
-      "AI modernization is the process of adding AI capabilities to software a business already depends on, instead of replacing it. Greenoh layers AI onto existing CRMs, ERPs, portals, and legacy platforms through their data and APIs — so teams gain intelligent search, drafting, and automation without a migration or a rewrite.",
+      "AI modernization is the process of adding AI capabilities to software a business already depends on, instead of replacing it. Flowmoat layers AI onto existing CRMs, ERPs, portals, and legacy platforms through their data and APIs — so teams gain intelligent search, drafting, and automation without a migration or a rewrite.",
     intro:
       "The system everyone complains about is usually the system everyone depends on. It holds a decade of data and a hundred undocumented rules the business actually runs on. Replacing it is an 18-month bet. Modernizing it is a 10-week one.",
     problemTitle: "The rebuild trap",
@@ -161,13 +161,13 @@ export const SERVICES = [
     name: "Enterprise Software Development",
     cardSummary:
       "Design and build custom SaaS, internal platforms, business portals, dashboards, back-office systems, and administration software.",
-    title: "Enterprise Software Development Company | Greenoh",
+    title: "Enterprise Software Development Company | Flowmoat",
     metaDescription:
-      "Greenoh designs and builds custom enterprise software — SaaS platforms, internal tools, business portals, and back-office systems for companies in the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat designs and builds custom enterprise software — SaaS platforms, internal tools, business portals, and back-office systems for companies in the US, UK, Canada, Australia, and the UAE.",
     h1: "Custom enterprise software, built by a team that ships its own products.",
     eyebrow: "Enterprise Software Development",
     definition:
-      "Enterprise software development is the design and delivery of custom software for a specific organisation's operations — internal platforms, business portals, back-office systems, and SaaS products. Greenoh builds these systems end to end, from product definition through architecture, delivery, and rollout, for companies of 50 to 1,000 employees.",
+      "Enterprise software development is the design and delivery of custom software for a specific organisation's operations — internal platforms, business portals, back-office systems, and SaaS products. Flowmoat builds these systems end to end, from product definition through architecture, delivery, and rollout, for companies of 50 to 1,000 employees.",
     intro:
       "Off-the-shelf software makes your business run like everyone else's. Sometimes that is exactly right. But when the thing you do differently is the thing you compete on, encoding it in a spreadsheet and three SaaS subscriptions is a tax you pay every day.",
     problemTitle: "When custom software is the right call",
@@ -189,7 +189,7 @@ export const SERVICES = [
       },
       {
         title: "Custom SaaS products",
-        body: "We build and operate our own SaaS — RegRely and GreenOH.pk — which means we design for multi-tenancy, billing, and onboarding from experience, not theory.",
+        body: "We build and operate our own SaaS — RegRely and GreenOH — which means we design for multi-tenancy, billing, and onboarding from experience, not theory.",
       },
       {
         title: "Dashboards and decision systems",
@@ -216,7 +216,7 @@ export const SERVICES = [
         a: "Buy when the process is standard and someone else has already solved it well. Build when the process is the thing that makes you competitive — because at that point off-the-shelf software forces you to work like your competitors.",
       },
       {
-        q: "Do we own the code Greenoh writes?",
+        q: "Do we own the code Flowmoat writes?",
         a: "Yes. You own the source code, the repositories, and the infrastructure outright. We document the architecture so another team could take it over without us.",
       },
       {
@@ -237,13 +237,13 @@ export const SERVICES = [
     name: "Workflow Automation",
     cardSummary:
       "Connect people, systems, and data through business process automation, API integrations, n8n, Make, and custom Python workflows.",
-    title: "Business Workflow Automation Services | Greenoh",
+    title: "Business Workflow Automation Services | Flowmoat",
     metaDescription:
-      "Greenoh automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering for companies in the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering for companies in the US, UK, Canada, Australia, and the UAE.",
     h1: "Automate the work your team should not be doing by hand.",
     eyebrow: "Workflow Automation",
     definition:
-      "Workflow automation is the engineering of business processes so they run without manual handoffs — connecting systems, routing approvals, syncing data, and triggering actions automatically. Greenoh builds these workflows with API integrations, tools like n8n and Make, and custom code where off-the-shelf automation cannot reach.",
+      "Workflow automation is the engineering of business processes so they run without manual handoffs — connecting systems, routing approvals, syncing data, and triggering actions automatically. Flowmoat builds these workflows with API integrations, tools like n8n and Make, and custom code where off-the-shelf automation cannot reach.",
     intro:
       "Every company has a process that runs on someone copying data from one screen into another. It works, until that person is on leave. Automation is not about cutting headcount — it is about not spending your team's judgement on clerical work.",
     problemTitle: "The manual-handoff tax",

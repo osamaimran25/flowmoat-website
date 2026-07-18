@@ -6,7 +6,7 @@ import { getService } from "../../data/services.js";
 import { SITE } from "../../data/site.js";
 
 const path = "/blog/";
-const title = "Insights on Enterprise AI, Software, and Automation | Greenoh";
+const title = "Insights on Enterprise AI, Software, and Automation | Flowmoat";
 const description =
   "Practical writing on enterprise AI engineering, legacy modernization, custom software, and workflow automation — from the team that builds and operates its own products.";
 
@@ -29,7 +29,7 @@ const schema = [
     "@type": "Blog",
     "@id": `${SITE.url}${path}#blog`,
     url: `${SITE.url}${path}`,
-    name: "Greenoh Insights",
+    name: "Flowmoat Insights",
     description,
     publisher: { "@id": `${SITE.url}/#organization` },
     blogPost: posts.map((post) => ({
@@ -43,7 +43,7 @@ const schema = [
 ];
 ---
 
-<BaseLayout {title} {description} {schema} {path} ogImage="/og/blog.jpg" ogImageAlt="Greenoh Insights — decisions worth getting right before you build">
+<BaseLayout {title} {description} {schema} {path} ogImage="/og/blog.jpg" ogImageAlt="Flowmoat Insights — decisions worth getting right before you build">
   <section class="section page-hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container narrow">

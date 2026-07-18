@@ -5,16 +5,16 @@ import { SERVICES } from "../../data/services.js";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "../../lib/schema.js";
 
 const path = "/services/";
-const title = "AI Engineering & Software Development Services | Greenoh";
+const title = "AI Engineering & Software Development Services | Flowmoat";
 const description =
-  "Greenoh's four services: AI engineering, AI modernization, enterprise software development, and workflow automation — for companies in the US, UK, Canada, Australia, and the UAE.";
+  "Flowmoat's four services: AI engineering, AI modernization, enterprise software development, and workflow automation — for companies in the US, UK, Canada, Australia, and the UAE.";
 
 const definition =
-  "Greenoh offers four services: AI engineering (production AI agents, copilots, and retrieval systems), AI modernization (adding AI to existing platforms without a rebuild), enterprise software development (custom SaaS, portals, and internal systems), and workflow automation (process automation and API integration).";
+  "Flowmoat offers four services: AI engineering (production AI agents, copilots, and retrieval systems), AI modernization (adding AI to existing platforms without a rebuild), enterprise software development (custom SaaS, portals, and internal systems), and workflow automation (process automation and API integration).";
 
 const faqs = [
   {
-    q: "Which Greenoh service do we need?",
+    q: "Which Flowmoat service do we need?",
     a: "If you want AI capability you do not have today, start with AI engineering. If you want AI inside a system you already run, start with AI modernization. If a process runs on manual handoffs, start with workflow automation. If you need a platform that does not exist yet, start with enterprise software development.",
   },
   {
@@ -22,11 +22,11 @@ const faqs = [
     a: "Most engagements do. A workflow automation project often surfaces the need for a custom platform, and an enterprise software build usually includes AI capability from the start. We scope them as one engagement rather than separate contracts.",
   },
   {
-    q: "What size of company does Greenoh work with?",
+    q: "What size of company does Flowmoat work with?",
     a: "Organizations of roughly 50 to 1,000 employees with real operational or software complexity. Typical engagements range from $10,000 to $100,000+.",
   },
   {
-    q: "Which countries does Greenoh serve?",
+    q: "Which countries does Flowmoat serve?",
     a: "We work with companies in the United States, Canada, the United Kingdom, Australia, and the United Arab Emirates, delivering remotely with overlap on your working hours.",
   },
 ];
@@ -43,18 +43,18 @@ const schema = [
   ),
   {
     "@type": "ItemList",
-    "@id": `https://thegreenoh.com${path}#services`,
+    "@id": `https://flowmoat.com${path}#services`,
     itemListElement: SERVICES.map((service, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: service.name,
-      url: `https://thegreenoh.com/services/${service.slug}/`,
+      url: `https://flowmoat.com/services/${service.slug}/`,
     })),
   },
 ];
 ---
 
-<BaseLayout {title} {description} {schema} {path} ogImage="/og/services.jpg" ogImageAlt="Greenoh services — AI engineering, modernization, enterprise software, automation">
+<BaseLayout {title} {description} {schema} {path} ogImage="/og/services.jpg" ogImageAlt="Flowmoat services — AI engineering, modernization, enterprise software, automation">
   <section class="section page-hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container narrow">
