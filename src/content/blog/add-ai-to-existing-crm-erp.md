@@ -1,5 +1,6 @@
 ---
 title: "How to add AI to your existing CRM or ERP without replacing it"
+metaTitle: "Add AI to your existing CRM or ERP"
 description: "You do not need to migrate off Salesforce, Dynamics, or SAP to get AI capability. Four patterns for layering AI onto the system your business already runs on."
 excerpt: "The vendor wants you on their new AI tier. You do not need it. Four patterns for adding AI to the system you already have."
 answer: "You can add AI to an existing CRM or ERP without replacing it by building an AI layer that reads from the system through its API or database and writes results back into it. The four common patterns are intelligent search over historic records, AI-assisted data entry, next-best-action suggestions, and automated document processing."

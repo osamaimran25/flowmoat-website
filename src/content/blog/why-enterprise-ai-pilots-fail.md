@@ -1,6 +1,6 @@
 ---
 title: "Why enterprise AI pilots never reach production"
-description: "The demo works. Six months later it still has not shipped. Five failure modes that kill enterprise AI pilots between the prototype and production — and what to build instead."
+description: "The demo works. Six months later it still has not shipped. Five failure modes that kill enterprise AI pilots before production — and what to build instead."
 excerpt: "The pilot impressed everyone in the room. Then it stalled for six months. The reasons are boringly consistent, and all five are avoidable."
 answer: "Enterprise AI pilots fail to reach production for five recurring reasons: the prototype was built on clean sample data, there is no way to measure whether the output is good, the model can access data the requesting user cannot, token cost is unmodelled at real scale, and there is no fallback when the system is wrong or unavailable."
 published: 2026-07-14

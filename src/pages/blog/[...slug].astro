@@ -63,10 +63,11 @@ const schema = [
 ---
 
 <BaseLayout
-  title={`${d.title} | Flowmoat`}
+  title={`${d.metaTitle ?? d.title} | Flowmoat`}
   description={d.description}
   {schema}
   {path}
+  ogType="article"
   ogImage={`/og/blog-${post.id}.jpg`}
   ogImageAlt={d.title}
 >

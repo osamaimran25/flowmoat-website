@@ -1,6 +1,7 @@
 ---
 title: "What custom enterprise software actually costs — and what drives the price"
-description: "A straight answer on enterprise software development costs, the six factors that actually move the number, and the hidden costs that turn a $40,000 project into a $90,000 one."
+metaTitle: "What custom enterprise software costs"
+description: "A straight answer on enterprise software development costs, the six factors that actually move the number, and the hidden costs buyers miss."
 excerpt: "Nobody publishes their pricing, so every buyer is guessing. Here is what drives the number, where estimates go wrong, and how to get a quote you can trust."
 answer: "Custom enterprise software typically costs between $10,000 and $100,000+ for a first phase, depending on scope. The six factors that move the number most are integration count, compliance requirements, user roles, data migration, the quality of existing documentation, and how clearly the business outcome is defined before work starts."
 published: 2026-07-14

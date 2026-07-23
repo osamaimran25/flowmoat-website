@@ -1,6 +1,7 @@
 ---
 title: "n8n vs Make vs custom code: how to choose an automation approach"
-description: "A practical comparison of n8n, Make, and custom-coded workflows — what each is genuinely good at, where each breaks down, and the four signals that tell you which one your process needs."
+metaTitle: "n8n vs Make vs custom code"
+description: "What n8n, Make, and custom-coded workflows are each genuinely good at, where each breaks down, and the four signals that tell you which one you need."
 excerpt: "The honest answer is that most real systems use both a platform and custom code. The question is which parts get which — and there are four signals that decide it."
 answer: "Use Make for simple, low-volume integrations between popular SaaS tools. Use n8n when you need self-hosting, complex branching, or data residency control. Use custom code when the workflow exceeds what a visual builder can express, runs at high volume, or is business-critical enough to require real testing and version control."
 published: 2026-07-14

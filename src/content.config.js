@@ -5,6 +5,9 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
+    // Short form used only in <title>, where Google truncates past ~60 chars.
+    // Falls back to title. The H1 and BlogPosting headline always use title.
+    metaTitle: z.string().optional(),
     // Meta description. Kept separate from the excerpt shown on the index.
     description: z.string(),
     excerpt: z.string(),

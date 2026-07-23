@@ -9,7 +9,7 @@ export const SERVICES = [
       "Build intelligent systems that help teams find answers, make decisions, and execute complex work with the right human oversight.",
     title: "Enterprise AI Engineering Services | Flowmoat",
     metaDescription:
-      "Flowmoat builds production AI systems for enterprises — AI agents, copilots, RAG search, and document intelligence. Serving the US, UK, Canada, Australia, and the UAE. Book a strategy call.",
+      "Flowmoat builds production AI systems for enterprises — AI agents, copilots, RAG search, and document intelligence. Book a strategy call.",
     h1: "Enterprise AI engineering that ships to production.",
     eyebrow: "AI Engineering",
     // AEO answer block: self-contained, 40–60 words, citable without context.
@@ -87,7 +87,7 @@ export const SERVICES = [
       "Add practical AI capabilities to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without forcing a disruptive rebuild.",
     title: "AI Modernization Services for Legacy Systems | Flowmoat",
     metaDescription:
-      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a rebuild. AI modernization for the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a disruptive rebuild or migration.",
     h1: "Add AI to the systems you already run.",
     eyebrow: "AI Modernization",
     definition:
@@ -163,7 +163,7 @@ export const SERVICES = [
       "Design and build custom SaaS, internal platforms, business portals, dashboards, back-office systems, and administration software.",
     title: "Enterprise Software Development Company | Flowmoat",
     metaDescription:
-      "Flowmoat designs and builds custom enterprise software — SaaS platforms, internal tools, business portals, and back-office systems for companies in the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat designs and builds custom enterprise software — SaaS platforms, internal tools, business portals, and back-office systems.",
     h1: "Custom enterprise software, built by a team that ships its own products.",
     eyebrow: "Enterprise Software Development",
     definition:
@@ -239,7 +239,7 @@ export const SERVICES = [
       "Connect people, systems, and data through business process automation, API integrations, n8n, Make, and custom Python workflows.",
     title: "Business Workflow Automation Services | Flowmoat",
     metaDescription:
-      "Flowmoat automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering for companies in the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering.",
     h1: "Automate the work your team should not be doing by hand.",
     eyebrow: "Workflow Automation",
     definition:

@@ -10,6 +10,8 @@ const {
   path,
   ogImage = "/og-image.jpg",
   ogImageAlt = "Flowmoat — enterprise AI engineering, software modernization, and workflow automation",
+  // "article" on blog posts, "website" everywhere else.
+  ogType = "website",
   // Page-specific JSON-LD nodes appended to the shared @graph.
   schema = [],
   noindex = false,
@@ -111,7 +113,7 @@ const ASSET_VERSION = "20260714-8";
     <link rel="canonical" href={canonical} />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />

@@ -6,9 +6,9 @@ import { getService } from "../../data/services.js";
 import { SITE } from "../../data/site.js";
 
 const path = "/blog/";
-const title = "Insights on Enterprise AI, Software, and Automation | Flowmoat";
+const title = "Insights on Enterprise AI and Automation | Flowmoat";
 const description =
-  "Practical writing on enterprise AI engineering, legacy modernization, custom software, and workflow automation — from the team that builds and operates its own products.";
+  "Practical writing on enterprise AI engineering, legacy modernization, custom software, and workflow automation — from the team that builds its own products.";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.published.getTime() - a.data.published.getTime(),
