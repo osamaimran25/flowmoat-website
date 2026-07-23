@@ -77,16 +77,28 @@ available, but it needs real data to exist first.
 
 ---
 
-## STEP 3 — One real case study (1–2 days) ← THE BIG ONE
+## STEP 3 — Write up RegRely as a build story (1–2 days) ← THE BIG ONE
 
-This is the single highest-return thing on this list, and nothing can
-substitute for it.
+**No clients yet? You already have two case studies. You just haven't
+written them as case studies.**
 
-Right now `/work/` shows RegRely and GreenOH — your own products. Good, but
-every agency claims capability. Almost none show the reasoning behind a real
-engagement.
+RegRely and GreenOH are live, in production, and you designed and built
+both. That is real engineering work with real constraints and real
+tradeoffs. The only difference from a client engagement is that the client
+was you — and that difference matters far less than it feels like it does.
 
-Write **one** engagement up properly:
+It also hands you an advantage agencies don't have:
+
+> Agencies can't discuss client work in depth — NDAs, approvals, "the client
+> said no." **You can disclose everything about RegRely.** No permission
+> needed. Treat that as an asset, not a consolation prize.
+
+Right now `/work/` gives each product a paragraph and three bullets. That is
+a *summary*. Nobody evaluating you as an engineer can tell from it whether
+you can think. Start with **RegRely** — compliance is a harder domain than
+marketplaces, and it's the claim most agencies can't make.
+
+Write it up properly:
 
 ```
 1. The constraint      What the client could not do, and why it mattered
@@ -99,16 +111,49 @@ Write **one** engagement up properly:
 5. The result          Measured, if you have it. Honest, always.
 ```
 
-**Can't name the client?** `"a 400-person logistics operator in the Midlands"`
-still beats nothing. Anonymised and specific is far stronger than named and
-vague.
+Concretely, for RegRely, the questions worth answering:
 
-**No hard numbers?** Write it without them. A case study with real
-architecture and no metrics outranks one with invented metrics — because the
-invented one eventually gets caught, and it destroys exactly the authority
-you were building.
+- How do you model compliance rules that differ per jurisdiction *and* per
+  framework, without the schema collapsing every time a regulation changes?
+- Where did you let AI decide, and where did you force a human to approve —
+  and what made you draw the line exactly there?
+- How do you keep an audit trail trustworthy when part of the output was
+  generated?
+- Multi-tenant isolation: what did you get wrong first, and how did you find
+  out?
 
-> One detailed case study outperforms twenty blog posts for this business.
+**Label it honestly.** "A product we built and operate" — never dressed up
+as a client engagement. Anyone senior enough to hire you will spot the
+difference, and the moment they do, everything else on the site becomes
+suspect too.
+
+**No metrics?** Write it without them. A writeup with real architecture and
+no numbers beats one with invented numbers — the invented one eventually
+gets caught, and it destroys exactly the authority you were building.
+
+**Usage numbers you *do* have are fair game** — your own signups, uptime,
+documents processed. You own the data, so you can state it.
+
+> One detailed build story outperforms twenty blog posts for this business.
+
+**Then GreenOH**, a few weeks later. Different proof: two-sided marketplace,
+trust and verification, a category that didn't exist in the market before.
+
+---
+
+## A word on timing, since you have no clients yet
+
+SEO is a 3–6 month channel. It will not produce your first client, and you
+should not wait on it as if it might.
+
+**For the first few clients, direct outreach and your existing network will
+beat SEO decisively** — and they'll also hand you the thing SEO needs most:
+real engagements to write about. The two compound; they don't compete.
+
+So keep SEO to roughly a day a week. Steps 1, 2, 4, and 5 are a few hours
+total. Step 3 is the one worth real time — and note that a good RegRely
+writeup doubles as sales material you can send a prospect directly, which
+pays off long before it ranks.
 
 ---
 
