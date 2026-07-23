@@ -42,24 +42,38 @@ silently breaks step 3 and you find out in Search Console six weeks later.
 
 ---
 
-## STEP 2 — Search Console + Bing (30 minutes, do today)
+## STEP 2 — Search Console: verify indexing, then wait (15 minutes)
 
-You currently have no rankings data. Everything after this is guesswork
-without it, and the data takes weeks to accumulate — so start the clock now,
-even though you won't use it for a month.
+Search Console is already connected (DNS-verified) and the sitemap is
+submitted. It has been collecting for under a month, so **there is no
+meaningful data yet** — nothing to analyse, and any conclusion drawn now
+would be noise.
 
-1. [search.google.com/search-console](https://search.google.com/search-console)
-   → Add property → **Domain** (not URL prefix) → `flowmoat.com`
-2. Verify via DNS TXT record at your registrar.
-3. Sitemaps → submit `https://flowmoat.com/sitemap.xml`
-4. URL Inspection → paste the homepage → **Request indexing**
-5. Repeat step 4 for the four service pages. Not the blog — let those get
-   found naturally.
-6. [bing.com/webmasters](https://www.bing.com/webmasters) → import from
-   Google Search Console (one click). Bing feeds ChatGPT search.
+Three checks, then leave it alone:
 
-**Then leave it alone for 3–4 weeks.** Impressions arrive before clicks;
-that's normal, not a problem.
+1. **Sitemaps tab** — status should read `Success`, with **16 discovered
+   URLs**. Fewer means pages aren't being found; tell me and I'll investigate.
+2. **Pages tab** — indexed count should climb toward 16 over the coming
+   weeks. Anything under "Not indexed", send me the reason string.
+3. **URL Inspection** — paste the homepage and the four service pages, hit
+   **Request indexing** on each. Skip the blog; let those be found naturally.
+
+Then add Bing: [bing.com/webmasters](https://www.bing.com/webmasters) →
+import from Google Search Console, one click. Worth the two minutes because
+**Bing's index feeds ChatGPT search.**
+
+**Now stop looking at it for 3–4 weeks.** Impressions arrive before clicks —
+that is the normal order, not a problem. Checking daily will only tempt you
+into reacting to noise.
+
+> **Don't idle during the wait.** The data isn't the bottleneck right now —
+> proof is. Spend these weeks on Step 3. When rankings data does arrive, it
+> tells you what to *adjust*; it never tells you what to *build*.
+
+Export the Performance CSV once ~6 weeks of data exist and send it to me.
+I'll pull the striking-distance keywords — terms sitting at position 11–20,
+where small changes move you onto page one. That's the cheapest ranking win
+available, but it needs real data to exist first.
 
 ---
 
