@@ -1,15 +1,15 @@
 ---
-title: "What custom enterprise software actually costs — and what drives the price"
-metaTitle: "What custom enterprise software costs"
-description: "A straight answer on enterprise software development costs, the six factors that actually move the number, and the hidden costs buyers miss."
+title: "What custom software actually costs — and what drives the price"
+metaTitle: "What custom software actually costs"
+description: "What actually drives the cost of custom software: the six factors that move the number, where estimates go wrong, and how to get a quote you can trust."
 excerpt: "Nobody publishes their pricing, so every buyer is guessing. Here is what drives the number, where estimates go wrong, and how to get a quote you can trust."
-answer: "Custom enterprise software typically costs between $10,000 and $100,000+ for a first phase, depending on scope. The six factors that move the number most are integration count, compliance requirements, user roles, data migration, the quality of existing documentation, and how clearly the business outcome is defined before work starts."
+answer: "Custom software is priced by scope rather than from a list price. The six factors that move the number most are the number of systems it must integrate with, compliance requirements, how many distinct user roles it serves, data migration, how well the existing process is documented, and how clearly the business outcome is defined before work starts."
 published: 2026-07-14
-service: enterprise-software-development
+service: custom-software-development
 readingTime: 9
 faqs:
-  - q: "How much does custom enterprise software cost?"
-    a: "A first phase typically runs from $10,000 for a focused internal tool to $100,000+ for a multi-integration platform with compliance requirements. The largest cost drivers are the number of systems it must integrate with, regulatory constraints, and how many distinct user roles the software must serve."
+  - q: "How much does custom software cost?"
+    a: "There is no useful single answer, because the same request can describe a three-week build or a nine-month programme. Cost is driven by the number of systems it must integrate with, regulatory constraints, and how many distinct user roles the software must serve. Any serious vendor should scope and fix-price a first phase before you commit to the rest."
   - q: "Why do software estimates vary so much between vendors?"
     a: "Usually because they are estimating different things. A low quote often excludes integration work, data migration, testing, deployment, and post-launch support. Ask every vendor to state explicitly what is out of scope — the differences usually live there rather than in the day rate."
   - q: "How can we reduce the cost of a custom software project?"
@@ -18,20 +18,20 @@ faqs:
 
 Nobody in this industry publishes pricing, which means every buyer walks into the conversation guessing. That is bad for buyers, and honestly it is bad for us too — half the calls we take are with people whose budget and expectations were never in the same room.
 
-So here is a straight answer, and then the part that actually matters: what moves the number.
+We do not publish a price list either, and it is worth being straight about why. The same sentence — "we need a customer portal" — describes a three-week build and a nine-month programme. A number written before anyone has looked at your systems is a guess wearing a suit, and you would be right not to trust it.
 
-## The range
+What we can do is tell you exactly what moves the number. Once you know that, you can read any quote — ours or anyone else's — and understand why it says what it says.
 
-For the work we do, a first phase generally lands between **$10,000 and $100,000+**.
+## What you are actually buying
 
-That is a wide range because it spans genuinely different things:
+Custom software spreads across roughly four tiers, and the distance between them is scope, not quality:
 
-- **$10,000–$25,000** — a focused internal tool, one integration, a single user role. Replacing a spreadsheet that has become load-bearing. An automation that removes a recurring manual process.
-- **$25,000–$50,000** — a real internal platform or customer-facing portal. Several integrations, a few user roles, meaningful business logic. This is where most engagements land.
-- **$50,000–$100,000** — a multi-integration platform, several distinct user types, compliance requirements, migration from an existing system.
-- **$100,000+** — a full SaaS product, a regulated domain, or a phased programme rather than a single build.
+- **A small scoped build** — one automation, one integration, one workflow. Replacing a spreadsheet that has quietly become load-bearing.
+- **A focused internal tool** — a single user role, a couple of integrations, real business logic underneath.
+- **A platform** — several integrations, multiple distinct user types, migration from an existing system. This is where most engagements land.
+- **A full product** — a SaaS build, a regulated domain, or a phased programme rather than a single project.
 
-If your budget is below $10,000, we are not the right partner, and we will tell you that on the first call rather than the fourth.
+There is no minimum size of client here — only a minimum size of problem. If what you want is smaller than the first tier, an off-the-shelf tool is probably the better answer, and we will tell you that on the first call rather than the fourth.
 
 ## The six things that actually drive the number
 
@@ -85,7 +85,7 @@ Three patterns, and you can spot all of them in a quote.
 
 **The number excludes the parts nobody enjoys.** Testing, deployment, error handling, monitoring, documentation, and the two weeks after launch when real users find the things nobody anticipated. A quote that omits these is not cheaper; it is incomplete, and you will pay the difference later at a worse moment.
 
-**Scope grows quietly.** Not through a formal change request, but through a series of small reasonable additions in weekly calls. This is the most common way a $40,000 project becomes a $90,000 one, and it happens by consent rather than by ambush.
+**Scope grows quietly.** Not through a formal change request, but through a series of small reasonable additions in weekly calls. This is the most common way a project quietly doubles in cost, and it happens by consent rather than by ambush.
 
 **Cheap becomes expensive.** The lowest bid frequently wins the project and loses the money, because it was priced on the assumption that everything goes well. Ask any vendor what happens to the price when it does not.
 
@@ -109,4 +109,4 @@ We say so when it is true. It costs us the engagement and it earns a client who 
 
 If you want a real number for something specific, [tell us the outcome you need](/contact/) and we will scope it properly — or tell you honestly that you should not build it.
 
-More on how we approach [enterprise software development](/services/enterprise-software-development/).
+More on how we approach [custom software development](/services/custom-software-development/).

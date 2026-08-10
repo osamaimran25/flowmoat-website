@@ -1,5 +1,5 @@
 ---
-title: "Rebuild or modernize? A decision framework for legacy enterprise systems"
+title: "Rebuild or modernize? A decision framework for legacy systems"
 metaTitle: "Rebuild or modernize a legacy system?"
 description: "A rebuild is a far bigger bet than a modernization. Here is the framework we use to decide which a legacy system actually needs, in four questions."
 excerpt: "Everyone wants to replace the system everyone complains about. Usually that is the most expensive way to solve the problem. Four questions that decide it."

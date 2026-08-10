@@ -59,6 +59,10 @@ for (const file of files) {
   const url = toUrlPath(file);
   const $ = cheerio.load(await readFile(file, "utf8"));
 
+  // Astro emits meta-refresh stubs for `redirects`. They are not pages anyone
+  // should land on, so they are exempt from every rule below.
+  if ($('head meta[http-equiv="refresh"]').length) continue;
+
   const title = $("head title").text().trim();
   const description = $('head meta[name="description"]').attr("content")?.trim() ?? "";
   const canonical = $('head link[rel="canonical"]').attr("href")?.trim() ?? "";

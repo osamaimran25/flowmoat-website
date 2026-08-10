@@ -7,23 +7,23 @@ import { faqSchema, serviceSchema, breadcrumbSchema } from "../../lib/schema.js"
 const path = "/services/";
 const title = "AI Engineering & Software Development Services | Flowmoat";
 const description =
-  "Flowmoat's four services: AI engineering, AI modernization, enterprise software development, and workflow automation for growing enterprises.";
+  "Flowmoat's four services: AI engineering, AI modernization, custom software development, and workflow automation for businesses of every size.";
 
 const definition =
-  "Flowmoat offers four services: AI engineering (production AI agents, copilots, and retrieval systems), AI modernization (adding AI to existing platforms without a rebuild), enterprise software development (custom SaaS, portals, and internal systems), and workflow automation (process automation and API integration).";
+  "Flowmoat offers four services: AI engineering (production AI agents, copilots, and retrieval systems), AI modernization (adding AI to existing platforms without a rebuild), custom software development (SaaS, portals, and internal systems), and workflow automation (process automation and API integration).";
 
 const faqs = [
   {
     q: "Which Flowmoat service do we need?",
-    a: "If you want AI capability you do not have today, start with AI engineering. If you want AI inside a system you already run, start with AI modernization. If a process runs on manual handoffs, start with workflow automation. If you need a platform that does not exist yet, start with enterprise software development.",
+    a: "If you want AI capability you do not have today, start with AI engineering. If you want AI inside a system you already run, start with AI modernization. If a process runs on manual handoffs, start with workflow automation. If you need a platform that does not exist yet, start with custom software development.",
   },
   {
     q: "Can we combine more than one service?",
-    a: "Most engagements do. A workflow automation project often surfaces the need for a custom platform, and an enterprise software build usually includes AI capability from the start. We scope them as one engagement rather than separate contracts.",
+    a: "Most engagements do. A workflow automation project often surfaces the need for a custom platform, and a software build usually includes AI capability from the start. We scope them as one engagement rather than separate contracts.",
   },
   {
     q: "What size of company does Flowmoat work with?",
-    a: "Organizations of roughly 50 to 1,000 employees with real operational or software complexity. Typical engagements range from $10,000 to $100,000+.",
+    a: "Every size — solo founders, small businesses, growing teams, and large organizations. Scope is what changes, not the standard of the work. We can start small and phase the rest.",
   },
   {
     q: "Which countries does Flowmoat serve?",
@@ -54,7 +54,7 @@ const schema = [
 ];
 ---
 
-<BaseLayout {title} {description} {schema} {path} ogImage="/og/services.jpg" ogImageAlt="Flowmoat services — AI engineering, modernization, enterprise software, automation">
+<BaseLayout {title} {description} {schema} {path} ogImage="/og/services.jpg" ogImageAlt="Flowmoat services — AI engineering, modernization, custom software, automation">
   <section class="section page-hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container narrow">
@@ -68,13 +68,13 @@ const schema = [
       <h1>Four capabilities. One accountable engineering partner.</h1>
       <p class="hero-subheadline">
         From introducing AI to building a new operational platform, we combine product thinking and
-        enterprise engineering in one focused engagement.
+        engineering discipline in one focused engagement.
       </p>
 
       <p class="hero-definition">{definition}</p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+        <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
         <a class="btn btn-secondary" href="/work/">See our work</a>
       </div>
     </div>
@@ -126,7 +126,7 @@ const schema = [
     <div class="container narrow">
       <div class="section-heading centered reveal">
         <p class="eyebrow">FAQ</p>
-        <h2>Questions enterprise teams ask before starting.</h2>
+        <h2>Questions people ask before starting.</h2>
       </div>
       <Faq {faqs} />
     </div>
@@ -136,7 +136,7 @@ const schema = [
     <div class="container cta-panel reveal">
       <p class="eyebrow">Start with the right roadmap</p>
       <h2>Not sure which one you need? That is what the first call is for.</h2>
-      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+      <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
     </div>
   </section>
 </BaseLayout>

@@ -19,7 +19,7 @@ const blog = defineCollection({
     service: z.enum([
       "ai-engineering",
       "ai-modernization",
-      "enterprise-software-development",
+      "custom-software-development",
       "workflow-automation",
     ]),
     readingTime: z.number(),

@@ -219,7 +219,7 @@ function setupLiveWorkflow() {
   ];
 
   const events = [
-    "Agent retrieved enterprise context",
+    "Agent retrieved business context",
     "RAG search returned verified source data",
     "API workflow executed successfully",
     "AI insight delivered to dashboard",
@@ -485,53 +485,53 @@ function setupAiAssistant() {
   const knowledge = [
     {
       keywords: ["service", "services", "offer", "do you do", "what do you", "kya karte", "kaam"],
-      reply: `We help growing companies modernize operations through AI engineering, AI modernization, enterprise software development, and workflow automation. Which business outcome are you working toward?`,
-      quick: ["AI engineering", "Modernization", "Enterprise software", "Strategy call"],
+      reply: `We help businesses of every size — from solo founders to large teams — through AI engineering, AI modernization, custom software development, and workflow automation. Which business outcome are you working toward?`,
+      quick: ["AI engineering", "Modernization", "Custom software", "Free call"],
     },
     {
       keywords: ["agent", "copilot", "chatbot", "rag", "assistant", "llm", "gpt", "claude"],
       reply: `Yes — we build AI agents, copilots, RAG search and multi-agent systems that plug into your tools and act on real data (not just chat). Want to tell us what it should automate?`,
-      quick: ["Strategy call", "Enterprise software", "Automation"],
+      quick: ["Free call", "Custom software", "Automation"],
     },
     {
       keywords: ["automat", "workflow", "n8n", "zapier", "make", "process", "integrate", "integration"],
       reply: `We automate the repetitive workflows — lead handling, follow-ups, data entry, reporting, approvals — using n8n, Make, Zapier or custom code wired into your stack. What's eating most of your team's time?`,
-      quick: ["Strategy call", "AI engineering", "Modernization"],
+      quick: ["Free call", "AI engineering", "Modernization"],
     },
     {
       keywords: ["web", "website", "app", "mobile", "saas", "platform", "dashboard", "portal", "software"],
       reply: `We build custom SaaS products, internal platforms, business portals, dashboards, and back-office systems—and can introduce AI into software you already run. What are you trying to improve or build?`,
-      quick: ["Strategy call", "AI engineering", "Modernization"],
+      quick: ["Free call", "AI engineering", "Modernization"],
     },
     {
       keywords: ["price", "pricing", "cost", "budget", "rate", "charge", "kitna", "paisa", "quote", "how much"],
-      reply: `Every engagement is scoped around the business outcome, system complexity, integrations, and delivery requirements. Share a short project brief and our team can recommend the right next step.`,
-      quick: ["Discuss my project", "Strategy call", "Services"],
+      reply: `Every project is priced around its actual scope — integrations, user roles, and delivery requirements move the number more than anything else. Share a short brief and we can price the first phase properly, small or large.`,
+      quick: ["Discuss my project", "Free call", "Services"],
     },
     {
       keywords: ["time", "long", "timeline", "deadline", "how fast", "kitne din", "duration"],
-      reply: `Timelines depend on scope, data readiness, integrations, governance, and testing requirements. We normally define a phased roadmap during discovery. Shall I take your project details?`,
-      quick: ["Discuss my project", "Strategy call"],
+      reply: `Small builds ship in 2 to 4 weeks. Larger systems take 6 to 12. We define a phased plan during discovery so you can fund one phase at a time. Shall I take your project details?`,
+      quick: ["Discuss my project", "Free call"],
     },
     {
       keywords: ["secure", "security", "data", "privacy", "compliance", "safe"],
       reply: `Security is designed in from day one — least-privilege access, careful data handling, auditability and your compliance needs. Happy to go deeper on a call.`,
-      quick: ["Strategy call", "Services"],
+      quick: ["Free call", "Services"],
     },
     {
       keywords: ["who", "about", "company", "experience", "trust", "kaun"],
-      reply: `${brand} is an enterprise AI engineering company that turns business goals into production-ready software—through strategy, architecture, delivery, integration, and long-term support.`,
-      quick: ["Strategy call", "Services", "Products"],
+      reply: `${brand} is an AI engineering and automation company that turns business goals into production-ready software—through strategy, architecture, delivery, integration, and long-term support.`,
+      quick: ["Free call", "Services", "Products"],
     },
     {
       keywords: ["hi", "hello", "hey", "salam", "assalam", "hola", "yo"],
-      reply: `Hi! 👋 I'm the ${brand} AI assistant. I can explain our services, products, delivery approach, or help you discuss an AI roadmap. What brings you here?`,
-      quick: ["Services", "Products", "AI engineering", "Strategy call"],
+      reply: `Hi! 👋 I'm the ${brand} AI assistant. I can explain our services, products, delivery approach, or help you scope a project. What brings you here?`,
+      quick: ["Services", "Products", "AI engineering", "Free call"],
     },
     {
       keywords: ["thank", "thanks", "shukria", "great", "ok", "cool"],
       reply: `Anytime! If you'd like, I can take a few details and a human will follow up by email.`,
-      quick: ["Strategy call", "Discuss my project"],
+      quick: ["Free call", "Discuss my project"],
     },
   ];
 
@@ -539,7 +539,7 @@ function setupAiAssistant() {
 
   const fallbackReply = {
     reply: `Good question — I'll make sure a specialist covers that. Meanwhile I can take a few quick details so our team can reply by email. Want to do that?`,
-    quick: ["Strategy call", "Services", "Products"],
+    quick: ["Free call", "Services", "Products"],
   };
 
   function scrollToEnd() {
@@ -630,7 +630,7 @@ function setupAiAssistant() {
       state.started = true;
       botSay(
         `Hi! 👋 I'm the ${brand} AI assistant. Ask me about our services, products, or delivery approach—or discuss the AI roadmap you are working on.`,
-        ["Services", "Products", "AI engineering", "Strategy call"],
+        ["Services", "Products", "AI engineering", "Free call"],
         300
       );
     }

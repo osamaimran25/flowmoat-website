@@ -4,8 +4,8 @@ export const SITE = {
   email: "osamaimran25@gmail.com",
   linkedin: "https://www.linkedin.com/company/flowmoat/",
   description:
-    "Flowmoat is an enterprise AI engineering company that builds AI-powered software, modernizes legacy systems, and automates business workflows for companies with 50 to 1,000 employees.",
-  slogan: "Enterprise AI engineering for companies that need more than code delivery.",
+    "Flowmoat is an AI engineering and automation company that builds AI-powered software, modernizes existing systems, and automates business workflows for companies of every size — from small teams to large organizations.",
+  slogan: "AI engineering and automation for businesses of every size.",
   countries: ["United States", "Canada", "United Kingdom", "Australia", "United Arab Emirates"],
 };
 
@@ -16,4 +16,4 @@ export const NAV = [
   { label: "About", href: "/about/" },
 ];
 
-export const NAV_CTA = { label: "Discuss Your AI Roadmap", href: "/contact/" };
+export const NAV_CTA = { label: "Book a Free Call", href: "/contact/" };
