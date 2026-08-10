@@ -22,7 +22,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Must match deploy.yml. Astro 7 refuses anything below 22.12.
+          node-version: 22
           cache: npm
 
       - run: npm ci
