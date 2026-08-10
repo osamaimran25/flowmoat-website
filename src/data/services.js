@@ -7,14 +7,14 @@ export const SERVICES = [
     name: "AI Engineering",
     cardSummary:
       "Build intelligent systems that help teams find answers, make decisions, and execute complex work with the right human oversight.",
-    title: "Enterprise AI Engineering Services | Flowmoat",
+    title: "AI Engineering & AI Agent Development | Flowmoat",
     metaDescription:
-      "Flowmoat builds production AI systems for enterprises — AI agents, copilots, RAG search, and document intelligence. Serving the US, UK, Canada, Australia, and the UAE. Book a strategy call.",
-    h1: "Enterprise AI engineering that ships to production.",
+      "Flowmoat builds production AI systems for businesses of every size — AI agents, copilots, RAG search, and document intelligence. Book a free call.",
+    h1: "AI engineering that ships to production.",
     eyebrow: "AI Engineering",
     // AEO answer block: self-contained, 40–60 words, citable without context.
     definition:
-      "Enterprise AI engineering is the practice of designing, building, and operating production AI systems inside a business — not prototypes. Flowmoat builds AI agents, copilots, retrieval systems, and document intelligence that connect to real company data, run under human oversight, and hold up to enterprise security, audit, and reliability requirements.",
+      "AI engineering is the practice of designing, building, and operating production AI systems inside a business — not prototypes. Flowmoat builds AI agents, copilots, retrieval systems, and document intelligence that connect to real company data, run under human oversight, and hold up to real security, audit, and reliability requirements.",
     intro:
       "Most AI projects die between the demo and the deployment. A pilot impresses the room, then stalls on data access, evaluation, permissions, cost, and the question nobody wants to own: what happens when it is wrong? We engineer for that question from the first week.",
     problemTitle: "Why AI pilots stall",
@@ -22,7 +22,7 @@ export const SERVICES = [
       "The prototype works on clean sample data and collapses on the real thing.",
       "Nobody can measure whether the output is good, so nobody will sign off on it.",
       "The model can see documents the requesting user is not allowed to see.",
-      "Token cost at pilot scale is fine; at company scale it is a budget line nobody approved.",
+      "Token cost at pilot scale is fine; at real usage it is a bill nobody planned for.",
       "There is no fallback path when the model is unavailable, slow, or confidently wrong.",
     ],
     offeringsTitle: "What we build",
@@ -32,7 +32,7 @@ export const SERVICES = [
         body: "Assistants that execute real work inside your systems — draft, retrieve, classify, route, and act — with explicit approval gates on anything consequential.",
       },
       {
-        title: "Retrieval and enterprise search (RAG)",
+        title: "Retrieval and internal search (RAG)",
         body: "Grounded answers over your own contracts, tickets, wikis, and records, with permission-aware retrieval so the model never surfaces what the user cannot already access.",
       },
       {
@@ -54,9 +54,9 @@ export const SERVICES = [
     ],
     whoForTitle: "Who this is for",
     whoFor: [
-      "Companies with 50–1,000 employees and real operational complexity",
+      "Any business — from a five-person team to a thousand — with work AI could take on",
       "Teams sitting on years of documents, tickets, or records nobody can search",
-      "Leaders who need AI to survive a security review, not just a demo",
+      "Founders and leaders who need AI that actually works, not just a demo",
     ],
     faqs: [
       {
@@ -64,8 +64,8 @@ export const SERVICES = [
         a: "A consultant produces a strategy and a recommendation. AI engineering produces a running system. Flowmoat writes the code, connects the data, builds the evaluation harness, and hands over software your team can operate.",
       },
       {
-        q: "How long does an enterprise AI engineering project take?",
-        a: "Most engagements deliver a working system in 6 to 12 weeks. We ship in focused iterations with regular demonstrations rather than disappearing for a quarter and returning with a finished product.",
+        q: "How long does an AI engineering project take?",
+        a: "Small, tightly scoped builds ship in 2 to 4 weeks. Larger systems deliver a working version in 6 to 12 weeks. We ship in focused iterations with regular demonstrations rather than disappearing for a quarter and returning with a finished product.",
       },
       {
         q: "Which AI models does Flowmoat build on?",
@@ -87,7 +87,7 @@ export const SERVICES = [
       "Add practical AI capabilities to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without forcing a disruptive rebuild.",
     title: "AI Modernization Services for Legacy Systems | Flowmoat",
     metaDescription:
-      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a rebuild. AI modernization for the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a disruptive rebuild or migration.",
     h1: "Add AI to the systems you already run.",
     eyebrow: "AI Modernization",
     definition:
@@ -152,22 +152,22 @@ export const SERVICES = [
         a: "We work alongside your system rather than inside it wherever possible — reading data, not rewriting it. Anything that does touch the core is staged, reviewed, and reversible.",
       },
     ],
-    related: ["ai-engineering", "enterprise-software-development"],
+    related: ["ai-engineering", "custom-software-development"],
   },
 
   {
-    slug: "enterprise-software-development",
-    icon: "ENT",
-    name: "Enterprise Software Development",
+    slug: "custom-software-development",
+    icon: "SW",
+    name: "Custom Software Development",
     cardSummary:
       "Design and build custom SaaS, internal platforms, business portals, dashboards, back-office systems, and administration software.",
-    title: "Enterprise Software Development Company | Flowmoat",
+    title: "Custom Software Development Company | Flowmoat",
     metaDescription:
-      "Flowmoat designs and builds custom enterprise software — SaaS platforms, internal tools, business portals, and back-office systems for companies in the US, UK, Canada, Australia, and the UAE.",
-    h1: "Custom enterprise software, built by a team that ships its own products.",
-    eyebrow: "Enterprise Software Development",
+      "Flowmoat designs and builds custom software — SaaS platforms, internal tools, business portals, and back-office systems for any size of company.",
+    h1: "Custom software, built by a team that ships its own products.",
+    eyebrow: "Custom Software Development",
     definition:
-      "Enterprise software development is the design and delivery of custom software for a specific organisation's operations — internal platforms, business portals, back-office systems, and SaaS products. Flowmoat builds these systems end to end, from product definition through architecture, delivery, and rollout, for companies of 50 to 1,000 employees.",
+      "Custom software development is the design and delivery of software built for one specific business — internal platforms, business portals, back-office systems, and SaaS products. Flowmoat builds these systems end to end, from product definition through architecture, delivery, and rollout, for companies from a handful of people to a few thousand.",
     intro:
       "Off-the-shelf software makes your business run like everyone else's. Sometimes that is exactly right. But when the thing you do differently is the thing you compete on, encoding it in a spreadsheet and three SaaS subscriptions is a tax you pay every day.",
     problemTitle: "When custom software is the right call",
@@ -206,8 +206,8 @@ export const SERVICES = [
     ],
     whoForTitle: "Who this is for",
     whoFor: [
-      "Companies whose core operations have outgrown spreadsheets and generic SaaS",
-      "Founders and CTOs who need a delivery partner, not a staffing agency",
+      "Small businesses and large ones whose operations have outgrown spreadsheets and generic SaaS",
+      "Founders, owners, and CTOs who need a delivery partner, not a staffing agency",
       "Teams with a clear business outcome and no internal capacity to build for it",
     ],
     faqs: [
@@ -220,8 +220,8 @@ export const SERVICES = [
         a: "Yes. You own the source code, the repositories, and the infrastructure outright. We document the architecture so another team could take it over without us.",
       },
       {
-        q: "What does an enterprise software project cost?",
-        a: "Most engagements fall between $10,000 and $100,000+, depending on scope, integrations, and compliance requirements. We scope and price the first phase before you commit to the rest.",
+        q: "What does a custom software project cost?",
+        a: "It depends entirely on scope — a small, tightly scoped first build and a full platform with multiple integrations are different orders of magnitude. We scope and price the first phase before you commit to the rest, so the entry point matches your budget rather than ours. Tell us the outcome you need and we will quote it properly.",
       },
       {
         q: "How do you avoid the classic agency problem of delivering the wrong thing?",
@@ -239,7 +239,7 @@ export const SERVICES = [
       "Connect people, systems, and data through business process automation, API integrations, n8n, Make, and custom Python workflows.",
     title: "Business Workflow Automation Services | Flowmoat",
     metaDescription:
-      "Flowmoat automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering for companies in the US, UK, Canada, Australia, and the UAE.",
+      "Flowmoat automates business processes end to end — API integrations, approval flows, data sync, and custom workflow engineering.",
     h1: "Automate the work your team should not be doing by hand.",
     eyebrow: "Workflow Automation",
     definition:
@@ -305,7 +305,7 @@ export const SERVICES = [
         a: "Every workflow we build has explicit error handling, retries, and alerting. A failure surfaces immediately to a named owner rather than quietly dropping records until someone notices months later.",
       },
     ],
-    related: ["ai-engineering", "enterprise-software-development"],
+    related: ["ai-engineering", "custom-software-development"],
   },
 ];
 

@@ -63,10 +63,11 @@ const schema = [
 ---
 
 <BaseLayout
-  title={`${d.title} | Flowmoat`}
+  title={`${d.metaTitle ?? d.title} | Flowmoat`}
   description={d.description}
   {schema}
   {path}
+  ogType="article"
   ogImage={`/og/blog-${post.id}.jpg`}
   ogImageAlt={d.title}
 >
@@ -160,7 +161,7 @@ const schema = [
     <div class="container cta-panel reveal">
       <p class="eyebrow">Start with the right roadmap</p>
       <h2>Facing this decision? We will give you a straight answer.</h2>
-      <a class="btn btn-primary" href="/contact/">Book a Strategy Call</a>
+      <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
     </div>
   </section>
 </BaseLayout>

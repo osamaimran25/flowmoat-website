@@ -9,7 +9,9 @@ const {
   // Path with leading and trailing slash, e.g. "/services/ai-engineering/".
   path,
   ogImage = "/og-image.jpg",
-  ogImageAlt = "Flowmoat — enterprise AI engineering, software modernization, and workflow automation",
+  ogImageAlt = "Flowmoat — AI engineering, software modernization, and workflow automation",
+  // "article" on blog posts, "website" everywhere else.
+  ogType = "website",
   // Page-specific JSON-LD nodes appended to the shared @graph.
   schema = [],
   noindex = false,
@@ -31,9 +33,9 @@ const organization = {
   sameAs: [SITE.linkedin],
   areaServed: SITE.countries.map((name) => ({ "@type": "Country", name })),
   knowsAbout: [
-    "Enterprise AI Engineering",
+    "AI Engineering",
     "AI Modernization",
-    "Enterprise Software Development",
+    "Custom Software Development",
     "AI Agents",
     "Workflow Automation",
     "Business Process Automation",
@@ -111,7 +113,7 @@ const ASSET_VERSION = "20260714-8";
     <link rel="canonical" href={canonical} />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />

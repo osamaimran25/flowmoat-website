@@ -1,0 +1,32 @@
+name: SEO audit
+
+# Gate only. Runs on pull requests to main; never publishes anything.
+# Deployment stays entirely in deploy.yml.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: Build and audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Must match deploy.yml. Astro 7 refuses anything below 22.12.
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build and run SEO audit
+        run: npm run seo:audit

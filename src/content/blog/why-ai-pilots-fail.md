@@ -1,25 +1,25 @@
 ---
-title: "Why enterprise AI pilots never reach production"
-description: "The demo works. Six months later it still has not shipped. Five failure modes that kill enterprise AI pilots between the prototype and production — and what to build instead."
+title: "Why most AI pilots never reach production"
+description: "The demo works. Six months later it still has not shipped. Five failure modes that kill AI pilots before production — and what to build instead."
 excerpt: "The pilot impressed everyone in the room. Then it stalled for six months. The reasons are boringly consistent, and all five are avoidable."
-answer: "Enterprise AI pilots fail to reach production for five recurring reasons: the prototype was built on clean sample data, there is no way to measure whether the output is good, the model can access data the requesting user cannot, token cost is unmodelled at real scale, and there is no fallback when the system is wrong or unavailable."
+answer: "AI pilots fail to reach production for five recurring reasons: the prototype was built on clean sample data, there is no way to measure whether the output is good, the model can access data the requesting user cannot, token cost is unmodelled at real scale, and there is no fallback when the system is wrong or unavailable."
 published: 2026-07-14
 service: ai-engineering
 readingTime: 9
 faqs:
-  - q: "Why do most enterprise AI projects fail?"
+  - q: "Why do most AI projects fail?"
     a: "Most fail between the prototype and production, not at the modelling stage. The common causes are unrepresentative test data, no evaluation method, permission leakage through the retrieval layer, unmodelled cost at scale, and no fallback path when the system is wrong or unavailable."
   - q: "How do you measure whether an AI system is good enough to launch?"
     a: "Build an evaluation set of real cases with known correct answers before you build the system, then score every change against it. Without a baseline number, launch decisions come down to opinion, and nobody will sign off on an opinion."
-  - q: "How long should an enterprise AI project take?"
-    a: "A well-scoped enterprise AI system should reach production in 6 to 12 weeks. Projects that run substantially longer are usually not blocked on the model — they are blocked on data access, evaluation, or permissions, which are the things a pilot skips."
+  - q: "How long should an AI project take?"
+    a: "A well-scoped AI system should reach production in 6 to 12 weeks, and a small one in 2 to 4. Projects that run substantially longer are usually not blocked on the model — they are blocked on data access, evaluation, or permissions, which are the things a pilot skips."
 ---
 
 The pilot goes well. Someone builds a prototype in three weeks, demos it to the leadership team, and the room is genuinely impressed. It reads the documents. It answers the questions. Everyone agrees this is the future.
 
 Then six months pass and it has not shipped.
 
-This is the single most common shape of an enterprise AI project, and it is not a modelling problem. The model was never the hard part. The hard part is everything a prototype is allowed to skip — and a prototype is allowed to skip almost everything.
+This is the single most common shape of an AI project, and it is not a modelling problem. The model was never the hard part. The hard part is everything a prototype is allowed to skip — and a prototype is allowed to skip almost everything.
 
 Here are the five things that kill it, in roughly the order they surface.
 
@@ -83,7 +83,7 @@ None of which is an argument against prototyping. It is an argument for being ho
 
 The projects that ship look different from week one. They start with the evaluation set, not the model. They test on the real corpus, not a sample. They build permission-aware retrieval before they build anything on top of it. They know the cost per task before scaling. And they have a written answer to what happens when the system is wrong.
 
-Done that way, a real enterprise AI system reaches production in six to twelve weeks — not because the team is faster, but because they are not spending months rediscovering the five things above.
+Done that way, a real AI system reaches production in six to twelve weeks — not because the team is faster, but because they are not spending months rediscovering the five things above.
 
 This is what [AI engineering](/services/ai-engineering/) means as a discipline, as distinct from AI experimentation. Both have their place. Only one of them ships.
 

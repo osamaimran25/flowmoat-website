@@ -1,6 +1,7 @@
 ---
 title: "AI agents vs workflow automation: when you actually need each"
-description: "Most processes labelled 'AI use cases' are automation problems with an AI step in the middle. The distinction matters, because building the wrong one is expensive and slow."
+metaTitle: "AI agents vs workflow automation"
+description: "Most processes labelled 'AI use cases' are automation problems with an AI step in the middle. Building the wrong one is expensive and slow."
 excerpt: "If a process has fixed rules, an AI agent is the expensive way to run it. The test is simple: does any step require judgement?"
 answer: "Use workflow automation when every step of a process follows fixed rules — automation is cheaper, faster, and fully predictable. Use an AI agent only when a step requires judgement that cannot be expressed as rules, such as interpreting free text, classifying ambiguous cases, or deciding between options. Most real systems combine both."
 published: 2026-07-14

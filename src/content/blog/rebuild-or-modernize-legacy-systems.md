@@ -1,6 +1,7 @@
 ---
-title: "Rebuild or modernize? A decision framework for legacy enterprise systems"
-description: "A rebuild is an 18-month bet. Modernization is a 10-week one. Here is the framework we use to decide which a legacy system actually needs — and the four questions that settle it."
+title: "Rebuild or modernize? A decision framework for legacy systems"
+metaTitle: "Rebuild or modernize a legacy system?"
+description: "A rebuild is a far bigger bet than a modernization. Here is the framework we use to decide which a legacy system actually needs, in four questions."
 excerpt: "Everyone wants to replace the system everyone complains about. Usually that is the most expensive way to solve the problem. Four questions that decide it."
 answer: "Rebuild a legacy system only when its data model can no longer represent the business, when it blocks a revenue-critical capability, or when it can no longer be secured. In every other case, modernization — layering new capability onto the existing system through its data and APIs — delivers the same business outcome faster and at lower risk."
 published: 2026-07-14

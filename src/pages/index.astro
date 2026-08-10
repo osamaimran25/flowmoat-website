@@ -5,14 +5,14 @@ import ContactForm from "../components/ContactForm.astro";
 import { SERVICES } from "../data/services.js";
 import { faqSchema, serviceSchema, PRODUCTS } from "../lib/schema.js";
 
-const title = "Enterprise AI Engineering Company | Flowmoat";
+const title = "AI Software & Automation Company | Flowmoat";
 const description =
-  "Flowmoat is an enterprise AI engineering company. We build AI-powered software, modernize legacy systems, and automate workflows for companies in the US, UK, Canada, Australia, and the UAE. Book a strategy call.";
+  "Flowmoat builds AI-powered software, modernizes existing systems, and automates workflows for businesses of every size in the US, UK, Canada, and beyond.";
 
 const faqs = [
   {
     q: "What does Flowmoat build?",
-    a: "We build AI-powered enterprise software, modernize existing systems, develop custom SaaS and internal platforms, and automate operational workflows.",
+    a: "We build AI-powered business software, modernize existing systems, develop custom SaaS and internal platforms, and automate operational workflows.",
   },
   {
     q: "Can you add AI to our existing software?",
@@ -20,11 +20,15 @@ const faqs = [
   },
   {
     q: "Do you work on new products or existing systems?",
-    a: "Both. We take new software from strategy to production and help established organizations modernize systems already central to their operations.",
+    a: "Both. We take new software from strategy to production and help established businesses modernize systems already central to their operations.",
   },
   {
     q: "How do engagements begin?",
-    a: "Most engagements begin with strategy and discovery. We clarify the business outcome, map the current environment, identify the highest-value opportunities, and define a phased delivery roadmap.",
+    a: "Most engagements begin with a free call. We clarify the business outcome, map the current environment, identify the highest-value opportunities, and define a phased plan you can fund one phase at a time.",
+  },
+  {
+    q: "Do you work with small businesses and startups?",
+    a: "Yes. We work with solo founders, small teams, growing companies, and large organizations. The scope changes with the size of the business; the way we work does not. We can start with one small, tightly scoped project and grow from there.",
   },
   {
     q: "Can Flowmoat support the software after launch?",
@@ -32,7 +36,7 @@ const faqs = [
   },
   {
     q: "Who does Flowmoat work with?",
-    a: "We work best with founders, CEOs, CTOs, COOs, product leaders, and operations leaders at growing companies with meaningful software or workflow complexity.",
+    a: "Business owners, founders, CEOs, CTOs, COOs, product leaders, and operations leaders — at companies of any size that have real software or workflow problems worth solving.",
   },
 ];
 
@@ -43,31 +47,31 @@ const schema = [
 ];
 ---
 
-<BaseLayout {title} {description} {schema} path="/" ogImage="/og/home.jpg" ogImageAlt="Flowmoat — enterprise AI engineering that modernizes how your business runs">
+<BaseLayout {title} {description} {schema} path="/" ogImage="/og/home.jpg" ogImageAlt="Flowmoat — AI engineering and automation that modernizes how your business runs">
   <section class="hero section" id="home">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Enterprise AI engineering company</p>
-        <h1>Enterprise AI engineering that modernizes how your business runs.</h1>
+        <p class="eyebrow">AI software and automation company</p>
+        <h1>AI engineering that modernizes how your business runs.</h1>
         <p class="hero-subheadline">
-          Flowmoat helps growing companies reduce manual work, modernize critical systems,
-          and launch intelligent products through AI engineering, enterprise software, and
-          workflow automation.
+          Flowmoat helps businesses of every size — from small teams to large organizations —
+          reduce manual work, modernize critical systems, and launch intelligent products through
+          AI engineering, custom software, and workflow automation.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary js-contact-cta" href="#contact">Book a Strategy Call</a>
+          <a class="btn btn-primary js-contact-cta" href="#contact">Book a Free Call</a>
           <a class="btn btn-secondary" href="#use-cases">Explore Our Work</a>
         </div>
         <p class="hero-definition">
-          Flowmoat is an enterprise AI engineering company serving organizations of 50–1,000 employees
-          across the United States, Canada, the United Kingdom, Australia, and the UAE. We build
-          AI-powered software, modernize legacy systems, and automate workflows — and we build our own
-          products, RegRely and GreenOH.
+          Flowmoat is an AI engineering and automation company working with businesses of every size —
+          from solo founders and small teams to established organizations — across the United States,
+          Canada, the United Kingdom, Australia, and the UAE. We build AI-powered software, modernize
+          existing systems, and automate workflows — and we build our own products, RegRely and GreenOH.
         </p>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Live enterprise AI operating system canvas">
+      <div class="hero-visual reveal" aria-label="Live AI operating system canvas">
         <div class="workflow-canvas" data-workflow-canvas>
           <div class="os-readout os-readout-left" aria-hidden="true">
             <span>ORCHESTRATION</span>
@@ -80,7 +84,7 @@ const schema = [
           <div class="canvas-toolbar">
             <div>
               <span class="status-dot"></span>
-              <span>Enterprise AI system running</span>
+              <span>AI system running</span>
             </div>
             <div class="run-pill">Production-ready architecture</div>
           </div>
@@ -175,13 +179,13 @@ const schema = [
               </div>
               <div>
                 <strong>Scalable</strong>
-                <span>enterprise architecture</span>
+                <span>architecture that grows</span>
               </div>
             </div>
             <div class="live-log" aria-live="polite">
               <div class="log-title">Live event stream</div>
               <ul data-live-log>
-                <li><span>12:04:08</span> Agent retrieved enterprise context</li>
+                <li><span>12:04:08</span> Agent retrieved business context</li>
                 <li><span>12:04:11</span> API workflow executed successfully</li>
                 <li><span>12:04:17</span> AI insight delivered to dashboard</li>
               </ul>
@@ -225,15 +229,15 @@ const schema = [
         <p class="eyebrow">Serious engineering for real operations</p>
         <h2>Turn disconnected tools and aging software into intelligent business systems.</h2>
         <p>
-          We partner with founders, technology leaders, and operations teams to make complex
-          workflows easier to run, govern, and scale.
+          We partner with business owners, founders, technology leaders, and operations teams to
+          make complex workflows easier to run, govern, and scale.
         </p>
       </div>
       <div class="solution-list reveal">
         <div><span></span>Reduce delays, repetitive work, and avoidable operational cost</div>
         <div><span></span>Introduce useful AI inside the products and systems you already own</div>
         <div><span></span>Replace fragmented workflows with clear, accountable software</div>
-        <div><span></span>Launch new SaaS and internal platforms with enterprise foundations</div>
+        <div><span></span>Launch new SaaS and internal platforms on solid foundations</div>
         <div><span></span>Scale delivery without adding unnecessary systems or headcount</div>
       </div>
     </div>
@@ -285,7 +289,7 @@ const schema = [
       <div class="section-heading centered reveal">
         <p class="eyebrow">What we build</p>
         <h2>Four capabilities. One accountable engineering partner.</h2>
-        <p>From introducing AI to building a new operational platform, we combine product thinking and enterprise engineering in one focused engagement.</p>
+        <p>From introducing AI to building a new operational platform, we combine product thinking and engineering discipline in one focused engagement.</p>
       </div>
       <div class="services-grid">
         {
@@ -336,7 +340,7 @@ const schema = [
         </article>
         <article class="service-card reveal">
           <div class="service-icon">SCL</div>
-          <p class="eyebrow">Enterprise foundations</p>
+          <p class="eyebrow">Built to last</p>
           <h3>Designed to evolve</h3>
           <p>We apply the same focus on adoption, maintainability, governance, and long-term ownership to every client system we engineer.</p>
         </article>
@@ -348,7 +352,7 @@ const schema = [
     <div class="container">
       <div class="section-heading reveal">
         <p class="eyebrow">Selected work</p>
-        <h2>Enterprise platforms and solutions built around real operational complexity.</h2>
+        <h2>Platforms and solutions built around real operational complexity.</h2>
         <p>Our work spans owned SaaS platforms and tailored business systems designed to make complex operations easier to run, govern, and scale.</p>
       </div>
       <div class="use-case-grid">
@@ -396,7 +400,7 @@ const schema = [
       <div class="section-heading reveal">
         <p class="eyebrow">Engineered for real operations</p>
         <h2>Software your teams can trust, adopt, and grow with.</h2>
-        <p>Enterprise readiness is designed into the architecture, delivery process, and operating model from the start.</p>
+        <p>Reliability and security are designed into the architecture, delivery process, and operating model from the start.</p>
       </div>
       <div class="result-cards">
         <div class="result-card reveal">
@@ -435,8 +439,8 @@ const schema = [
           <p>We think beyond feature lists—considering adoption, maintainability, workflows, ownership, and how software creates value over time.</p>
         </div>
         <div>
-          <h3>Enterprise architecture</h3>
-          <p>We design for security, integration, performance, governance, and change so the system can grow with the organization.</p>
+          <h3>Architecture that scales</h3>
+          <p>We design for security, integration, performance, and change so the system can grow with the business — whether that means ten users or ten thousand.</p>
         </div>
         <div>
           <h3>Long-term partnership</h3>
@@ -450,24 +454,24 @@ const schema = [
     <div class="container">
       <div class="section-heading centered reveal">
         <p class="eyebrow">Who we partner with</p>
-        <h2>Built for growing companies with meaningful operational complexity.</h2>
-        <p>Flowmoat works best with organizations of approximately 50–1,000 employees and a clear owner for the business outcome across North America, the United Kingdom, and Australia.</p>
+        <h2>Built for any business with work that software should be doing.</h2>
+        <p>Flowmoat works with solo founders, small businesses, growing teams, and established organizations. The scope changes with the size of the business — the standard of the work does not.</p>
       </div>
       <div class="three-grid">
         <article class="glass-card reveal">
-          <span class="card-number">LEADERSHIP</span>
-          <h3>Founders, CEOs, and CTOs</h3>
-          <p>Launch or modernize digital products, strengthen architecture, and turn strategic AI initiatives into production systems.</p>
+          <span class="card-number">SMALL BUSINESS</span>
+          <h3>Owners and solo founders</h3>
+          <p>Automate the repetitive work eating your week, and get a first AI or software build shipped for a scoped, fixed price.</p>
         </article>
         <article class="glass-card reveal">
-          <span class="card-number">OPERATIONS</span>
-          <h3>COOs and VP Operations</h3>
-          <p>Reduce manual work, connect fragmented systems, and give teams better visibility and control across critical workflows.</p>
+          <span class="card-number">GROWING TEAMS</span>
+          <h3>Operations and startup teams</h3>
+          <p>Connect fragmented tools, remove manual handoffs, and add software capability without hiring an in-house engineering team.</p>
         </article>
         <article class="glass-card reveal">
-          <span class="card-number">PRODUCT</span>
-          <h3>Product and technology teams</h3>
-          <p>Introduce practical AI into existing customer experiences or build a new SaaS or internal platform with an accountable partner.</p>
+          <span class="card-number">ESTABLISHED</span>
+          <h3>Larger organizations</h3>
+          <p>Modernize systems already central to operations, introduce practical AI into existing products, and build platforms that survive a security review.</p>
         </article>
       </div>
     </div>
@@ -477,7 +481,7 @@ const schema = [
     <div class="container narrow">
       <div class="section-heading centered reveal">
         <p class="eyebrow">FAQ</p>
-        <h2>Questions enterprise teams ask before starting.</h2>
+        <h2>Questions people ask before starting.</h2>
       </div>
       <Faq faqs={faqs} />
     </div>
@@ -487,7 +491,7 @@ const schema = [
     <div class="container cta-panel reveal">
       <p class="eyebrow">Start with the right roadmap</p>
       <h2>Turn your AI or software initiative into a system your business can rely on.</h2>
-      <a class="btn btn-primary js-contact-cta" href="#contact">Book a Strategy Call</a>
+      <a class="btn btn-primary js-contact-cta" href="#contact">Book a Free Call</a>
     </div>
   </section>
 
