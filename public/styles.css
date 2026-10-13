@@ -3567,6 +3567,55 @@ textarea {
   border-bottom: none;
 }
 
+/* Contents list and author box sit on the same 68ch measure as the prose. */
+.toc,
+.author-box {
+  max-width: 68ch;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted-strong);
+}
+
+.toc {
+  margin-bottom: 40px;
+}
+
+.author-box {
+  margin-top: 52px;
+  line-height: 1.7;
+}
+
+.toc-title {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 720;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Unnumbered: several posts already number their own H2s. */
+.toc ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.toc li + li {
+  margin-top: 6px;
+}
+
+.toc a,
+.author-box a {
+  color: #54d7ff;
+}
+
+.toc a:hover,
+.author-box a:hover {
+  text-decoration: underline;
+}
+
 .prose blockquote {
   padding-left: 18px;
   border-left: 2px solid rgba(84, 215, 255, 0.4);
