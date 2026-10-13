@@ -135,8 +135,9 @@ function setupSmoothScrolling() {
   });
 
   // Delegated so CTAs injected later (e.g. the finder result) are tracked too.
+  // Links to /contact/ count as well — every page except home uses them.
   document.addEventListener("click", (event) => {
-    const cta = event.target.closest(selectors.contactCtas);
+    const cta = event.target.closest(`${selectors.contactCtas}, a[href^="/contact"]`);
     if (!cta) return;
     track("cta_click", {
       cta_text: cta.textContent.trim().slice(0, 60),
