@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { breadcrumbSchema, PRODUCTS } from "../lib/schema.js";
+import { getService } from "../data/services.js";
 
 const path = "/work/";
 const title = "Our Work — Products We Built and Operate | Flowmoat";
@@ -25,6 +26,9 @@ const products = [
   {
     tag: "RegRely",
     url: "https://regrely.com",
+    // The services this product is proof for. Rendered as links so /work/
+    // passes visitors (and link equity) back to the pages that convert.
+    services: ["ai-engineering", "custom-software-development"],
     headline: "AI compliance and privacy management",
     body: "RegRely turns compliance programs, privacy operations, vendor risk, and governance into a single system of record — with AI doing the reading, mapping, and drafting that compliance teams otherwise do by hand.",
     proves: [
@@ -36,6 +40,7 @@ const products = [
   {
     tag: "GreenOH",
     url: "https://thegreenoh.com",
+    services: ["custom-software-development", "workflow-automation"],
     headline: "Pakistan's first solar aggregator",
     body: "GreenOH is a marketplace where homes and businesses compare verified solar installers in one place, instead of chasing quotes across a fragmented, low-trust market.",
     proves: [
@@ -87,6 +92,15 @@ const products = [
                 Visit {product.tag}
               </a>
             </div>
+            <p>
+              Proof for:{" "}
+              {product.services.map(getService).map((service, index) => (
+                <>
+                  {index > 0 && " · "}
+                  <a class="service-link" href={`/services/${service.slug}/`}>{service.name}</a>
+                </>
+              ))}
+            </p>
           </div>
           <div class="solution-list">
             {product.proves.map((item) => (
