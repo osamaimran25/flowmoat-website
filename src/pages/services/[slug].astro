@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Faq from "../../components/Faq.astro";
 import { SERVICES, getService } from "../../data/services.js";
@@ -13,6 +14,11 @@ const service = getService(slug);
 const path = `/services/${service.slug}/`;
 
 const related = service.related.map(getService);
+// Posts that funnel toward this service. Closes the loop the posts already
+// open, so link equity flows both ways between the blog and the money page.
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.service === service.slug)
+  .sort((a, b) => b.data.published - a.data.published);
 
 const schema = [
   serviceSchema(service),
@@ -135,6 +141,36 @@ const schema = [
       </div>
     </div>
   </section>
+
+  {
+    posts.length > 0 && (
+      <section class="section">
+        <div class="container narrow">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Related reading</p>
+            <h2>Before you decide on {service.name}</h2>
+          </div>
+          <div class="post-list">
+            {posts.map((post) => (
+              <article class="post-card reveal">
+                <div class="post-meta">
+                  <span class="post-tag">{service.name}</span>
+                  <span>{post.data.readingTime} min read</span>
+                </div>
+                <h3>
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                </h3>
+                <p>{post.data.excerpt}</p>
+              </article>
+            ))}
+          </div>
+          <p class="reveal">
+            Want proof we ship? <a class="service-link" href="/work/">See the products we built and operate <span aria-hidden="true">→</span></a>
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   <section class="section faq" id="faq">
     <div class="container narrow">
