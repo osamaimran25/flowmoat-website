@@ -87,8 +87,8 @@ export const SERVICES = [
       "Add practical AI capabilities to existing CRMs, ERPs, portals, SaaS products, mobile apps, and legacy systems without forcing a disruptive rebuild.",
     title: "AI Modernization Services for Legacy Systems | Flowmoat",
     metaDescription:
-      "Flowmoat adds AI to the systems you already run — CRMs, ERPs, portals, and legacy platforms — without a disruptive rebuild or migration.",
-    h1: "Add AI to the systems you already run.",
+      "AI modernization services for US, UK and EU teams: add AI search, document processing and agents to your CRM, ERP or legacy system. No rebuild. Free call.",
+    h1: "AI modernization services: add AI to the systems you already run.",
     eyebrow: "AI Modernization",
     definition:
       "AI modernization is the process of adding AI capabilities to software a business already depends on, instead of replacing it. Flowmoat layers AI onto existing CRMs, ERPs, portals, and legacy platforms through their data and APIs — so teams gain intelligent search, drafting, and automation without a migration or a rewrite.",
