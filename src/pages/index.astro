@@ -3,11 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Faq from "../components/Faq.astro";
 import ContactForm from "../components/ContactForm.astro";
 import { SERVICES } from "../data/services.js";
+import { TESTIMONIALS } from "../data/testimonials.js";
 import { faqSchema, serviceSchema, PRODUCTS } from "../lib/schema.js";
 
 const title = "AI Software & Automation Company | Flowmoat";
 const description =
-  "Flowmoat builds AI-powered software, modernizes existing systems, and automates workflows for businesses of every size in the US, UK, Canada, and beyond.";
+  "Flowmoat builds AI-powered software, modernizes existing systems, and automates workflows for businesses in the US, UK, Europe, and Canada.";
 
 const faqs = [
   {
@@ -29,6 +30,10 @@ const faqs = [
   {
     q: "Do you work with small businesses and startups?",
     a: "Yes. We work with solo founders, small teams, growing companies, and large organizations. The scope changes with the size of the business; the way we work does not. We can start with one small, tightly scoped project and grow from there.",
+  },
+  {
+    q: "Can we add a Flowmoat engineer to our own team?",
+    a: "Yes. A dedicated AI or automation engineer can join your team on a monthly basis, work in your tools and stand-ups, and report to your lead. Most teams start with one engineer and adjust after the first month.",
   },
   {
     q: "Can Flowmoat support the software after launch?",
@@ -53,11 +58,11 @@ const schema = [
     <div class="container hero-grid">
       <div class="hero-copy reveal">
         <p class="eyebrow">AI software and automation company</p>
-        <h1>AI engineering that modernizes how your business runs.</h1>
+        <h1>AI and automation engineers who build it, ship it, and hand it over.</h1>
         <p class="hero-subheadline">
-          Flowmoat helps businesses of every size — from small teams to large organizations —
-          reduce manual work, modernize critical systems, and launch intelligent products through
-          AI engineering, custom software, and workflow automation.
+          Flowmoat builds AI assistants, workflow automation, and custom software for law firms, SaaS
+          teams, and operations-heavy businesses. Hire us for a fixed-scope project, or add a dedicated
+          AI engineer to your team.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary js-contact-cta" href="#contact">Book a Free Call</a>
@@ -66,7 +71,7 @@ const schema = [
         <p class="hero-definition">
           Flowmoat is an AI engineering and automation company working with businesses of every size —
           from solo founders and small teams to established organizations — across the United States,
-          Canada, the United Kingdom, Australia, and the UAE. We build AI-powered software, modernize
+          Canada, the United Kingdom, Europe, Australia, and the UAE. We build AI-powered software, modernize
           existing systems, and automate workflows — and we build our own products, RegRely and GreenOH.
         </p>
       </div>
@@ -183,7 +188,7 @@ const schema = [
               </div>
             </div>
             <div class="live-log" aria-live="polite">
-              <div class="log-title">Live event stream</div>
+              <div class="log-title">Example event stream</div>
               <ul data-live-log>
                 <li><span>12:04:08</span> Agent retrieved business context</li>
                 <li><span>12:04:11</span> API workflow executed successfully</li>
@@ -310,6 +315,34 @@ const schema = [
     </div>
   </section>
 
+
+  <section class="section" id="engagement">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">How we work with you</p>
+        <h2>Three ways to work together. Pick what fits your stage.</h2>
+        <p>Start small with a scoped project, or bring an engineer into your team. You can switch between them as the work changes.</p>
+      </div>
+      <div class="three-grid">
+        <article class="glass-card reveal">
+          <span class="card-number">FIXED SCOPE</span>
+          <h3>Project</h3>
+          <p>One clearly defined build, such as an AI assistant, an automation, or an internal tool, for an agreed price and timeline. Best for a first project or a known problem.</p>
+        </article>
+        <article class="glass-card reveal engagement-featured">
+          <span class="card-number">MONTHLY</span>
+          <h3><a href="/hire-dedicated-ai-engineer/">Dedicated AI engineer</a></h3>
+          <p>An AI or automation engineer joins your team, works in your tools and stand-ups, and reports to your lead. Add capacity without a months-long hiring process.</p>
+        </article>
+        <article class="glass-card reveal">
+          <span class="card-number">ONGOING</span>
+          <h3>Support &amp; improvement</h3>
+          <p>Monitoring, fixes, and new features after launch, for systems we built or ones you already run. Keeps the software useful as the business changes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="products">
     <div class="container">
       <div class="section-heading centered reveal">
@@ -358,11 +391,62 @@ const schema = [
       <div class="use-case-grid">
         <div class="use-case reveal"><strong>AI Compliance Platform — RegRely.</strong> A connected operating layer for compliance programs, privacy operations, vendor risk, governance, evidence, and accountability.</div>
         <div class="use-case reveal"><strong>Pakistan's Solar Marketplace &amp; Aggregation Platform — GreenOH.</strong> A trusted platform for discovering, comparing, and connecting with verified solar solution providers for homes and businesses.</div>
+        <div class="use-case reveal"><strong><a href="/rag-chatbot-for-company-documents/">RAG Chatbots for Company Documents.</a></strong> Answers from your own contracts, policies and wikis, with a citation for every answer.</div>
+        <div class="use-case reveal"><strong><a href="/document-processing-automation/">AI Document Processing.</a></strong> Extract and validate data from PDFs, invoices and forms, with human review for uncertain cases.</div>
         <div class="use-case reveal"><strong>AI Modernization for Legacy Systems.</strong> Extend established CRMs, ERPs, portals, and internal systems with intelligent search, document processing, and decision support.</div>
         <div class="use-case reveal"><strong>Custom Operations Platforms.</strong> Replace fragmented spreadsheets, manual handoffs, and disconnected tools with software designed around how the business operates.</div>
       </div>
     </div>
   </section>
+
+
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Industries</p>
+        <h2>Where we've solved these problems before.</h2>
+        <p>Different industries, same pattern: work that waits between people and systems.</p>
+      </div>
+      <div class="industry-grid reveal">
+        <div><strong><a href="/ai-automation-for-law-firms/">Law firms</a></strong><span>Intake, research assistants, document review</span></div>
+        <div><strong>Healthcare</strong><span>Scheduling, records, patient communication</span></div>
+        <div><strong>Real estate</strong><span>Lead routing, listings, follow-ups</span></div>
+        <div><strong>Logistics</strong><span>Order tracking, dispatch, reporting</span></div>
+        <div><strong>Recruitment</strong><span>Screening, candidate pipelines, outreach</span></div>
+        <div><strong>E-commerce</strong><span>WhatsApp ordering, catalog, support</span></div>
+        <div><strong>SaaS</strong><span>AI features, integrations, internal tools</span></div>
+        <div><strong>Compliance</strong><span>Policy, privacy, vendor risk (RegRely)</span></div>
+      </div>
+      <p class="markets-line reveal">
+        Working with teams in the <a href="/ai-automation-agency-usa/">United States</a>,
+        the <a href="/ai-development-company-uk/">United Kingdom</a> and
+        <a href="/ai-automation-europe/">Europe</a>, plus Canada, Australia and the UAE.
+      </p>
+    </div>
+  </section>
+
+  {TESTIMONIALS.length > 0 && (
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Client feedback</p>
+          <h2>What clients say after the handover.</h2>
+        </div>
+        <div class="three-grid">
+          {TESTIMONIALS.map((t) => (
+            <figure class="glass-card testimonial reveal">
+              <blockquote>“{t.quote}”</blockquote>
+              <figcaption>
+                <strong>{t.name}</strong>
+                <span>{[t.role, t.company].filter(Boolean).join(", ")}</span>
+                {t.source && <a href={t.source} target="_blank" rel="noreferrer">View review</a>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section process" id="process">
     <div class="container">

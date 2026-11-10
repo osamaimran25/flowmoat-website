@@ -12,7 +12,9 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+// H2s only: H3s turn a contents list into a second copy of the article.
+const toc = headings.filter((h) => h.depth === 2);
 
 const d = post.data;
 const path = `/blog/${post.id}/`;
@@ -96,9 +98,35 @@ const schema = [
 
   <section class="section post-section">
     <div class="container narrow">
+      {
+        toc.length >= 3 && (
+          <nav class="toc" aria-labelledby="toc-title">
+            <p class="toc-title" id="toc-title">In this article</p>
+            <ul>
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+
       <article class="prose">
         <Content />
       </article>
+
+      <aside class="author-box" aria-label="About the author">
+        <p class="toc-title">Written by</p>
+        <p>
+          <strong>The Flowmoat engineering team</strong>, the people who build and run{" "}
+          <a href="https://regrely.com" target="_blank" rel="noopener">RegRely</a> and{" "}
+          <a href="https://thegreenoh.com" target="_blank" rel="noopener">GreenOH</a> and deliver
+          client work in <a href={`/services/${service.slug}/`}>{service.name}</a>.{" "}
+          <a href="/about/">More about how we work</a>.
+        </p>
+      </aside>
     </div>
   </section>
 

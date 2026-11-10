@@ -1,6 +1,7 @@
 import { getCollection } from "astro:content";
 import { SITE } from "../data/site.js";
 import { SERVICES } from "../data/services.js";
+import { SOLUTIONS } from "../data/solutions.js";
 
 // Hand-rolled instead of @astrojs/sitemap so the file stays at /sitemap.xml —
 // the exact URL already submitted to Google Search Console and Bing.
@@ -13,6 +14,11 @@ export async function GET() {
     ...SERVICES.map((service) => ({
       path: `/services/${service.slug}/`,
       priority: "0.9",
+      changefreq: "monthly",
+    })),
+    ...SOLUTIONS.map((solution) => ({
+      path: `/${solution.slug}/`,
+      priority: "0.8",
       changefreq: "monthly",
     })),
     { path: "/blog/", priority: "0.8", changefreq: "weekly" },

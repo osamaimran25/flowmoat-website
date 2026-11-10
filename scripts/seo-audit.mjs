@@ -7,7 +7,7 @@
  * Exits 1 if any ERROR is found. WARNs are reported but do not fail the build,
  * so the gate stays useful instead of becoming something people learn to skip.
  */
-import { readFile, readdir } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
 import * as cheerio from "cheerio";
 
@@ -19,6 +19,14 @@ const TITLE_MAX = 60;
 const TITLE_MIN = 15;
 const DESC_MAX = 158;
 const DESC_MIN = 70;
+
+const SITE_URL = "https://flowmoat.com";
+
+const exists = (file) =>
+  access(file).then(
+    () => true,
+    () => false,
+  );
 
 const errors = [];
 const warnings = [];
@@ -102,6 +110,13 @@ for (const file of files) {
 
   const ogTitle = $('head meta[property="og:title"]').attr("content")?.trim();
   if (ogTitle && title && ogTitle !== title) warn(url, "og:title differs from <title>");
+
+  // A renamed page keeps pointing at its old image unless the file moves too.
+  const ogImage = $('head meta[property="og:image"]').attr("content");
+  if (ogImage?.startsWith(SITE_URL)) {
+    const file = join(ROOT, decodeURIComponent(new URL(ogImage).pathname));
+    if (!(await exists(file))) err(url, `og:image file not in build: ${new URL(ogImage).pathname}`);
+  }
 
   const ogType = $('head meta[property="og:type"]').attr("content");
   if (url.startsWith("/blog/") && url !== "/blog/" && ogType !== "article")

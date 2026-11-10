@@ -6,7 +6,10 @@ export const SITE = {
   description:
     "Flowmoat is an AI engineering and automation company that builds AI-powered software, modernizes existing systems, and automates business workflows for companies of every size — from small teams to large organizations.",
   slogan: "AI engineering and automation for businesses of every size.",
-  countries: ["United States", "Canada", "United Kingdom", "Australia", "United Arab Emirates"],
+  countries: [
+    "United States", "Canada", "United Kingdom", "Ireland", "Germany", "Netherlands",
+    "France", "Sweden", "Denmark", "Switzerland", "Australia", "United Arab Emirates",
+  ],
 };
 
 export const NAV = [

@@ -1,0 +1,141 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Faq from "../components/Faq.astro";
+import { SOLUTIONS, getSolution } from "../data/solutions.js";
+import { getService } from "../data/services.js";
+import { SITE } from "../data/site.js";
+import { faqSchema, breadcrumbSchema } from "../lib/schema.js";
+
+export function getStaticPaths() {
+  return SOLUTIONS.map((solution) => ({ params: { solution: solution.slug } }));
+}
+
+const solution = getSolution(Astro.params.solution);
+const service = getService(solution.service);
+const path = `/${solution.slug}/`;
+const posts = (await getCollection("blog")).filter((post) => solution.posts.includes(post.id));
+
+const schema = [
+  {
+    "@type": "Service",
+    "@id": `${SITE.url}${path}#service`,
+    name: solution.eyebrow,
+    description: solution.definition,
+    url: `${SITE.url}${path}`,
+    provider: { "@id": `${SITE.url}/#organization` },
+    isRelatedTo: { "@id": `${SITE.url}/services/${service.slug}/#service` },
+    areaServed: SITE.countries.map((name) => ({ "@type": "Country", name })),
+  },
+  faqSchema(solution.faqs, path),
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: service.name, path: `/services/${service.slug}/` },
+      { name: solution.eyebrow, path },
+    ],
+    path,
+  ),
+];
+---
+
+<BaseLayout
+  title={solution.title}
+  description={solution.metaDescription}
+  {schema}
+  {path}
+  ogImage={`/og/service-${service.slug}.jpg`}
+  ogImageAlt={solution.h1}
+>
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/services/${service.slug}/`}>{service.name}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{solution.eyebrow}</span>
+      </nav>
+      <p class="eyebrow">{solution.eyebrow}</p>
+      <h1>{solution.h1}</h1>
+      <p class="hero-definition">{solution.definition}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
+        <a class="btn btn-secondary" href={`/services/${service.slug}/`}>{service.name}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Sound familiar?</p>
+        <h2>The problems this solves</h2>
+      </div>
+      <div class="solution-list">
+        {solution.problems.map((problem) => (
+          <div class="reveal"><span aria-hidden="true"></span><p>{problem}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>From first call to working system</h2>
+      </div>
+      <div class="process-track">
+        {solution.steps.map((step, i) => (
+          <article class="process-step reveal">
+            <span>{String(i + 1).padStart(2, "0")}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Related reading</p>
+          <h2>Before you decide</h2>
+        </div>
+        <div class="post-list">
+          {posts.map((post) => (
+            <article class="post-card reveal">
+              <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+              <p>{post.data.excerpt}</p>
+            </article>
+          ))}
+        </div>
+        <p class="reveal">
+          Want proof we ship? <a class="service-link" href="/work/">See products we built and operate <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+  )}
+
+  <section class="section faq" id="faq">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Common questions</h2>
+      </div>
+      <Faq faqs={solution.faqs} />
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Next step</p>
+      <h2>Tell us about the work, and we'll tell you honestly if this fits.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
+    </div>
+  </section>
+</BaseLayout>
