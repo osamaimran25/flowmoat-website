@@ -3,7 +3,8 @@
 > Flowmoat is an AI engineering and automation company that builds AI-powered software,
 > modernizes existing systems, and automates business workflows for businesses of every
 > size — from solo founders and small teams to established organizations — across the
-> United States, Canada, the United Kingdom, Australia, and the United Arab Emirates.
+> United States, Canada, the United Kingdom, Europe (Ireland, Germany, the Netherlands, France,
+> the Nordics, Switzerland), Australia, and the United Arab Emirates.
 
 Flowmoat combines product thinking with engineering discipline. Engagements start with the
 business outcome, then work backward to the right architecture. Flowmoat also builds and
@@ -40,6 +41,26 @@ scoped and priced individually rather than from a published price list.
 2. **Architect** — Define the product experience, technical approach, integration boundaries, controls, and phased delivery plan.
 3. **Build** — Deliver working software in focused iterations, with regular demonstrations and transparent decisions.
 4. **Scale** — Support rollout, measure performance, strengthen the system, and evolve it as the business grows.
+
+## Solutions and markets
+
+- [Hire a dedicated AI engineer](https://flowmoat.com/hire-dedicated-ai-engineer/): A Flowmoat AI or automation engineer joins your team monthly, in your tools and stand-ups.
+- [RAG chatbot for company documents](https://flowmoat.com/rag-chatbot-for-company-documents/): Answers from your own documents with citations and permission-aware retrieval.
+- [AI document processing automation](https://flowmoat.com/document-processing-automation/): Extract and validate data from PDFs, invoices and forms, with human review for uncertain cases.
+- [AI automation for law firms](https://flowmoat.com/ai-automation-for-law-firms/): Intake, precedent research assistants and document review with lawyer sign-off.
+- [AI automation for US businesses](https://flowmoat.com/ai-automation-agency-usa/): Remote delivery with daily overlap on US hours, USD invoicing.
+- [AI development for UK businesses](https://flowmoat.com/ai-development-company-uk/): Built around UK GDPR, full UK-hours overlap, GBP invoicing.
+- [AI engineering for European companies](https://flowmoat.com/ai-automation-europe/): EU data residency, GDPR and EU AI Act aware, CET overlap.
+
+## Guides
+
+- [How to build a GDPR-compliant AI assistant](https://flowmoat.com/blog/gdpr-compliant-ai-assistant/)
+- [Why most AI pilots never reach production](https://flowmoat.com/blog/why-ai-pilots-fail/)
+- [AI agents vs workflow automation](https://flowmoat.com/blog/ai-agents-vs-automation-when-to-use-which/)
+- [n8n vs Make vs custom code](https://flowmoat.com/blog/n8n-vs-make-vs-custom-code/)
+- [What custom software costs](https://flowmoat.com/blog/what-custom-software-costs/)
+- [Add AI to an existing CRM or ERP](https://flowmoat.com/blog/add-ai-to-existing-crm-erp/)
+- [Rebuild or modernize legacy systems](https://flowmoat.com/blog/rebuild-or-modernize-legacy-systems/)
 
 ## Contact
 
