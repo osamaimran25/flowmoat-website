@@ -30,7 +30,7 @@ const organization = {
   image: `${SITE.url}/og-image.jpg`,
   description: SITE.description,
   slogan: SITE.slogan,
-  sameAs: [SITE.linkedin],
+  sameAs: Object.values(SITE.socials).filter(Boolean),
   areaServed: SITE.countries.map((name) => ({ "@type": "Country", name })),
   knowsAbout: [
     "AI Engineering",
@@ -91,7 +91,7 @@ const graph = {
   "@graph": [organization, website, webPage, primaryImage, ...schema],
 };
 
-const ASSET_VERSION = "20261014-1";
+const ASSET_VERSION = "20261111-1";
 ---
 
 <!doctype html>

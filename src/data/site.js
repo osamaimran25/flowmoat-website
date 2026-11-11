@@ -3,6 +3,15 @@ export const SITE = {
   url: "https://flowmoat.com",
   email: "osamaimran25@gmail.com",
   linkedin: "https://www.linkedin.com/company/flowmoat/",
+  // Social profiles shown in the footer and in schema sameAs. Leave a URL empty to hide it.
+  socials: {
+    linkedin: "https://www.linkedin.com/company/flowmoat/",
+    x: "",
+    instagram: "",
+    facebook: "",
+    youtube: "",
+    github: "",
+  },
   description:
     "Flowmoat is an AI engineering and automation company that builds AI-powered software, modernizes existing systems, and automates business workflows for companies of every size — from small teams to large organizations.",
   slogan: "AI engineering and automation for businesses of every size.",

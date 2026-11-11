@@ -1705,55 +1705,88 @@ textarea:focus {
 }
 
 .footer-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1.6fr) repeat(3, minmax(150px, 1fr));
+  gap: 40px;
+  align-items: start;
 }
 
 .footer p {
-  max-width: 520px;
+  max-width: 420px;
   margin-top: 14px;
   font-size: 0.92rem;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .footer-social {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 8px 14px;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgba(84, 215, 255, 0.28);
-  border-radius: var(--radius);
+  border-radius: 50%;
   color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 560;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  background: rgba(84, 215, 255, 0.04);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .footer-social svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
-.footer-social:hover {
+.footer-social:hover,
+.footer-social:focus-visible {
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-title {
+  margin: 0 0 6px;
+  font-family: inherit;
+  line-height: 1.3;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text);
-  border-color: rgba(84, 215, 255, 0.6);
 }
 
-.footer-links {
+.footer-col a {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.footer-col a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 16px;
-}
-
-.footer-links a {
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-}
-
-.footer-links a:hover {
-  color: var(--text);
+  font-size: 0.85rem;
+  padding-right: 210px; /* keep clear of the fixed "Ask Flowmoat AI" button */
 }
 
 .reveal {
@@ -2315,12 +2348,17 @@ textarea {
   }
 
   .footer-grid {
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
   }
 
-  .footer-links {
-    justify-content: flex-start;
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    padding-right: 72px;
   }
 }
 
