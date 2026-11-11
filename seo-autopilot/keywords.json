@@ -1,0 +1,18 @@
+[
+  {"keyword": "n8n self-hosting cost", "slug": "n8n-self-hosting-cost-and-setup", "service": "workflow-automation", "links": ["/n8n-automation-agency/", "/services/workflow-automation/"], "status": "pending"},
+  {"keyword": "RAG vs fine-tuning", "slug": "rag-vs-fine-tuning", "service": "ai-engineering", "links": ["/rag-chatbot-for-company-documents/", "/services/ai-engineering/"], "status": "pending"},
+  {"keyword": "automate invoice processing with AI", "slug": "automate-invoice-processing-with-ai", "service": "workflow-automation", "links": ["/document-processing-automation/", "/services/workflow-automation/"], "status": "pending"},
+  {"keyword": "how much does an AI agent cost to build", "slug": "ai-agent-development-cost", "service": "ai-engineering", "links": ["/ai-agent-development-company/", "/hire-dedicated-ai-engineer/"], "status": "pending"},
+  {"keyword": "migrate Zapier to n8n", "slug": "migrate-zapier-to-n8n", "service": "workflow-automation", "links": ["/n8n-automation-agency/", "/services/workflow-automation/"], "status": "pending"},
+  {"keyword": "AI chatbot for customer support small business", "slug": "ai-chatbot-for-customer-support", "service": "ai-engineering", "links": ["/ai-chatbot-development-company/", "/rag-chatbot-for-company-documents/"], "status": "pending"},
+  {"keyword": "AI for law firms document review", "slug": "ai-document-review-for-law-firms", "service": "workflow-automation", "links": ["/ai-automation-for-law-firms/", "/document-processing-automation/"], "status": "pending"},
+  {"keyword": "hire AI engineer vs agency", "slug": "hire-ai-engineer-vs-agency", "service": "ai-engineering", "links": ["/hire-dedicated-ai-engineer/", "/ai-agent-development-company/"], "status": "pending"},
+  {"keyword": "EU AI Act what businesses need to do", "slug": "eu-ai-act-checklist-for-businesses", "service": "ai-engineering", "links": ["/ai-automation-europe/", "/blog/gdpr-compliant-ai-assistant/"], "status": "pending"},
+  {"keyword": "add AI search to SharePoint or Google Drive", "slug": "ai-search-for-sharepoint-and-google-drive", "service": "ai-modernization", "links": ["/rag-chatbot-for-company-documents/", "/services/ai-modernization/"], "status": "pending"},
+  {"keyword": "AI lead qualification automation", "slug": "ai-lead-qualification-automation", "service": "workflow-automation", "links": ["/n8n-automation-agency/", "/ai-automation-agency-usa/"], "status": "pending"},
+  {"keyword": "HubSpot AI automation", "slug": "hubspot-ai-automation", "service": "ai-modernization", "links": ["/services/ai-modernization/", "/n8n-automation-agency/"], "status": "pending"},
+  {"keyword": "UK GDPR AI chatbot requirements", "slug": "uk-gdpr-ai-chatbot-requirements", "service": "ai-engineering", "links": ["/ai-development-company-uk/", "/ai-chatbot-development-company/"], "status": "pending"},
+  {"keyword": "AI agent evaluation how to test", "slug": "how-to-test-ai-agents", "service": "ai-engineering", "links": ["/ai-agent-development-company/", "/blog/why-ai-pilots-fail/"], "status": "pending"},
+  {"keyword": "WhatsApp AI assistant for business", "slug": "whatsapp-ai-assistant-for-business", "service": "ai-engineering", "links": ["/ai-chatbot-development-company/", "/services/ai-engineering/"], "status": "pending"},
+  {"keyword": "workflow automation ROI how to calculate", "slug": "workflow-automation-roi", "service": "workflow-automation", "links": ["/services/workflow-automation/", "/ai-automation-agency-usa/"], "status": "pending"}
+]

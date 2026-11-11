@@ -7,3 +7,4 @@ flowmoat-widget.js
 node_modules/
 dist/
 .astro/
+seo-autopilot/logs/
