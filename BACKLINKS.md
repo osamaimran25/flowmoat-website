@@ -41,6 +41,23 @@ We also build and operate our own products: RegRely, an AI compliance and privac
 8. **n8n community / creators** — https://community.n8n.io — share real workflows (for example the LinkedIn auto-poster) with a link back.
 9. **RegRely and GreenOH footers** — "Built by Flowmoat" link to https://flowmoat.com/.
 
+## More free listings (after the first nine)
+
+| Site | Link | Notes |
+|---|---|---|
+| Sortlist | https://www.sortlist.com/agency/signup | Strong in UK and Europe |
+| TechBehemoths | https://techbehemoths.com/ | Free agency profile, EU-heavy buyers |
+| The Manifest | https://themanifest.com/ | Fed from the Clutch profile automatically |
+| UpCity | https://upcity.com/ | US buyers |
+| Wellfound | https://wellfound.com/ | Company page with website link |
+| F6S | https://www.f6s.com/ | Startup profile |
+| n8n Creator Hub | https://n8n.io/creators/ | Publish a real workflow template with a profile link |
+| Product Hunt | https://www.producthunt.com/ | Launch RegRely; maker profile links flowmoat.com |
+| G2 / Capterra | https://sell.g2.com/ , https://www.capterra.com/vendors/sign-up | List RegRely as a product; vendor = Flowmoat |
+| AlternativeTo | https://alternativeto.net/ | List RegRely as an alternative to OneTrust / Vanta |
+
+Each needs an account created by you. Use the profile basics above, word for word.
+
 ## Earned links (highest value, slowest)
 
 - Guest posts on automation and AI blogs: pitch "How to build a GDPR-compliant AI assistant" or "n8n vs Make vs custom code" as adapted versions.

@@ -47,6 +47,9 @@ scoped and priced individually rather than from a published price list.
 - [Hire a dedicated AI engineer](https://flowmoat.com/hire-dedicated-ai-engineer/): A Flowmoat AI or automation engineer joins your team monthly, in your tools and stand-ups.
 - [RAG chatbot for company documents](https://flowmoat.com/rag-chatbot-for-company-documents/): Answers from your own documents with citations and permission-aware retrieval.
 - [AI document processing automation](https://flowmoat.com/document-processing-automation/): Extract and validate data from PDFs, invoices and forms, with human review for uncertain cases.
+- [AI agent development](https://flowmoat.com/ai-agent-development-company/): Agents that call your tools and data for multi-step tasks, with evaluation, guardrails and human approval.
+- [AI chatbot development](https://flowmoat.com/ai-chatbot-development-company/): Custom chatbots for websites, support and internal teams that answer from your content with citations.
+- [n8n automation agency](https://flowmoat.com/n8n-automation-agency/): n8n workflows designed, self-hosted and maintained, including Zapier and Make migrations.
 - [AI automation for law firms](https://flowmoat.com/ai-automation-for-law-firms/): Intake, precedent research assistants and document review with lawyer sign-off.
 - [AI automation for US businesses](https://flowmoat.com/ai-automation-agency-usa/): Remote delivery with daily overlap on US hours, USD invoicing.
 - [AI development for UK businesses](https://flowmoat.com/ai-development-company-uk/): Built around UK GDPR, full UK-hours overlap, GBP invoicing.

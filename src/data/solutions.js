@@ -281,6 +281,132 @@ export const SOLUTIONS = [
     ],
     posts: ["gdpr-compliant-ai-assistant", "why-ai-pilots-fail"],
   },
+  {
+    slug: "n8n-automation-agency",
+    service: "workflow-automation",
+    title: "n8n Automation Agency: Hire n8n Experts | Flowmoat",
+    metaDescription:
+      "n8n automation agency for US, UK and European teams. We design, self-host and maintain n8n workflows with AI steps, error handling and monitoring.",
+    eyebrow: "n8n automation agency",
+    h1: "n8n workflows built by engineers, not just connected by drag-and-drop.",
+    definition:
+      "Flowmoat is an n8n automation agency. We design n8n workflows that connect your CRM, inbox, spreadsheets, databases and AI models, self-host n8n in your own cloud when data must stay with you, and add the error handling, retries, logging and alerts that keep workflows running after launch. When a step outgrows n8n, we write it as Python or TypeScript and call it from the workflow.",
+    problems: [
+      "Workflows break silently and nobody notices until a customer does.",
+      "Your team copies data between tools by hand every day.",
+      "Zapier or Make bills are climbing as volume grows.",
+      "You need AI in the workflow (classify, extract, draft) without sending data to unknown tools.",
+    ],
+    steps: [
+      { title: "Map the process", body: "We walk through the manual process with the people who do it and agree what to automate first." },
+      { title: "Build in n8n", body: "Workflows with clear naming, sub-workflows, retries and a person-approval step where it matters." },
+      { title: "Host and monitor", body: "n8n Cloud or self-hosted with Docker in your own AWS, Azure or EU region, with failure alerts." },
+      { title: "Hand over", body: "Documentation and a walkthrough so your team can change workflows without us." },
+    ],
+    faqs: [
+      {
+        q: "Should we self-host n8n or use n8n Cloud?",
+        a: "n8n Cloud is fastest to start. Self-hosting suits teams with strict data rules or high volume, because data stays in your cloud and there are no per-execution limits.",
+      },
+      {
+        q: "Can you migrate our Zapier or Make workflows to n8n?",
+        a: "Yes. We rebuild them in n8n, run both side by side until the results match, then switch off the old ones.",
+      },
+      {
+        q: "Can n8n workflows use AI models?",
+        a: "Yes. n8n can call OpenAI, Anthropic, Azure OpenAI or self-hosted models to classify, extract or draft, with a person approving important actions.",
+      },
+      {
+        q: "Who maintains the workflows after launch?",
+        a: "Your team, with our documentation, or us on a monthly maintenance plan.",
+      },
+    ],
+    posts: ["n8n-vs-make-vs-custom-code", "ai-agents-vs-automation-when-to-use-which"],
+  },
+  {
+    slug: "ai-agent-development-company",
+    service: "ai-engineering",
+    title: "AI Agent Development Company | Flowmoat",
+    metaDescription:
+      "AI agent development for US, UK and European businesses. Agents that use your tools and data, with guardrails, evaluation and human approval built in.",
+    eyebrow: "AI agent development",
+    h1: "AI agents that do real work in your systems, with a person in control.",
+    definition:
+      "Flowmoat is an AI agent development company. We build agents that read your documents and data, call your APIs and tools (CRM, ticketing, email, databases), and complete multi-step tasks such as triaging requests, preparing reports or updating records. Every agent has limits on what it can do, an evaluation set it must pass, and a human approval step for consequential actions.",
+    problems: [
+      "An agent demo looked impressive, but it isn't reliable enough for real customers.",
+      "You aren't sure whether you need an agent or a simpler automation.",
+      "Your team spends hours on multi-step tasks that follow the same pattern.",
+      "You need agents that respect permissions and leave an audit trail.",
+    ],
+    steps: [
+      { title: "Pick the task", body: "One well-defined task with a clear success measure, not a general assistant." },
+      { title: "Give it tools", body: "Connect the agent to the APIs and data it needs, with read and write permissions kept separate." },
+      { title: "Evaluate", body: "Test against real cases and measure accuracy before anyone relies on it." },
+      { title: "Ship with guardrails", body: "Approval steps, logging and alerts in production, then expand scope." },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between an AI agent and automation?",
+        a: "Automation follows fixed steps. An agent decides which steps to take based on the input. We use agents only where the task genuinely varies; otherwise a workflow is cheaper and more reliable.",
+      },
+      {
+        q: "Which models and frameworks do you use?",
+        a: "We choose per task: OpenAI, Anthropic Claude, Azure OpenAI or open models, orchestrated in Python, LangGraph or n8n.",
+      },
+      {
+        q: "How do you keep agents from making mistakes?",
+        a: "Narrow permissions, an evaluation set run before every release, and human approval for actions that send, pay, delete or change customer data.",
+      },
+      {
+        q: "How long does a first agent take?",
+        a: "A focused first agent usually takes 3 to 6 weeks from scope to production.",
+      },
+    ],
+    posts: ["ai-agents-vs-automation-when-to-use-which", "why-ai-pilots-fail"],
+  },
+  {
+    slug: "ai-chatbot-development-company",
+    service: "ai-engineering",
+    title: "AI Chatbot Development Company | Flowmoat",
+    metaDescription:
+      "Custom AI chatbot development for websites, support and internal teams. Answers from your own content with citations and handoff to a person.",
+    eyebrow: "AI chatbot development",
+    h1: "AI chatbots that answer from your content, not from guesswork.",
+    definition:
+      "Flowmoat builds custom AI chatbots for websites, customer support and internal teams. The chatbot answers from your own help articles, policies and documents, cites its sources, says when it doesn't know, and hands the conversation to a person when needed. It can run on your website, in Slack or Microsoft Teams, or inside your product.",
+    problems: [
+      "Support answers the same questions every day.",
+      "Off-the-shelf chatbots invent answers that aren't in your policies.",
+      "Staff can't find information spread across drives, wikis and PDFs.",
+      "You need a chatbot that meets GDPR and keeps data in your region.",
+    ],
+    steps: [
+      { title: "Collect content", body: "Help articles, policies, product docs and past tickets, cleaned and kept up to date." },
+      { title: "Build retrieval", body: "Search that finds the right passage, so answers come with a source." },
+      { title: "Design handoff", body: "Clear rules for when the chatbot passes the conversation to a person." },
+      { title: "Launch and measure", body: "Track resolved questions, unanswered ones and feedback, then improve weekly." },
+    ],
+    faqs: [
+      {
+        q: "Where can the chatbot run?",
+        a: "On your website, in Slack or Microsoft Teams, in WhatsApp, or inside your own app through an API.",
+      },
+      {
+        q: "How do you stop it from making things up?",
+        a: "It answers only from retrieved passages of your content and shows the source. If nothing relevant is found, it says so and offers a person.",
+      },
+      {
+        q: "Can it connect to our helpdesk or CRM?",
+        a: "Yes. It can look up orders or tickets and create cases in tools such as Zendesk, Intercom, HubSpot or Salesforce.",
+      },
+      {
+        q: "Is it GDPR compliant?",
+        a: "We can host in EU regions, avoid storing personal data where not needed, and set retention rules. See our guide to GDPR-compliant AI assistants.",
+      },
+    ],
+    posts: ["gdpr-compliant-ai-assistant", "why-ai-pilots-fail"],
+  },
 ];
 
 export const getSolution = (slug) => SOLUTIONS.find((s) => s.slug === slug);
