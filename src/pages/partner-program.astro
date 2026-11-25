@@ -1,0 +1,374 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Faq from "../components/Faq.astro";
+import { faqSchema, breadcrumbSchema } from "../lib/schema.js";
+import { SITE } from "../data/site.js";
+import { PARTNER } from "../data/partner.js";
+
+const path = "/partner-program/";
+const title = "Partner Program — Refer Clients to Flowmoat, Earn Commission";
+const description = `Refer a business that needs AI engineering, automation or custom software to Flowmoat and earn ${PARTNER.commission} of the first project. No fees, no cap on referrals.`;
+
+const next = new URL("/partner-program/?submitted=1#join", SITE.url).href;
+
+const faqs = [
+  {
+    q: "Does it cost anything to join?",
+    a: "No. There are no fees, no minimums and no contract to sign before you send a referral. You only need to tell us who you're introducing and why they might need us.",
+  },
+  {
+    q: "How much do I earn, and when am I paid?",
+    a: `You earn ${PARTNER.commission} of the fees Flowmoat collects on the first project you refer. We pay within ${PARTNER.payoutDays} days of the client's payment clearing, so you're never paid before we are.`,
+  },
+  {
+    q: "What counts as a valid referral?",
+    a: "A business that isn't already in our pipeline or a current client, introduced with enough context for us to follow up, either through the form or with the contact's agreement. If we're already talking to them, we'll tell you within a few business days.",
+  },
+  {
+    q: "Do I have to sell or manage anything?",
+    a: "No. You make the introduction. Flowmoat handles scoping, proposals, contracts, delivery, billing and all client communication. If you'd like to stay in the loop, we'll keep you updated.",
+  },
+  {
+    q: "Do I earn on repeat or follow-on work?",
+    a: `Yes, for ${PARTNER.followOnMonths} months from the first signed project, you keep earning ${PARTNER.followOnCommission} on additional projects and retainers from the same client.`,
+  },
+  {
+    q: "Who can join?",
+    a: "Freelancers, consultants, agencies, fractional CTOs, advisors, and existing clients. If you regularly talk to companies that are stuck on software, AI or manual workflows, you're a fit.",
+  },
+];
+
+const steps = [
+  {
+    n: "01",
+    title: "Send the introduction",
+    body: "Fill in the short form below with who you're referring and what they're struggling with. Two minutes, no paperwork.",
+  },
+  {
+    n: "02",
+    title: "We take it from there",
+    body: "An engineer reaches out, scopes the work and proposes a plan. We handle every client conversation, so there's nothing for you to chase.",
+  },
+  {
+    n: "03",
+    title: "You get paid",
+    body: `Once the client signs and pays, your commission follows within ${PARTNER.payoutDays} days. You can see where each referral stands whenever you ask.`,
+  },
+];
+
+const audiences = [
+  {
+    title: "Freelancers & consultants",
+    body: "Your clients keep asking for things outside your lane. Hand them to a team you trust and get paid for the introduction.",
+  },
+  {
+    title: "Agencies",
+    body: "Need AI or custom engineering capacity you don't want to hire for? Refer the work, or tell us about white-label arrangements.",
+  },
+  {
+    title: "Founders, CTOs & advisors",
+    body: "You see companies hit the limits of their systems before anyone else does. Connect them with people who can fix it.",
+  },
+  {
+    title: "Existing clients",
+    body: "Know another business with a similar problem? Thank-yous are nice, but commission is nicer.",
+  },
+];
+
+const rewards = [
+  { title: `${PARTNER.commission} commission`, body: "On the fees collected for the first project you refer." },
+  { title: `${PARTNER.followOnCommission} on follow-on work`, body: `For ${PARTNER.followOnMonths} months, on additional projects and retainers from the same client.` },
+  { title: "No cap", body: "Refer one company or fifty. There's no ceiling on what you can earn." },
+  { title: "Clear status", body: "You'll know whether a referral is contacted, scoped, signed or paid." },
+];
+
+const terms = [
+  "A referral must be a new business that isn't already in Flowmoat's pipeline or a current client.",
+  `Commission is calculated on fees actually collected, and paid within ${PARTNER.payoutDays} days of the client's payment clearing.`,
+  "You remain the referring partner for follow-on work from that client for the period stated above.",
+  "Flowmoat handles scoping, contracts, delivery, billing and all client communication.",
+  "Flowmoat reserves the right to decline a project, in which case no commission applies.",
+  "Written terms are sent to every partner after they apply, before any referral is submitted.",
+];
+
+const roles = [
+  "Freelancer / independent consultant",
+  "Agency owner / executive",
+  "Founder / CEO",
+  "CTO / technical lead",
+  "Advisor / fractional executive",
+  "Business development / sales",
+  "Existing Flowmoat client",
+  "Other",
+];
+
+const projectTypes = [
+  "AI agent or chatbot",
+  "Workflow automation",
+  "Adding AI to an existing system",
+  "Custom software or SaaS",
+  "Not sure yet",
+];
+
+const budgets = ["Under $10,000", "$10,000 – $50,000", "$50,000 – $150,000", "$150,000+", "Not sure yet"];
+
+const schema = [
+  faqSchema(faqs, path),
+  breadcrumbSchema(
+    [
+      { name: "Home", path: "/" },
+      { name: "Partner program", path },
+    ],
+    path,
+  ),
+  {
+    "@type": "WebPage",
+    "@id": `${SITE.url}${path}#webpage`,
+    url: `${SITE.url}${path}`,
+    name: title,
+    description,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    about: { "@id": `${SITE.url}/#organization` },
+  },
+];
+---
+
+<BaseLayout {title} {description} {schema} {path} ogImage="/og-image.jpg" ogImageAlt="Flowmoat partner program — refer clients and earn commission">
+  <section class="section page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Partner program</span>
+      </nav>
+
+      <p class="eyebrow">Partner program</p>
+      <h1>Refer a business. We deliver. You earn.</h1>
+      <p class="hero-subheadline">
+        Know a company that needs AI engineering, automation or custom software? Introduce them to
+        Flowmoat and earn {PARTNER.commission} of the first project, with no fees and no cap.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#join">Become a partner</a>
+        <a class="btn btn-secondary" href="#how-it-works">See how it works</a>
+      </div>
+
+      <ul class="partner-stats" aria-label="Program at a glance">
+        <li><strong>{PARTNER.commission}</strong><span>commission on the first project</span></li>
+        <li><strong>{PARTNER.payoutDays} days</strong><span>to payout after client pays</span></li>
+        <li><strong>No cap</strong><span>on referrals or earnings</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>Three steps, start to finish.</h2>
+      </div>
+      <div class="three-grid">
+        {
+          steps.map((step) => (
+            <article class="process-step reveal">
+              <span class="card-number">{step.n}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Who can join</p>
+        <h2>Built for people who talk to growing companies.</h2>
+      </div>
+      <div class="three-grid">
+        {
+          audiences.map((item) => (
+            <article class="process-step reveal">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">Rewards</p>
+        <h2>What you earn.</h2>
+      </div>
+      <div class="three-grid">
+        {
+          rewards.map((item) => (
+            <article class="process-step reveal">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Eligibility &amp; terms</p>
+        <h2>The ground rules, in plain English.</h2>
+      </div>
+      <div class="solution-list">
+        {
+          terms.map((term) => (
+            <div class="reveal">
+              <span aria-hidden="true"></span>
+              <p>{term}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="join">
+    <div class="container contact-grid">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Join the program</p>
+        <h2>Start referring today.</h2>
+        <p>
+          Tell us about yourself and the business you have in mind. A real person reads every
+          submission and replies within two business days.
+        </p>
+        <div class="contact-steps">
+          <div class="reveal">
+            <h3>No fees, no upfront contract</h3>
+            <p>You don't owe us anything to send a referral.</p>
+          </div>
+          <div class="reveal">
+            <h3>One contact for every referral</h3>
+            <p>You'll deal with the same person from introduction to payout.</p>
+          </div>
+          <div class="reveal">
+            <h3>Only with their say-so</h3>
+            <p>Please only share details of people who are happy to hear from us.</p>
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="contact-form reveal"
+        id="partnerForm"
+        action={`https://formsubmit.co/${SITE.email}`}
+        method="POST"
+        novalidate
+      >
+        <input type="hidden" name="_subject" value="New partner referral — Flowmoat website" />
+        <input type="hidden" name="_next" value={next} />
+        <input type="hidden" name="_template" value="table" />
+        <input class="bot-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-row">
+          <label for="p-name">Your name</label>
+          <input id="p-name" name="partner_name" type="text" autocomplete="name" required />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="p-email">Your email</label>
+          <input id="p-email" name="partner_email" type="email" autocomplete="email" required />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="p-phone">Your phone (optional)</label>
+          <input id="p-phone" name="partner_phone" type="tel" autocomplete="tel" />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="p-role">Your role</label>
+          <select id="p-role" name="partner_role" required>
+            <option value="">Select one</option>
+            {roles.map((r) => <option value={r}>{r}</option>)}
+          </select>
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-row full">
+          <label for="r-company">Business you're referring</label>
+          <input id="r-company" name="referral_company" type="text" autocomplete="off" required />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="r-contact">Their contact name (optional)</label>
+          <input id="r-contact" name="referral_contact" type="text" autocomplete="off" />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="r-email">Their email (optional)</label>
+          <input id="r-email" name="referral_email" type="email" autocomplete="off" />
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="r-type">What do they need?</label>
+          <select id="r-type" name="project_type">
+            <option value="">Select one</option>
+            {projectTypes.map((t) => <option value={t}>{t}</option>)}
+          </select>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row">
+          <label for="r-budget">Estimated budget</label>
+          <select id="r-budget" name="budget">
+            <option value="">Select one</option>
+            {budgets.map((b) => <option value={b}>{b}</option>)}
+          </select>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row full">
+          <label for="r-notes">Tell us about the situation</label>
+          <textarea id="r-notes" name="notes" rows="5" required minlength="20" placeholder="What are they struggling with, and how do you know them?"></textarea>
+          <small class="error-message"></small>
+        </div>
+        <div class="form-row full partner-consent">
+          <label class="partner-check" for="p-consent">
+            <input id="p-consent" name="consent" type="checkbox" value="yes" required />
+            <span>
+              I confirm the business I'm referring is happy to be contacted by Flowmoat, and I've read the
+              terms above.
+            </span>
+          </label>
+          <small class="error-message"></small>
+        </div>
+
+        <button class="btn btn-primary form-submit" type="submit">Submit referral</button>
+        <p class="form-success" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container narrow">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Partner program questions</h2>
+      </div>
+      <Faq {faqs} />
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container cta-panel reveal">
+      <p class="eyebrow">Got a project of your own?</p>
+      <h2>Tell us the outcome. We'll tell you what it takes.</h2>
+      <a class="btn btn-primary" href="/contact/">Book a Free Call</a>
+    </div>
+  </section>
+</BaseLayout>

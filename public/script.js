@@ -426,6 +426,65 @@ function setupContactForm() {
   });
 }
 
+function setupPartnerForm() {
+  const form = document.querySelector("#partnerForm");
+  if (!form) return;
+
+  const success = form.querySelector(".form-success");
+  const submitButton = form.querySelector(".form-submit");
+  const fieldsOf = () => Array.from(form.querySelectorAll("input:not([type=hidden]):not(.bot-field), select, textarea"));
+
+  const validate = () => {
+    let ok = true;
+    const check = (name, bad, message) => {
+      const field = form.elements[name];
+      setFieldError(field, bad(field) ? message : "");
+      if (bad(field)) ok = false;
+    };
+    check("partner_name", (f) => f.value.trim().length < 2, "Enter your name.");
+    check("partner_email", (f) => !validateEmail(f.value.trim()), "Enter a valid email address.");
+    check("partner_role", (f) => !f.value, "Pick the option closest to your role.");
+    check("referral_company", (f) => f.value.trim().length < 2, "Enter the business you're referring.");
+    check("referral_email", (f) => f.value.trim() && !validateEmail(f.value.trim()), "That email doesn't look right.");
+    check("notes", (f) => f.value.trim().length < 20, "Add a little more detail, at least 20 characters.");
+    check("consent", (f) => !f.checked, "Please confirm before submitting.");
+    return ok;
+  };
+
+  fieldsOf().forEach((field) => {
+    const evt = field.type === "checkbox" || field.tagName === "SELECT" ? "change" : "input";
+    field.addEventListener(evt, () => {
+      if (field.closest(".form-row")?.classList.contains("invalid")) validate();
+      if (success) success.textContent = "";
+    });
+  });
+
+  if (new URLSearchParams(window.location.search).get("submitted") === "1") {
+    if (success) success.textContent = "Thanks, your referral was sent. We'll reply by email within two business days.";
+    track("generate_lead", { method: "partner_form" });
+    history.replaceState(null, "", `${window.location.pathname}#join`);
+  }
+
+  window.addEventListener("pageshow", () => {
+    if (!submitButton) return;
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit referral";
+  });
+
+  form.addEventListener("submit", (event) => {
+    if (!validate()) {
+      event.preventDefault();
+      form.querySelector(".form-row.invalid input, .form-row.invalid select, .form-row.invalid textarea")?.focus();
+      return;
+    }
+    track("partner_form_submit");
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Continue to verification...";
+    }
+  });
+}
+
 function setupAiAssistant() {
   const brand = SITE_CONFIG.brandName;
 
@@ -882,6 +941,7 @@ setupScrollReveal();
 setupParallaxReveal();
 setupActiveNavigation();
 setupContactForm();
+setupPartnerForm();
 setupLiveWorkflow();
 setupAiAssistant();
 setupOpportunityFinder();
