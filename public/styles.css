@@ -3750,3 +3750,42 @@ textarea {
 .markets-line a {
   color: var(--cyan);
 }
+
+/* Partner program */
+.partner-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.partner-stats li {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(7, 10, 18, 0.5);
+}
+.partner-stats strong { font-size: 1.5rem; line-height: 1.1; }
+.partner-stats span { color: var(--muted-strong); font-size: 0.86rem; }
+.partner-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.partner-check input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  flex: none;
+  padding: 0;
+}
+select { appearance: auto; }
+@media (max-width: 640px) {
+  .partner-stats { grid-template-columns: 1fr; }
+}
