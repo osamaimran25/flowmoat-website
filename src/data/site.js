@@ -9,7 +9,7 @@ export const SITE = {
     x: "",
     instagram: "",
     facebook: "",
-    youtube: "",
+    youtube: "https://www.youtube.com/@Flowmoat",
     github: "",
   },
   description:
